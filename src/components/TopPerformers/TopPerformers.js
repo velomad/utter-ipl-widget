@@ -4,7 +4,7 @@ import { Text } from "../../common";
 export default function Topperformers(props) {
   return (
     <React.Fragment>
-      <div className="dummy-main-container ">
+      <div className="dummy-main-container">
         <div className="main-container border border-gray-300 w-full p-2 rounded-md">
           <h4 className="text-sm font-semibold pb-2">
             <Text
