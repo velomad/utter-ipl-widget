@@ -1,10 +1,15 @@
 import React from "react";
+import { Text } from '../../common';
 
 const TossInsights = () => {
   return (
     <div className="p-2 border rounded-md ">
-      <div>Toss Insights</div>
-
+      <Text
+        fontFamily='Roboto Condensed'
+        class='text-sm font-semibold pb-1'
+        text='Toss Insights'
+        fontColor='#283574'
+      />
       <div className="flex relative items-center justify-between py-4 px-8">
         <div className="space-y-6">
           <div>
@@ -16,33 +21,78 @@ const TossInsights = () => {
             </div>
           </div>
 
-          <div>Time left for the toss</div>
+          <div>
+            <Text
+              fontFamily='Roboto Condensed'
+              class='text-xs font-semibold'
+              text='Time left for the toss'
+              fontColor='#656666'
+            /></div>
 
           <div className="flex items-center space-x-8">
             <div>
               <div className="bg-gray-100 border rounded-full h-10 w-10 flex items-center justify-center">
-                00
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='text-lg font-extrabold'
+                  text='00'
+                  fontColor='#283574'
+                />
               </div>
-              <div className="text-center">Hrs</div>
+              <div className="text-center">
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='text-xs font-semibold'
+                  text='Hrs'
+                  fontColor='#283574'
+                />
+              </div>
             </div>
             <div>
               <div className="bg-gray-100 border rounded-full h-10 w-10 flex items-center justify-center">
-                24
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='text-lg font-extrabold'
+                  text='24'
+                  fontColor='#283574'
+                />
               </div>
-              <div className="text-center">Mins</div>
+              <div className="text-center">
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='text-xs font-semibold'
+                  text='Mins'
+                  fontColor='#283574'
+                /></div>
             </div>
             <div>
               <div className="bg-gray-100 border rounded-full h-10 w-10 flex items-center justify-center">
-                36
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='text-lg font-extrabold'
+                  text='34'
+                  fontColor='#283574'
+                />
               </div>
-              <div className="text-center">Secs</div>
+              <div className="text-center">
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='text-xs font-semibold'
+                  text='Secs'
+                  fontColor='#283574'
+                /></div>
             </div>
           </div>
         </div>
 
         <div className="space-y-10 ">
-          <div className="text-center ">batting win %</div>
-          
+          <div className="text-center ">
+            <Text
+              fontFamily='Roboto Condensed'
+              class='text-sm font-semibold pb-1'
+              text='Batting win %'
+              fontColor='#283574'
+            /></div>
           <div className="flex items-center space-x-8">
             <div className="flex">
               <div className="flex space-x-1">
@@ -50,11 +100,23 @@ const TossInsights = () => {
                   <img src="/static/images/one.svg" />
                 </div>
                 <div>
-                  <sup>st</sup>
+                  <sup>
+                    <Text
+                      fontFamily='Roboto Condensed'
+                      class='text-xs p-1 font-semibold pb-1'
+                      text='st'
+                      fontColor='#656666'
+                    />
+                  </sup>
                 </div>
               </div>
-              <div className=" bg-gray-100 border h-32 px-10 rounded-md flex items-center">
-                45
+              <div className=" bg-gray-100 border h-28 px-6 rounded-md flex items-center">
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='text-4xl font-semibold p-2'
+                  text='45'
+                  fontColor='#9F1C34'
+                />
               </div>
             </div>
             <div className="flex">
@@ -64,11 +126,23 @@ const TossInsights = () => {
                 </div>
 
                 <div>
-                  <sup>nd</sup>
+                  <sup>
+                    <Text
+                      fontFamily='Roboto Condensed'
+                      class='text-xs p-1 font-semibold'
+                      text='nd'
+                      fontColor='#656666'
+                    />
+                  </sup>
                 </div>
               </div>
-              <div className="bg-gray-100 border h-32 px-10 rounded-md flex items-center">
-                55
+              <div className="bg-gray-100 border h-28 px-6 rounded-md flex items-center">
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='text-4xl font-semibold p-2'
+                  text='55'
+                  fontColor='#197F5C'
+                />
               </div>
             </div>
           </div>
