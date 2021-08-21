@@ -21,7 +21,7 @@ const AnnouncedPlayers = () => {
   ];
 
   return (
-    <div className="p-2 border rounded-md space-y-8">
+    <div className="p-2 border rounded-md space-y-4 h-80">
       <Text
         fontFamily='Roboto Condensed'
         class='text-sm font-semibold pb-1'
