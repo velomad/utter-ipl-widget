@@ -1,6 +1,7 @@
 import React from "react";
 import {
   AnnouncedPlayers,
+  Footer,
   GroundInsights,
   HeadToHead,
   PitchInsights,
@@ -43,6 +44,9 @@ function App() {
         <PlayingTeam />
       </div>
 
+      <div className="mt-8">
+        <Footer />
+      </div>
     </div>
   );
 }

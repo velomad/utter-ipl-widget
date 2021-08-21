@@ -3,7 +3,7 @@ import { Text } from '../../common';
 
 const TossInsights = () => {
   return (
-    <div className="p-2 border rounded-md ">
+    <div className="p-2 border rounded-md h-80">
       <Text
         fontFamily='Roboto Condensed'
         class='text-sm font-semibold pb-1'

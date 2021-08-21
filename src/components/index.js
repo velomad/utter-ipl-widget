@@ -6,3 +6,4 @@ export { default as TossInsights } from "./TossInsights";
 export { default as HeadToHead } from "./HeadToHead";
 export { default as TopPerformers } from "./TopPerformers";
 export { default as PlayingTeam } from "./PlayingTeam";
+export { default as Footer } from "./Footer";

@@ -453,7 +453,6 @@ export default function Topperformers(props) {
               </div>
               <div className="border-r h-3 border-b border-l border-gray-300 rounded-bl-md rounded-br-md rounded-tl-0 rounded-tr-0 w-32"></div>
             </div>
-            
           </div>
         </div>
       </div>
