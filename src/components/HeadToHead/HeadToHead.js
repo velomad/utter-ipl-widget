@@ -6,7 +6,7 @@ export default function Headtohead(props) {
     <React.Fragment>
       <div className="dummy-main-container">
         <div className="main-container border border-gray-300 w-full p-1 pl-2 rounded-md">
-          <Text 
+          <Text
             fontFamily='Roboto Condensed'
             class='text-xs font-semibold pb-1'
             text='Head-to-Head'
@@ -14,17 +14,21 @@ export default function Headtohead(props) {
           />
           <div className="grid grid-cols-12">
             <div class="col-span-4">
-              <div className="flex flex-row items-center relative">
-                <img
-                  class="z-10 h-28 w-28 object-cover object-center mx-auto"
-                  src="/static/images/dhoni.png"
-                  alt="player1"
-                />
-                <img
-                  class="z-0 absolute -right-4 h-16 w-16 object-cover object-center mx-auto"
-                  src="/static/images/chennai_logo.png"
-                  alt="player1"
-                />
+              <div className="flex flex-row items-center justify-center">
+                <div>
+                  <img
+                    class="z-10 h-28 w-28 object-cover object-center mx-auto"
+                    src="/static/images/dhoni.png"
+                    alt="player1"
+                  />
+                </div>
+                <div>
+                  <img
+                    class="z-0 h-16 w-16 object-cover object-center mx-auto"
+                    src="/static/images/chennai_logo.png"
+                    alt="player1"
+                  />
+                </div>
               </div>
             </div>
             <div class="col-span-4">
@@ -37,17 +41,21 @@ export default function Headtohead(props) {
               <p className="text-sm font-bold text-center mt-8">VS</p>
             </div>
             <div class="col-span-4">
-              <div className="flex flex-row items-center relative">
-                <img
-                  class="z-10 h-28 w-28 object-cover object-center mx-auto"
-                  src="/static/images/virat.png"
-                  alt="player2"
-                />
-                <img
-                  class="z-0 h-16 w-16 absolute -left-2 object-cover object-center mx-auto"
-                  src="/static/images/rcb_logo.png"
-                  alt="player2"
-                />
+              <div className="flex flex-row items-center justify-center">
+                <div>
+                  <img
+                    class="z-0 h-16 w-16 object-cover object-center mx-auto"
+                    src="/static/images/rcb_logo.png"
+                    alt="player2"
+                  />
+                </div>
+                <div>
+                  <img
+                    class="z-10 h-28 w-28 object-cover object-center mx-auto"
+                    src="/static/images/virat.png"
+                    alt="player2"
+                  />
+                </div>
               </div>
             </div>
           </div>
