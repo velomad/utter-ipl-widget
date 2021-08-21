@@ -1,11 +1,17 @@
 import React from "react";
+import { Text } from '../../common';
 
 export default function Headtohead(props) {
   return (
     <React.Fragment>
       <div className="dummy-main-container">
         <div className="main-container border border-gray-300 w-full p-1 pl-2 rounded-md">
-          <h4 className="text-xs font-semibold pb-1" style={{ fontFamily: 'Roboto Condensed'}}>Head-to-Head</h4>
+          <Text 
+            fontFamily='Roboto Condensed'
+            class='text-xs font-semibold pb-1'
+            text='Head-to-Head'
+            fontColor='#283574'
+          />
           <div className="grid grid-cols-12">
             <div class="col-span-4">
               <div className="flex flex-row items-center relative">
