@@ -31,13 +31,18 @@ export default function Headtohead(props) {
             </div>
           </div>
           <div class="col-span-4">
-            <p
-              style={{ fontSize: "0.6rem" }}
-              className="font-bold text-center"
-            >
-              Matched Played: 27
-            </p>
-            <p className="text-sm font-bold text-center mt-8">VS</p>
+            <Text
+              fontFamily='Roboto Condensed'
+              class='text-xs font-bold text-center'
+              text='Matched Played: 27'
+              fontColor='#283574'
+            />
+            <Text
+              fontFamily='Roboto Condensed'
+              class='text-sm font-bold text-center mt-8'
+              text='VS'
+              fontColor='#283574'
+            />
           </div>
           <div class="col-span-4">
             <div className="flex flex-row items-center justify-center">
@@ -61,94 +66,138 @@ export default function Headtohead(props) {
         </div>
         <div className="grid grid-cols-12">
           <div class="col-span-4 space-y-2">
-            <p className="text-center text-md font-bold">13</p>
+            <Text
+              fontFamily='Roboto Condensed'
+              class='text-md font-bold text-center'
+              text='17'
+              fontColor='#197F5C'
+            />
             <div>
               <img src="/static/images/graph2.svg" className="mx-auto" />
             </div>
             <div className="flex flex-row justify-center items-center space-x-1">
               <div className="bg-gray-200 w-5 rounded-full">
-                <p className="font-bold text-sm text-center text-green-600">
-                  W
-                </p>
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='font-bold text-sm text-center'
+                  text='W'
+                  fontColor='#197F5C'
+                />
               </div>
               <div className="bg-gray-200 w-5 rounded-full">
-                <p className="font-bold text-sm text-center text-green-600">
-                  W
-                </p>
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='font-bold text-sm text-center'
+                  text='W'
+                  fontColor='#197F5C'
+                />
               </div>
               <div className="bg-gray-200 w-5 rounded-full">
-                <p className="font-bold text-sm text-center text-red-600">
-                  L
-                </p>
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='font-bold text-sm text-center'
+                  text='L'
+                  fontColor='#9F1C34'
+                />
               </div>
               <div className="bg-gray-200 w-5 rounded-full">
-                <p className="font-bold text-sm text-center text-red-600">
-                  L
-                </p>
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='font-bold text-sm text-center'
+                  text='L'
+                  fontColor='#9F1C34'
+                />
               </div>
               <div className="bg-gray-200 w-5 rounded-full">
-                <p className="font-bold text-sm text-center text-green-600">
-                  W
-                </p>
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='font-bold text-sm text-center'
+                  text='W'
+                  fontColor='#197F5C'
+                />
               </div>
             </div>
           </div>
           <div class="col-span-4">
-            <p
-              style={{ fontSize: "0.6rem" }}
-              className="font-bold text-center text-gray-500"
-            >
-              Matches Won
-            </p>
-            <p
-              style={{ fontSize: "0.6rem" }}
-              className="font-bold text-center text-gray-500 mt-7"
-            >
-              Win %
-            </p>
-            <p
-              style={{ fontSize: "0.6rem" }}
-              className="font-bold text-center text-gray-500 mt-7"
-            >
-              Last 5 Matches{" "}
-            </p>
-            <p
-              style={{ fontSize: "0.6rem" }}
-              className="font-bold text-center text-gray-900 mt-2"
-            >
-              No Result: 1{" "}
-            </p>
+            <Text
+              fontSize='0.7rem'
+              fontFamily='Roboto Condensed'
+              class='font-bold text-center mt-1'
+              text='Matches Won'
+              fontColor='#656666'
+            />
+            <Text
+              fontSize='0.7rem'
+              fontFamily='Roboto Condensed'
+              class='font-bold text-center mt-7'
+              text='Win %'
+              fontColor='#656666'
+            />
+            <Text
+              fontSize='0.7rem'
+              fontFamily='Roboto Condensed'
+              class='font-bold text-center mt-7'
+              text='Last 5 Matches'
+              fontColor='#656666'
+            />
+            <Text
+              fontSize='0.6rem'
+              fontFamily='Roboto Condensed'
+              class='font-bold text-center mt-2'
+              text='No Result: 1'
+              fontColor='#283574'
+            />
           </div>
           <div class="col-span-4 space-y-2">
-            <p className="text-center text-md font-bold">13</p>
+            <Text
+              fontFamily='Roboto Condensed'
+              class='text-md font-bold text-center'
+              text='09'
+              fontColor='#9F1C34'
+            />
             <div>
               <img src="/static/images/graph.svg" className="mx-auto" />
             </div>
             <div className="flex flex-row justify-center items-center space-x-1">
               <div className="bg-gray-200 w-5 rounded-full">
-                <p className="font-bold text-sm text-center text-red-600">
-                  L
-                </p>
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='font-bold text-sm text-center'
+                  text='L'
+                  fontColor='#9F1C34'
+                />
               </div>
               <div className="bg-gray-200 w-5 rounded-full">
-                <p className="font-bold text-sm text-center text-red-600">
-                  L
-                </p>
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='font-bold text-sm text-center'
+                  text='L'
+                  fontColor='#9F1C34'
+                />
               </div>
               <div className="bg-gray-200 w-5 rounded-full">
-                <p className="font-bold text-sm text-center text-green-600">
-                  W
-                </p>
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='font-bold text-sm text-center'
+                  text='W'
+                  fontColor='#197F5C'
+                />
               </div>
               <div className="bg-gray-200 w-5 rounded-full">
-                <p className="font-bold text-sm text-center text-green-600">
-                  W
-                </p>
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='font-bold text-sm text-center'
+                  text='W'
+                  fontColor='#197F5C'
+                />
               </div>
               <div className="bg-gray-200 w-5 rounded-full">
-                <p className="font-bold text-sm text-center text-red-600">
-                  L
-                </p>
+                <Text
+                  fontFamily='Roboto Condensed'
+                  class='font-bold text-sm text-center'
+                  text='L'
+                  fontColor='#9F1C34'
+                />
               </div>
             </div>
           </div>
