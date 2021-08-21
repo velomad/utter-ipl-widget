@@ -5,7 +5,7 @@ export default function Headtohead(props) {
     <React.Fragment>
       <div className="dummy-main-container">
         <div className="main-container border border-gray-300 w-full p-1 pl-2 rounded-md">
-          <h4 className="text-xs font-semibold pb-1">Head-to-Head</h4>
+          <h4 className="text-xs font-semibold pb-1" style={{ fontFamily: 'Roboto Condensed'}}>Head-to-Head</h4>
           <div className="grid grid-cols-12">
             <div class="col-span-4">
               <div className="flex flex-row items-center relative">
