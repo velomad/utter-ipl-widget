@@ -7,7 +7,7 @@ export default function Headtohead(props) {
       <div className="main-container h-72 border border-gray-300 w-full p-2 pl-2 rounded-md">
         <Text
           fontFamily='Roboto Condensed'
-          class='text-xs font-semibold pb-1'
+          class='text-sm font-semibold pb-1'
           text='Head-to-Head'
           fontColor='#283574'
         />
