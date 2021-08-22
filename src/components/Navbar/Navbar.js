@@ -5,9 +5,9 @@ function Navbar() {
   return (
     <div>
       <div className="slnt absolute"></div>
-      <div className="relative z-10 flex justify-between top-2 px-20">
+      <div className="relative z-10 flex justify-between top-2 sm:px-20 px-7">
         <img src="/static/images/csk.png" className="object-fit" />
-        <div className='bg-white rounded-full h-10 w-10 mt-4 mr-4'>
+        <div className='bg-white rounded-full h-10 w-10 mt-4 sm:mr-4 mr-10'>
           <Text
             class='text-center mt-2'
             text="VS"

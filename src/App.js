@@ -15,8 +15,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-
-      <div className="mx-4 mt-8 grid grid-cols-2 gap-3">
+      <div className="sm:mx-4 mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 space-y-5 sm:space-y-0">
         <div>
           <GroundInsights />
         </div>
@@ -24,7 +23,7 @@ function App() {
           <PitchInsights />
         </div>
       </div>
-      <div className="mx-4 mt-4 grid grid-cols-2 gap-3">
+      <div className="mx-4 mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 space-y-5 sm:space-y-0">
         <div>
           <TossInsights />
         </div>
@@ -32,7 +31,7 @@ function App() {
           <AnnouncedPlayers />
         </div>
       </div>
-      <div className="mx-4 mt-4 grid grid-cols-2 gap-3">
+      <div className="mx-4 mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 space-y-5 sm:space-y-0">
         <div>
           <HeadToHead />
         </div>
@@ -43,7 +42,6 @@ function App() {
       <div className="mx-4 mt-4">
         <PlayingTeam />
       </div>
-
       <div className="mt-8">
         <Footer />
       </div>

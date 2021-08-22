@@ -21,7 +21,7 @@ const AnnouncedPlayers = () => {
   ];
 
   return (
-    <div className="p-2 border rounded-md space-y-4 h-80">
+    <div className="p-2 sm:border rounded-md space-y-4 sm:h-80">
       <Text
         fontFamily='Roboto Condensed'
         class='text-sm font-semibold pb-1'
@@ -47,10 +47,10 @@ const AnnouncedPlayers = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-3 px-4 space-x-4 space-y-4">
+      <div className="grid grid-cols-3 space-x-2 space-y-4 sm:px-4 sm:space-x-4">
         {data.map((el, index) => (
           <div
-            className="flex justify-between bg-gray-100 border mt-4 ml-4 pl-4"
+            className="flex justify-between bg-gray-100 border mt-4 ml-2 pl-2 sm:ml-4 sm:pl-4"
             key={index}
           >
             <div>

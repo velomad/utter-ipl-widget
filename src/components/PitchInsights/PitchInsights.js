@@ -3,7 +3,7 @@ import { Text } from "../../common";
 
 const PitchInsights = () => {
   return (
-    <div className="p-2 border rounded-md">
+    <div className="p-2 sm:border rounded-md bg-gray-100 sm:bg-white">
       <Text
         fontFamily="Roboto Condensed"
         class="text-sm font-semibold pb-1"
@@ -13,7 +13,7 @@ const PitchInsights = () => {
       <div className="h-60 px-4 flex items-center justify-around">
         <div className="space-y-6">
           <div>
-            <img src="/static/images/pitch.png" />
+            <img src="/static/images/pitch.png " className='w-32 sm:w-full ' />
           </div>
           <div className="text-center">
             <Text
@@ -25,7 +25,7 @@ const PitchInsights = () => {
           </div>
         </div>
         <div>
-          <div className="flex space-x-12">
+          <div className="flex space-x-4 sm:space-x-12">
             <div className="text-center bg-gray-100 border rounded-full w-20 h-20 flex items-center justify-center">
               <Text
                 fontFamily="Roboto Condensed"
