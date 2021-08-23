@@ -1,7 +1,7 @@
 import React from "react";
 import { Text } from '../../common';
 
-const TossInsights = () => {
+const TossInsights = (props) => {
   return (
     <React.Fragment>
       <div className="p-2 border rounded-md h-80 hidden sm:block">
@@ -151,12 +151,14 @@ const TossInsights = () => {
         </div>
       </div>
       <div className='mobile-view block sm:hidden '>
-        <Text
-          fontFamily='Roboto Condensed'
-          class='text-sm font-semibold pb-1'
-          text='Toss Insights'
-          fontColor='#283574'
-        />
+        {
+          !!props.hideTitle ? "" : <Text
+            fontFamily='Roboto Condensed'
+            class='text-sm font-semibold pb-1'
+            text='Toss Insights'
+            fontColor='#283574'
+          />
+        }
         <div className='grid grid-cols-12 mt-2'>
           <div className='col-span-5'>
             <div className='flex flex-col'>

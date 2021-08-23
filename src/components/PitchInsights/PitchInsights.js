@@ -1,15 +1,17 @@
 import React from "react";
 import { Text } from "../../common";
 
-const PitchInsights = () => {
+const PitchInsights = (props) => {
   return (
-    <div className="p-2 sm:border rounded-md bg-gray-100 sm:bg-white">
-      <Text
-        fontFamily="Roboto Condensed"
-        class="text-sm font-semibold pb-1"
-        text="Pitch Inisghts"
-        fontColor="#283574"
-      />
+    <div className="p-2 sm:border rounded-md">
+      {
+        !!props.hideTitle ? "" : <Text
+          fontFamily="Roboto Condensed"
+          class="text-sm font-semibold pb-1"
+          text="Pitch Inisghts"
+          fontColor="#283574"
+        />
+      }
       <div className="h-60 px-4 flex items-center justify-around">
         <div className="space-y-6">
           <div>

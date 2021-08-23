@@ -1,7 +1,7 @@
 import React from "react";
 import { Text } from '../../common';
 
-const AnnouncedPlayers = () => {
+const AnnouncedPlayers = (props) => {
   const data = [
     { playerName: "Faf Du Plessis", isCaptain: false, playerRole: "batsmen" },
     { playerName: "Ruturaj Gaikwad", isCaptain: false, playerRole: "batsmen" },
@@ -22,12 +22,14 @@ const AnnouncedPlayers = () => {
 
   return (
     <div className="p-2 sm:border rounded-md space-y-4 sm:h-80">
-      <Text
-        fontFamily='Roboto Condensed'
-        class='text-sm font-semibold pb-1'
-        text='Announced Players'
-        fontColor='#283574'
-      />
+      {
+        !!props.hideTitle ? "" : <Text
+          fontFamily='Roboto Condensed'
+          class='text-sm font-semibold pb-1'
+          text='Announced Players'
+          fontColor='#283574'
+        />
+      }
       <div className="flex justify-center -space-x-2">
         <button className="bg-gray-100 w-32 z-10 shadow-md border rounded-md">
           <Text
