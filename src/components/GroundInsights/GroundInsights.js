@@ -214,7 +214,7 @@ const GroundInsights = () => {
           </div>
         </div>
       </div>
-      <div className='mobile-view-container mx-3 block sm:hidden '>
+      <div className='mobile-view-container block sm:hidden '>
         <div className='flex flex-row justify-between items-center'>
           <Text
             fontFamily='Roboto Condensed'
@@ -223,7 +223,7 @@ const GroundInsights = () => {
             fontColor='#283574'
             fontWeight='900'
           />
-          <div className='flex flex-row justify-end space-x-4 items-center'>
+          <div className='flex flex-row justify-end space-x-3 items-center'>
             <div onClick={() => setSelectedVal('ground')}>
               <Text
                 class={selectedVal == 'ground' ? "text-xs text-center border-b border-red-900" : "text-xs text-center"}
