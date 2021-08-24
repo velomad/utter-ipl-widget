@@ -117,69 +117,70 @@ const PlayingTeam = () => {
         />
         <div className='grid grid-cols-12'>
           <div class="col-span-3">
-            <img src="/static/images/cricket.png" className="mx-auto" />
+            <img src="/static/images/cricket.png" className="w-10 mx-auto" />
           </div>
           <div class="col-span-9">
-            <div className='flex flex-col items-center'>
+            <div className='flex flex-col items-start'>
               {
                 data.map((el, index) => {
-                  return <Text text={index + 1 + ". " + el} class='text-xs text-left font-bold' fontColor="#707070" />
+                  return <Text text={index + 1 + ". " + el} fontWeight="bolder" class='text-left font-extrabold' fontSize="0.6rem" fontColor="#1E1E58" />
                 })
               }
             </div>
           </div>
         </div>
-        <div className='grid grid-cols-12 mt-4 gap-2'>
-          <div class="col-span-4">
+        <div className='grid grid-cols-12 mt-4 gap-2 pt-2 gradient-bk'>
+          <div class="col-span-4 px-2">
             <Text
-              class='text-md text-left font-bold pb-2'
-              text="Playing XI 
-            Insights"
+              class='text-xs text-left font-bold pb-1'
+              text="Playing XI"
               fontColor="#283574"
               fontWeight="700"
             />
             <Text
-              class='text-xs text-left font-bold'
-              text="Utter's recommended playing XI for the match 
-            "
+              class='text-left font-bold'
+              text="Utter's recommended playing XI for the match"
               fontColor="#707070"
               fontWeight="700"
+              fontSize="0.5rem"
             />
           </div>
-          <div class="col-span-8">
+          <div class="col-span-8 px-2">
             <div class="w-full">
               <div class="h-full flex items-center border-gray-200 border p-1 rounded-lg">
                 <div className='flex flex-col items-center'>
-                  <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-sm mr-2" src="/static/images/dhoni.png" />
-                  <div className='bg-indigo-700 w-16 text-left mr-2'>
+                  <img alt="team" class="w-12 h-12 bg-gray-100 object-cover object-center flex-shrink-0 rounded-sm mr-2" src="/static/images/dhoni.png" />
+                  <div className='bg-indigo-700 w-12 text-left mr-2'>
                     <Text
-                      class='text-xs text-center font-bold'
-                      text="Dhoni 
-            "
+                      class='text-center font-bold'
+                      text="Dhoni"
                       fontColor="#FFF"
                       fontWeight="700"
+                      fontSize="0.5rem"
                     />
                   </div>
                 </div>
                 <div class="flex-grow items-center">
                   <Text
-                    class='w-40 text-xs text-center font-bold'
+                    class='w-40 text-left font-bold'
                     text="“An exceptional bowler with great line and length. He could be the joker everyone wants in their deck of the playing XI.”"
                     fontColor="#656666"
                     fontWeight="700"
+                    fontSize="0.5rem"
                   />
                   <Text
-                    class='text-sm text-right font-bold'
+                    class='text-right font-bold pr-2'
                     text="-UtterAi"
                     fontColor="#283574"
                     fontWeight="700"
+                    fontSize="0.7rem"
                   />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className='flex flex-nowrap items-center mt-4'>
+        <div className='flex flex-nowrap items-center mt-4 px-2'>
           <div className="grid grid-cols-4 place-items-center gap-6">
             {[...new Array(11)].map((e, index) => (
               <div>

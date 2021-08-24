@@ -4,7 +4,7 @@ import { Text } from '../../common';
 export default function Headtohead(props) {
   return (
     <React.Fragment>
-      <div className="main-container h-72 sm:border w-full sm:p-2 sm:pl-2 rounded-md ">
+      <div className="main-container h-72 sm:border px-4 py-2 w-full sm:p-2 sm:pl-2 rounded-md gradient-bk">
         <Text
           fontFamily='Roboto Condensed'
           class='text-sm font-semibold pb-1'

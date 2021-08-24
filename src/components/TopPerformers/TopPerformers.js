@@ -4,7 +4,7 @@ import { Text } from "../../common";
 export default function Topperformers(props) {
   return (
     <React.Fragment>
-      <div className="main-container h-72 sm:border w-full p-2 rounded-md">
+      <div className="main-container h-72 sm:border w-full h-full p-2 rounded-md gradient-bk">
         <h4 className="text-sm font-semibold pb-2">
           <Text
             text="Top Performers in last 5 Matches"

@@ -226,7 +226,7 @@ const GroundInsights = () => {
           <div className='flex flex-row justify-end space-x-3 items-center'>
             <div onClick={() => setSelectedVal('ground')}>
               <Text
-                class={selectedVal == 'ground' ? "text-xs text-center border-b border-red-900" : "text-xs text-center"}
+                class={selectedVal == 'ground' ? "cursor-pointer text-xs text-center border-b border-red-900" : "cursor-pointer text-xs text-center"}
                 text="Ground"
                 fontColor={selectedVal == 'ground' ? "#283574" : "#656666"}
                 fontWeight="600"
@@ -234,7 +234,7 @@ const GroundInsights = () => {
             </div>
             <div onClick={() => setSelectedVal('pitch')}>
               <Text
-                class={selectedVal == 'pitch' ? "text-xs text-center border-b border-red-900" : "text-xs text-center"}
+                class={selectedVal == 'pitch' ? "cursor-pointer text-xs text-center border-b border-red-900" : "cursor-pointer text-xs text-center"}
                 text="Pitch"
                 fontColor={selectedVal == 'pitch' ? "#283574" : "#656666"}
                 fontWeight="600"
@@ -242,7 +242,7 @@ const GroundInsights = () => {
             </div>
             <div onClick={() => setSelectedVal('toss')}>
               <Text
-                class={selectedVal == 'toss' ? "text-xs text-center border-b border-red-900" : "text-xs text-center"}
+                class={selectedVal == 'toss' ? "cursor-pointer text-xs text-center border-b border-red-900" : "cursor-pointer text-xs text-center"}
                 text="Toss"
                 fontColor={selectedVal == 'toss' ? "#283574" : "#656666"}
                 fontWeight="600"
@@ -250,7 +250,7 @@ const GroundInsights = () => {
             </div>
             <div onClick={() => setSelectedVal('announcedplayers')}>
               <Text
-                class={selectedVal == 'announcedplayers' ? "text-xs text-center border-b border-red-900" : "text-xs text-center"}
+                class={selectedVal == 'announcedplayers' ? "cursor-pointer text-xs text-center border-b border-red-900" : "cursor-pointer text-xs text-center"}
                 text="Announced Players"
                 fontColor={selectedVal == 'announcedplayers' ? "#283574" : "#656666"}
                 fontWeight="600"

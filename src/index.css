@@ -35,3 +35,22 @@
   position: relative;
   right: -31px;
 }
+
+.gradient-bk{
+  background: #ffffff !important;
+}
+
+@media only screen and  (max-width:320px)  { 
+  .gradient-bk{
+    background: transparent linear-gradient(180deg, #B3B3B326 0%, #FFFFFF26 100%) 0% 0% no-repeat padding-box !important;
+    opacity: 1 !important;
+  }
+}
+@media only screen and (max-width:480px)  { 
+  .gradient-bk{
+    background: transparent linear-gradient(180deg, #B3B3B326 0%, #FFFFFF26 100%) 0% 0% no-repeat padding-box !important;
+    opacity: 1 !important;
+  }
+ }
+
+ 
