@@ -10,16 +10,21 @@ const PlayingTeam = () => {
 
   return (
     <div>
-      <div className='hidden sm:block'>
+      <div className="hidden sm:block">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-9 border rounded-md">
             <div className="grid grid-cols-8 gap-4">
-              <div className="col-span-2 p-2 space-y-4">
+              <div className="col-span-2 p-2 space-y-6">
                 <div className="">
-                  <Text text="Playing XI" fontColor="#283574" fontWeight="700" />
+                  <Text
+                    text="Playing XI"
+                    fontColor="#283574"
+                    fontWeight="700"
+                  />
                 </div>
                 <div className="">
                   <Text
+                    fontSize="12px"
                     text="Utter's recommedned playing 11 for the match"
                     fontColor="#707070"
                     fontWeight="600"
@@ -33,7 +38,7 @@ const PlayingTeam = () => {
                   >
                     <Text text="Wildcard" fontColor="#fff" />
                   </div>
-                  <div className="bg-gray-100 py-4 space-y-4">
+                  <div className="bg-gray-100 py-8 space-y-4">
                     <div>
                       <img
                         src="/static/images/wildcard.png"
@@ -44,6 +49,7 @@ const PlayingTeam = () => {
                     <div className="px-4">
                       <p>
                         <Text
+                          fontSize="12px"
                           text='"An exceptional bowler with great line and length. He
                       could be the joker everyone wants in their deck of the
                       playing XI. "'
@@ -51,7 +57,7 @@ const PlayingTeam = () => {
                           fontWeight="700"
                         />
                       </p>
-                      <div className="py-2 float-right px-2">
+                      <div className=" float-right px-2">
                         <Text
                           text="-Utter.Ai"
                           fontColor="#283574"
@@ -69,7 +75,7 @@ const PlayingTeam = () => {
                     <div>
                       <img
                         src={`/static/images/${index + 1}.png`}
-                        className="w-24"
+                        className="w-20"
                       />
                     </div>
                   ))}
@@ -77,7 +83,7 @@ const PlayingTeam = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-3 bg-gray-100 border rounded-md space-y-8 p-4">
+          <div className="col-span-3 bg-gray-100 border rounded-md space-y-4 p-4">
             <div>
               <img src="/static/images/cricket.png" className="mx-auto" />
             </div>
@@ -93,13 +99,18 @@ const PlayingTeam = () => {
 
             <div>
               {data.map((el, index) => (
-                <div className="flex space-x-2">
-                  <div style={{ color: "#707070" }}>
+                <div className="flex space-x-2 space-y-4">
+                  <div className="mt-4" style={{ color: "#707070" }}>
                     {index + 1}
                     <span>.</span>
                   </div>
                   <div>
-                    <Text text={el} fontColor="#707070" fontWeight="500" />
+                    <Text
+                      text={el}
+                      fontColor="#707070"
+                      fontSize="14px"
+                      fontWeight="600"
+                    />
                   </div>
                 </div>
               ))}
@@ -107,15 +118,15 @@ const PlayingTeam = () => {
           </div>
         </div>
       </div>
-      <div className='mobile-view block sm:hidden'>
+      <div className="mobile-view block sm:hidden">
         <Text
-          class='text-md text-center font-bold pb-2'
+          class="text-md text-center font-bold pb-2"
           text="UtterAI Interesting 
             Insights"
           fontColor="#283574"
           fontWeight="700"
         />
-        <div className='grid grid-cols-12'>
+        <div className="grid grid-cols-12">
           <div class="col-span-3">
             <img src="/static/images/cricket.png" className="w-10 mx-auto" />
           </div>
@@ -184,10 +195,7 @@ const PlayingTeam = () => {
           <div className="grid grid-cols-4 place-items-center gap-6">
             {[...new Array(11)].map((e, index) => (
               <div>
-                <img
-                  src={`/static/images/${index + 1}.png`}
-                  className="w-24"
-                />
+                <img src={`/static/images/${index + 1}.png`} className="w-24" />
               </div>
             ))}
           </div>

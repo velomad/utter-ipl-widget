@@ -1,14 +1,14 @@
 import React from "react";
 import { Text } from "../../common";
 
-const PitchInsights = (props) => {
+const PitchInsgihts = (props) => {
   return (
     <div className="sm:p-2 sm:border rounded-md">
       {
         !!props.hideTitle ? "" : <Text
           fontFamily="Roboto Condensed"
           class="text-sm font-semibold pb-1"
-          text="Pitch Inisghts"
+          text="Pitch Insights"
           fontColor="#283574"
         />
       }
@@ -61,4 +61,4 @@ const PitchInsights = (props) => {
   );
 };
 
-export default PitchInsights;
+export default PitchInsgihts;
