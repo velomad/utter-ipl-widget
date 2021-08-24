@@ -140,7 +140,7 @@ const TossInsights = (props) => {
           </div>
         </div>
       </div>
-      <div className="mobile-view block sm:hidden ">
+      <div className="mobile-view block sm:hidden py-2">
         {!!props.hideTitle ? (
           ""
         ) : (
@@ -176,7 +176,7 @@ const TossInsights = (props) => {
                     <div className='bg-gray-200 rounded-full w-10 h-10 flex justify-center items-center'>
                       <Text
                         fontFamily='Roboto Condensed'
-                        class='text-xl font-bold text-center'
+                        class='text-sm font-bold text-center'
                         text='00'
                         fontColor='#283574'
                       />
@@ -192,7 +192,7 @@ const TossInsights = (props) => {
                     <div className='bg-gray-200 rounded-full w-10 h-10 flex justify-center items-center'>
                       <Text
                         fontFamily='Roboto Condensed'
-                        class='text-xl font-bold text-center'
+                        class='text-sm font-bold text-center'
                         text='24'
                         fontColor='#283574'
                       />
@@ -208,7 +208,7 @@ const TossInsights = (props) => {
                     <div className='bg-gray-200 rounded-full w-10 h-10 flex justify-center items-center'>
                       <Text
                         fontFamily='Roboto Condensed'
-                        class='text-xl font-bold text-center'
+                        class='text-sm font-bold text-center'
                         text='36'
                         fontColor='#283574'
                       />
@@ -227,7 +227,7 @@ const TossInsights = (props) => {
           <div className="col-span-7">
             <Text
               fontFamily='Roboto Condensed'
-              class='text-sm font-bold text-center pt-4'
+              class='text-xs font-bold text-center pt-4'
               text='Batting Win %'
               fontColor='#283574'
             />

@@ -16,14 +16,14 @@ export default function Headtohead(props) {
             <div className="flex justify-start h-24">
               <div className="absolute bottom-0 " style={{left:"4.5rem"}}>
                 <img
-                  className=" z-0 w-20 object-cover object-center mx-auto"
+                  className=" z-0 w-14 sm:w-20 object-cover object-center mx-auto"
                   src="/static/images/chennai_logo.png"
                   alt="player1"
                 />
               </div>
               <div className="absolute">
                 <img
-                  class="z-10 h-28 w-28 object-cover object-center mx-auto"
+                  class="z-10 w-28 object-cover object-center mx-auto"
                   src="/static/images/dhoni.png"
                   alt="player1"
                 />
@@ -33,9 +33,10 @@ export default function Headtohead(props) {
           <div class="col-span-2">
             <Text
               fontFamily="Roboto Condensed"
-              class="text-xs font-bold text-center"
-              text="Matched Played: 27"
+              class="font-bold text-center"
+              text="Matches Played: 27"
               fontColor="#283574"
+              fontSize='0.6rem'
             />
             <Text
               fontFamily="Roboto Condensed"
@@ -48,14 +49,14 @@ export default function Headtohead(props) {
             <div className="flex flex-row justify-end  h-24">
               <div className="absolute bottom-0 right-16">
                 <img
-                  class="z-0 w-20 object-cover object-center mx-auto"
+                  class="z-0 w-14 sm:w-20 object-cover object-center mx-auto"
                   src="/static/images/rcb_logo.png"
                   alt="player2"
                 />
               </div>
               <div className="absolute">
                 <img
-                  class="z-10 h-28 w-28 object-cover object-center mx-auto"
+                  class="z-10 w-28 object-cover object-center mx-auto"
                   src="/static/images/virat.png"
                   alt="player2"
                 />

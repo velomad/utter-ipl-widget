@@ -118,20 +118,20 @@ const PlayingTeam = () => {
           </div>
         </div>
       </div>
-      <div className="mobile-view block sm:hidden">
-        <Text
-          class="text-md text-center font-bold pb-2"
-          text="UtterAI Interesting 
-            Insights"
-          fontColor="#283574"
-          fontWeight="700"
-        />
-        <div className="grid grid-cols-12">
-          <div class="col-span-3">
+      <div className="mobile-view block sm:hidden py-2">
+        <div className="flex flex-row items-center px-4 space-x-4">
+          <div>
             <img src="/static/images/cricket.png" className="w-10 mx-auto" />
           </div>
-          <div class="col-span-9">
+          <div>
             <div className='flex flex-col items-start'>
+              <Text
+                class="text-xs font-bold pb-2"
+                text="UtterAI Interesting 
+            Insights"
+                fontColor="#283574"
+                fontWeight="700"
+              />
               {
                 data.map((el, index) => {
                   return <Text text={index + 1 + ". " + el} fontWeight="bolder" class='text-left font-extrabold' fontSize="0.6rem" fontColor="#1E1E58" />
@@ -160,8 +160,8 @@ const PlayingTeam = () => {
             <div class="w-full">
               <div class="h-full flex items-center border-gray-200 border p-1 rounded-lg">
                 <div className='flex flex-col items-center'>
-                  <img alt="team" class="w-12 h-12 bg-gray-100 object-cover object-center flex-shrink-0 rounded-sm mr-2" src="/static/images/dhoni.png" />
-                  <div className='bg-indigo-700 w-12 text-left mr-2'>
+                  <img alt="team" class="p-2 bg-gray-100 object-cover object-center flex-shrink-0 rounded-sm mr-2" src="/static/images/wildcard.png" />
+                  {/* <div className='bg-indigo-700 w-12 text-left mr-2'>
                     <Text
                       class='text-center font-bold'
                       text="Dhoni"
@@ -169,11 +169,11 @@ const PlayingTeam = () => {
                       fontWeight="700"
                       fontSize="0.5rem"
                     />
-                  </div>
+                  </div> */}
                 </div>
                 <div class="flex-grow items-center">
                   <Text
-                    class='w-40 text-left font-bold'
+                    class='text-left font-bold'
                     text="“An exceptional bowler with great line and length. He could be the joker everyone wants in their deck of the playing XI.”"
                     fontColor="#656666"
                     fontWeight="700"

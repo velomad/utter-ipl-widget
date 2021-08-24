@@ -218,7 +218,7 @@ const GroundInsights = () => {
           </div>
         </div>
       </div>
-      <div className="mobile-view-container block sm:hidden ">
+      <div className="mobile-view-container block sm:hidden mx-2">
         <div className="flex flex-row justify-between items-center">
           <Text
             fontFamily="Roboto Condensed"
@@ -264,207 +264,209 @@ const GroundInsights = () => {
             </div>
           </div>
         </div>
-        {selectedVal == "ground" ? (
-          <div className="flex flex-row justify-between space-x-2 items-center mt-5">
-            <div className="grid grid-cols-12 gap-5">
-              <div className="col-span-4">
-                <div className="w-full flex flex-col justify-between items-center">
-                  <div className="w-full flex flex-row justify-between items-center">
-                    <div className="flex flex-row justify-center space-x-1 items-center">
-                      <div>
-                        <img
-                          src="/static/images/icon-sunny.svg"
-                          className="w-5 h-5"
-                        />{" "}
+        <div className='h-40'>
+          {selectedVal == "ground" ? (
+            <div className="flex flex-row justify-between space-x-2 items-center py-2">
+              <div className="grid grid-cols-12 gap-5">
+                <div className="col-span-4">
+                  <div className="w-full flex flex-col justify-between items-center">
+                    <div className="w-full flex flex-row justify-between items-center">
+                      <div className="flex flex-row justify-center space-x-1 items-center">
+                        <div>
+                          <img
+                            src="/static/images/icon-sunny.svg"
+                            className="w-5 h-5"
+                          />{" "}
+                        </div>
+                        <Text
+                          fontFamily="Roboto Condensed"
+                          class="text-xs"
+                          text="34C"
+                          fontColor="#283574"
+                          fontWeight="900"
+                        />
                       </div>
-                      <Text
-                        fontFamily="Roboto Condensed"
-                        class="text-xs"
-                        text="34C"
-                        fontColor="#283574"
-                        fontWeight="900"
-                      />
-                    </div>
-                    <div className="flex flex-row justify-center space-x-1 items-center">
-                      <div>
-                        <img
-                          src="/static/images/icon-rainy.svg"
-                          className="w-5 h-5"
-                        />{" "}
+                      <div className="flex flex-row justify-center space-x-1 items-center">
+                        <div>
+                          <img
+                            src="/static/images/icon-rainy.svg"
+                            className="w-5 h-5"
+                          />{" "}
+                        </div>
+                        <Text
+                          fontFamily="Roboto Condensed"
+                          class="text-xs"
+                          text="20%"
+                          fontColor="#283574"
+                          fontWeight="900"
+                        />
                       </div>
-                      <Text
-                        fontFamily="Roboto Condensed"
-                        class="text-xs"
-                        text="20%"
-                        fontColor="#283574"
-                        fontWeight="900"
-                      />
                     </div>
-                  </div>
-                  <div className="mt-5">
-                    <img src="/static/images/stadium.png" />
-                  </div>
-                  <div>
-                    <div className="text-center pt-2">
-                      <Text
-                        fontFamily="Roboto Condensed"
-                        class="font-semibold"
-                        text="M chinnaswamy Stadium"
-                        fontColor="#283574"
-                        fontSize="0.6rem"
-                      />
-                      <Text
-                        fontFamily="Roboto Condensed"
-                        class="font-semibold"
-                        text="Bengaluru, Karnataka"
-                        fontColor="#283574"
-                        fontSize="0.6rem"
-                      />
+                    <div className="mt-5">
+                      <img src="/static/images/stadium.png" />
+                    </div>
+                    <div>
+                      <div className="text-center pt-2">
+                        <Text
+                          fontFamily="Roboto Condensed"
+                          class="font-semibold"
+                          text="M chinnaswamy Stadium"
+                          fontColor="#283574"
+                          fontSize="0.6rem"
+                        />
+                        <Text
+                          fontFamily="Roboto Condensed"
+                          class="font-semibold"
+                          text="Bengaluru, Karnataka"
+                          fontColor="#283574"
+                          fontSize="0.6rem"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-span-8">
-                <div className="grid grid-cols-12 gap-2">
-                  <div class="col-span-8">
-                    <div className="w-8 h-8">
-                      <img src="/static/images/batting.png" />
-                    </div>
-                    <div className="w-full box1 bg-gray-100 h-24 rounded-md">
-                      <div className="flex flex-row justify-between items-center p-2 py-4">
-                        <div>
-                          <Text
-                            fontFamily="Roboto Condensed"
-                            class="text-md font-bold pb-1"
-                            text="178"
-                            fontColor="#283574"
-                          />
+                <div className="col-span-8">
+                  <div className="grid grid-cols-12 gap-2">
+                    <div class="col-span-6 relative mt-8">
+                      <div className="w-8 h-8 absolute -top-4 -ml-4" style={{ left: '50%' }}>
+                        <img src="/static/images/batting.png" />
+                      </div>
+                      <div className="w-full box1 bg-gray-100 h-20 rounded-md">
+                        <div className="flex flex-row justify-between items-center p-2 pt-5 py-2">
                           <div>
                             <Text
                               fontFamily="Roboto Condensed"
-                              class="font-bold"
-                              text="AVG. score"
-                              fontColor="#656666"
-                              fontSize="0.6rem"
+                              class="text-sm font-bold pb-1"
+                              text="178"
+                              fontColor="#283574"
                             />
-                            <Text
-                              fontFamily="Roboto Condensed"
-                              class="font-bold"
-                              text="1st batting "
-                              fontColor="#656666"
-                              fontSize="0.6rem"
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <Text
-                            fontFamily="Roboto Condensed"
-                            class="text-md font-bold pb-1"
-                            text="254"
-                            fontColor="#197F5C"
-                          />
-                          <div>
-                            <Text
-                              fontFamily="Roboto Condensed"
-                              class="font-bold"
-                              text="Highest"
-                              fontColor="#656666"
-                              fontSize="0.6rem"
-                            />
-                            <Text
-                              fontFamily="Roboto Condensed"
-                              class="font-bold"
-                              text="Score "
-                              fontColor="#656666"
-                              fontSize="0.6rem"
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <div>
-                            <Text
-                              fontFamily="Roboto Condensed"
-                              class="text-md font-bold pb-1"
-                              text="49"
-                              fontColor="#9F1C34"
-                            />
+                            <div>
+                              <Text
+                                fontFamily="Roboto Condensed"
+                                class="font-bold text-center"
+                                text="AVG. score"
+                                fontColor="#656666"
+                                fontSize="0.4rem"
+                              />
+                              <Text
+                                fontFamily="Roboto Condensed"
+                                class="font-bold text-center"
+                                text="1st batting "
+                                fontColor="#656666"
+                                fontSize="0.4rem"
+                              />
+                            </div>
                           </div>
                           <div>
                             <Text
                               fontFamily="Roboto Condensed"
-                              class="font-bold"
-                              text="Lowest"
-                              fontColor="#656666"
-                              fontSize="0.6rem"
+                              class="text-sm font-bold pb-1"
+                              text="254"
+                              fontColor="#197F5C"
                             />
-                            <Text
-                              fontFamily="Roboto Condensed"
-                              class="font-bold"
-                              text="Score "
-                              fontColor="#656666"
-                              fontSize="0.6rem"
-                            />
+                            <div>
+                              <Text
+                                fontFamily="Roboto Condensed"
+                                class="font-bold text-center"
+                                text="Highest"
+                                fontColor="#656666"
+                                fontSize="0.4rem"
+                              />
+                              <Text
+                                fontFamily="Roboto Condensed"
+                                class="font-bold text-center"
+                                text="Score "
+                                fontColor="#656666"
+                                fontSize="0.4rem"
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <Text
+                                fontFamily="Roboto Condensed"
+                                class="text-sm font-bold pb-1"
+                                text="49"
+                                fontColor="#9F1C34"
+                              />
+                            </div>
+                            <div>
+                              <Text
+                                fontFamily="Roboto Condensed"
+                                class="font-bold text-center"
+                                text="Lowest"
+                                fontColor="#656666"
+                                fontSize="0.4rem"
+                              />
+                              <Text
+                                fontFamily="Roboto Condensed"
+                                class="font-bold text-center"
+                                text="Score "
+                                fontColor="#656666"
+                                fontSize="0.4rem"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-span-4">
-                    <div className="w-8 h-8">
-                      <img src="/static/images/bowling.svg" />
-                    </div>
-                    <div className="w-full box2 bg-gray-200 rounded-md h-24">
-                      <div className="flex flex-row justify-between space-x-4 items-center p-2">
-                        <div>
+                    <div class="col-span-6 relative mt-8">
+                      <div className="w-8 h-8 absolute -top-4 -ml-4" style={{ left: '50%' }}>
+                        <img src="/static/images/bowling.svg" />
+                      </div>
+                      <div className="w-full box2 bg-gray-100 h-20 rounded-md">
+                        <div className="flex flex-row justify-between space-x-4 items-center pt-5 p-2">
                           <div>
-                            <Text
-                              fontFamily="Roboto Condensed"
-                              class="text-md font-bold"
-                              text="4"
-                              fontColor="#283574"
-                            />
+                            <div>
+                              <Text
+                                fontFamily="Roboto Condensed"
+                                class="text-sm font-bold text-center"
+                                text="4"
+                                fontColor="#283574"
+                              />
+                            </div>
+                            <div>
+                              <Text
+                                fontFamily="Roboto Condensed"
+                                class="font-bold text-center"
+                                text="AVG. Wickets"
+                                fontColor="#656666"
+                                fontSize="0.4rem"
+                              />
+                              <Text
+                                fontFamily="Roboto Condensed"
+                                class="font-bold pb-1 text-center"
+                                text="by Pacers "
+                                fontColor="#656666"
+                                fontSize="0.4rem"
+                              />
+                            </div>
                           </div>
                           <div>
-                            <Text
-                              fontFamily="Roboto Condensed"
-                              class="font-bold"
-                              text="AVG. Wickets"
-                              fontColor="#656666"
-                              fontSize="0.6rem"
-                            />
-                            <Text
-                              fontFamily="Roboto Condensed"
-                              class="font-bold pb-1"
-                              text="by Pacers "
-                              fontColor="#656666"
-                              fontSize="0.6rem"
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <div>
-                            <Text
-                              fontFamily="Roboto Condensed"
-                              class="text-md font-bold"
-                              text="6"
-                              fontColor="#197F5C"
-                            />
-                          </div>
-                          <div>
-                            <Text
-                              fontFamily="Roboto Condensed"
-                              class="font-bold"
-                              text="AVG. Wickets"
-                              fontColor="#656666"
-                              fontSize="0.6rem"
-                            />
-                            <Text
-                              fontFamily="Roboto Condensed"
-                              class="font-bold"
-                              text="by Spinners"
-                              fontColor="#656666"
-                              fontSize="0.6rem"
-                            />
+                            <div>
+                              <Text
+                                fontFamily="Roboto Condensed"
+                                class="text-sm font-bold text-center"
+                                text="6"
+                                fontColor="#197F5C"
+                              />
+                            </div>
+                            <div>
+                              <Text
+                                fontFamily="Roboto Condensed"
+                                class="font-bold text-center"
+                                text="AVG. Wickets"
+                                fontColor="#656666"
+                                fontSize="0.4rem"
+                              />
+                              <Text
+                                fontFamily="Roboto Condensed"
+                                class="font-bold pb-1 text-center"
+                                text="by Spinners"
+                                fontColor="#656666"
+                                fontSize="0.4rem"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -473,17 +475,17 @@ const GroundInsights = () => {
                 </div>
               </div>
             </div>
-          </div>
-        ) : (
-          ""
-        )}
-        {selectedVal == "pitch" ? <PitchInsights hideTitle={true} /> : ""}
-        {selectedVal == "toss" ? <TossInsights hideTitle={true} /> : ""}
-        {selectedVal == "announcedplayers" ? (
-          <AnnouncedPlayers hideTitle={true} />
-        ) : (
-          ""
-        )}
+          ) : (
+            ""
+          )}
+          {selectedVal == "pitch" ? <PitchInsights hideTitle={true} /> : ""}
+          {selectedVal == "toss" ? <TossInsights hideTitle={true} /> : ""}
+          {selectedVal == "announcedplayers" ? (
+            <AnnouncedPlayers hideTitle={true} />
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </React.Fragment>
   );

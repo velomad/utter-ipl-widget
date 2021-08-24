@@ -3,7 +3,7 @@ import { Text } from "../../common";
 
 const PitchInsgihts = (props) => {
   return (
-    <div className="sm:p-2 sm:border rounded-md">
+    <div className="sm:p-2 sm:border rounded-md py-2">
       {
         !!props.hideTitle ? "" : <Text
           fontFamily="Roboto Condensed"
@@ -12,7 +12,7 @@ const PitchInsgihts = (props) => {
           fontColor="#283574"
         />
       }
-      <div className="h-60 sm:px-4 grid grid-cols-12">
+      <div className="sm:h-60 sm:px-4 grid grid-cols-12">
         <div className="col-span-4 flex justify-center items-center">
           <div className='flex flex-col space-y-4'>
             <div>
