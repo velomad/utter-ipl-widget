@@ -1,87 +1,93 @@
 import React from "react";
-import { Text } from '../../common';
+import { Text } from "../../common";
 
 const TossInsights = (props) => {
   return (
     <React.Fragment>
-      <div className="p-2 border rounded-md h-80 hidden sm:block">
+      <div className="p-2 border rounded-md h-72 hidden sm:block">
         <Text
-          fontFamily='Roboto Condensed'
-          class='text-sm font-semibold pb-1'
-          text='Toss Insights'
-          fontColor='#283574'
+          fontFamily="Roboto Condensed"
+          class="text-sm font-semibold pb-1"
+          text="Toss Insights"
+          fontColor="#283574"
         />
-        <div className="flex relative items-center justify-between py-4 px-8">
+        <div className="flex relative justify-between px-4 items-center py-4 ">
           <div className="space-y-6">
-            <div>
-              <div className="absolute left-28">
-                <img src="/static/images/tails.png" />
+            <div className="">
+              <div className="absolute left-20">
+                <img
+                  src="/static/images/tails.png"
+                  className="w-20  right-10"
+                />
               </div>
               <div className="z-20">
-                <img src="/static/images/heads.png" />
+                <img src="/static/images/heads.png" className="w-20" />
               </div>
             </div>
 
             <div>
               <Text
-                fontFamily='Roboto Condensed'
-                class='text-xs font-semibold'
-                text='Time left for the toss'
-                fontColor='#656666'
-              /></div>
+                fontFamily="Roboto Condensed"
+                class="text-xs font-semibold"
+                text="Time left for the toss"
+                fontColor="#656666"
+              />
+            </div>
 
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-4">
               <div>
-                <div className="bg-gray-100 border rounded-full h-10 w-10 flex items-center justify-center">
+                <div className="bg-gray-100 border rounded-full h-12 w-12 flex items-center justify-center">
                   <Text
-                    fontFamily='Roboto Condensed'
-                    class='text-lg font-extrabold'
-                    text='00'
-                    fontColor='#283574'
+                    fontFamily="Roboto Condensed"
+                    class="text-lg font-extrabold"
+                    text="00"
+                    fontColor="#283574"
                   />
                 </div>
                 <div className="text-center">
                   <Text
-                    fontFamily='Roboto Condensed'
-                    class='text-xs font-semibold'
-                    text='Hrs'
-                    fontColor='#283574'
+                    fontFamily="Roboto Condensed"
+                    class="text-sm "
+                    text="Hrs"
+                    fontColor="#283574"
                   />
                 </div>
               </div>
               <div>
-                <div className="bg-gray-100 border rounded-full h-10 w-10 flex items-center justify-center">
+                <div className="bg-gray-100 border rounded-full h-12 w-12 flex items-center justify-center">
                   <Text
-                    fontFamily='Roboto Condensed'
-                    class='text-lg font-extrabold'
-                    text='24'
-                    fontColor='#283574'
+                    fontFamily="Roboto Condensed"
+                    class="text-lg font-extrabold"
+                    text="24"
+                    fontColor="#283574"
                   />
                 </div>
                 <div className="text-center">
                   <Text
-                    fontFamily='Roboto Condensed'
-                    class='text-xs font-semibold'
-                    text='Mins'
-                    fontColor='#283574'
-                  /></div>
+                    fontFamily="Roboto Condensed"
+                    class="text-sm "
+                    text="Mins"
+                    fontColor="#283574"
+                  />
+                </div>
               </div>
               <div>
-                <div className="bg-gray-100 border rounded-full h-10 w-10 flex items-center justify-center">
+                <div className="bg-gray-100 border rounded-full h-12 w-12 flex items-center justify-center">
                   <Text
-                    fontFamily='Roboto Condensed'
-                    class='text-lg font-extrabold'
-                    text='34'
-                    fontColor='#283574'
+                    fontFamily="Roboto Condensed"
+                    class="text-lg font-extrabold"
+                    text="34"
+                    fontColor="#283574"
                   />
                 </div>
                 <div className="text-center">
                   <Text
-                    fontFamily='Roboto Condensed'
-                    class='text-xs font-semibold'
-                    text='Secs'
-                    fontColor='#283574'
-                  /></div>
+                    fontFamily="Roboto Condensed"
+                    class="text-sm "
+                    text="Secs"
+                    fontColor="#283574"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -89,60 +95,44 @@ const TossInsights = (props) => {
           <div className="space-y-10 ">
             <div className="text-center ">
               <Text
-                fontFamily='Roboto Condensed'
-                class='text-sm font-semibold pb-1'
-                text='Batting win %'
-                fontColor='#283574'
-              /></div>
-            <div className="flex items-center space-x-8">
-              <div className="flex">
-                <div className="flex space-x-1">
-                  <div>
-                    <img src="/static/images/one.svg" />
+                fontFamily="Roboto Condensed"
+                class="text-sm font-semibold pb-1"
+                text="Batting win %"
+                fontColor="#283574"
+              />
+            </div>
+            <div className="flex ">
+              <div className="flex relative space-x-9">
+                <div className="flex space-x-3">
+                  <div className="absolute left-2 right-2">
+                    <img src="/static/images/one.svg" className="w-8 " />
                   </div>
-                  <div>
-                    <sup>
-                      <Text
-                        fontFamily='Roboto Condensed'
-                        class='text-xs p-1 font-semibold pb-1'
-                        text='st'
-                        fontColor='#656666'
-                      />
-                    </sup>
+                  <div className="absolute left-8">
+                    <sup>st</sup>
                   </div>
                 </div>
-                <div className=" bg-gray-100 border h-28 px-6 rounded-md flex items-center">
+                <div className=" bg-gray-100 z-10 mt-4 border mr-4 h-28 px-4 rounded-md flex items-center">
                   <Text
-                    fontFamily='Roboto Condensed'
-                    class='text-4xl font-semibold p-2'
-                    text='45'
-                    fontColor='#9F1C34'
+                    fontFamily="Roboto Condensed"
+                    class="text-4xl font-semibold p-2"
+                    text="45"
+                    fontColor="#9F1C34"
                   />
                 </div>
               </div>
-              <div className="flex">
-                <div className="flex">
-                  <div>
-                    <img src="/static/images/two.svg" />
-                  </div>
-
-                  <div>
-                    <sup>
-                      <Text
-                        fontFamily='Roboto Condensed'
-                        class='text-xs p-1 font-semibold'
-                        text='nd'
-                        fontColor='#656666'
-                      />
-                    </sup>
-                  </div>
+              <div className="flex relative space-x-14">
+                <div className="absolute left-2 right-2">
+                  <img src="/static/images/two.svg" className="w-14" />
                 </div>
-                <div className="bg-gray-100 border h-28 px-6 rounded-md flex items-center">
+                <div className="absolute left-4">
+                  <sup>nd</sup>
+                </div>
+                <div className="bg-gray-100 border mt-4 h-26 z-10 px-4 rounded-md flex items-center">
                   <Text
-                    fontFamily='Roboto Condensed'
-                    class='text-4xl font-semibold p-2'
-                    text='55'
-                    fontColor='#197F5C'
+                    fontFamily="Roboto Condensed"
+                    class="text-4xl font-semibold p-2"
+                    text="55"
+                    fontColor="#197F5C"
                   />
                 </div>
               </div>
@@ -150,122 +140,124 @@ const TossInsights = (props) => {
           </div>
         </div>
       </div>
-      <div className='mobile-view block sm:hidden '>
-        {
-          !!props.hideTitle ? "" : <Text
-            fontFamily='Roboto Condensed'
-            class='text-sm font-semibold pb-1'
-            text='Toss Insights'
-            fontColor='#283574'
+      <div className="mobile-view block sm:hidden ">
+        {!!props.hideTitle ? (
+          ""
+        ) : (
+          <Text
+            fontFamily="Roboto Condensed"
+            class="text-sm font-semibold pb-1"
+            text="Toss Insights"
+            fontColor="#283574"
           />
-        }
-        <div className='grid grid-cols-12 mt-2'>
-          <div className='col-span-5'>
-            <div className='flex flex-col'>
+        )}
+        <div className="grid grid-cols-12 mt-2">
+          <div className="col-span-5">
+            <div className="flex flex-col">
               <div>
                 <div className="absolute left-16">
-                  <img src="/static/images/tails.png" className='w-16 h-16' />
+                  <img src="/static/images/tails.png" className="w-16 h-16" />
                 </div>
                 <div className="z-20">
-                  <img src="/static/images/heads.png" className='w-16 h-16' />
+                  <img src="/static/images/heads.png" className="w-16 h-16" />
                 </div>
               </div>
-              <div className='flex flex-col items-start mt-3'>
-                <div className=''>
+              <div className="flex flex-col items-start mt-3">
+                <div className="">
                   <Text
-                    fontFamily='Roboto Condensed'
-                    class='text-sm text-left font-semibold pb-1'
-                    text='Time Left for toss'
-                    fontColor='#656666'
+                    fontFamily="Roboto Condensed"
+                    class="text-sm text-left font-semibold pb-1"
+                    text="Time Left for toss"
+                    fontColor="#656666"
                   />
                 </div>
-                <div className='flex flex-row justify-between space-x-2 items-start'>
+                <div className="flex flex-row justify-between space-x-2 items-start">
                   <div>
-                    <div className='bg-gray-200 rounded-full w-10 h-10'>
+                    <div className="bg-gray-200 rounded-full w-10 h-10">
                       <Text
-                        fontFamily='Roboto Condensed'
-                        class='text-xl font-bold text-center pt-1'
-                        text='00'
-                        fontColor='#283574'
+                        fontFamily="Roboto Condensed"
+                        class="text-xl font-bold text-center pt-1"
+                        text="00"
+                        fontColor="#283574"
                       />
                     </div>
                     <Text
-                      fontFamily='Roboto Condensed'
-                      class='text-xs font-bold text-center pt-1'
-                      text='Hrs'
-                      fontColor='#283574'
+                      fontFamily="Roboto Condensed"
+                      class="text-xs font-bold text-center pt-1"
+                      text="Hrs"
+                      fontColor="#283574"
                     />
                   </div>
                   <div>
-                    <div className='bg-gray-200 rounded-full w-10 h-10'>
+                    <div className="bg-gray-200 rounded-full w-10 h-10">
                       <Text
-                        fontFamily='Roboto Condensed'
-                        class='text-xl font-bold text-center pt-1'
-                        text='24'
-                        fontColor='#283574'
+                        fontFamily="Roboto Condensed"
+                        class="text-xl font-bold text-center pt-1"
+                        text="24"
+                        fontColor="#283574"
                       />
                     </div>
                     <Text
-                      fontFamily='Roboto Condensed'
-                      class='text-xs font-bold text-center pt-1'
-                      text='Mins'
-                      fontColor='#283574'
+                      fontFamily="Roboto Condensed"
+                      class="text-xs font-bold text-center pt-1"
+                      text="Mins"
+                      fontColor="#283574"
                     />
                   </div>
                   <div>
-                    <div className='bg-gray-200 rounded-full w-10 h-10'>
+                    <div className="bg-gray-200 rounded-full w-10 h-10">
                       <Text
-                        fontFamily='Roboto Condensed'
-                        class='text-xl font-bold text-center pt-1'
-                        text='36'
-                        fontColor='#283574'
+                        fontFamily="Roboto Condensed"
+                        class="text-xl font-bold text-center pt-1"
+                        text="36"
+                        fontColor="#283574"
                       />
                     </div>
                     <Text
-                      fontFamily='Roboto Condensed'
-                      class='text-xs font-bold text-center pt-1'
-                      text='Secs'
-                      fontColor='#283574'
+                      fontFamily="Roboto Condensed"
+                      class="text-xs font-bold text-center pt-1"
+                      text="Secs"
+                      fontColor="#283574"
                     />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className='col-span-7'>
+          <div className="col-span-7">
             <Text
-              fontFamily='Roboto Condensed'
-              class='text-sm font-bold text-center'
-              text='Batting Win %'
-              fontColor='#283574'
+              fontFamily="Roboto Condensed"
+              class="text-sm font-bold text-center"
+              text="Batting Win %"
+              fontColor="#283574"
             />
-            <div className='grid grid-cols-12 gap-3'>
-              <div className='col-span-6'>
-                <div className='flex flex-row justify-center items-center'>
+            <div className="grid grid-cols-12 gap-3">
+              <div className="col-span-6">
+                <div className="flex flex-row justify-center items-center">
                   <div>
-                    <img src="/static/images/one.svg" className='w-20 h-20' />
+                    <img src="/static/images/one.svg" className="w-20 h-20" />
                   </div>
-                  <div className='bg-white border w-16 h-16 rounded-md'>
+                  <div className="bg-white border w-16 h-16 rounded-md">
                     <Text
-                      fontFamily='Roboto Condensed'
-                      class='text-3xl font-bold text-center pt-3'
-                      text='45'
-                      fontColor='#9F1C34'
+                      fontFamily="Roboto Condensed"
+                      class="text-3xl font-bold text-center pt-3"
+                      text="45"
+                      fontColor="#9F1C34"
                     />
                   </div>
                 </div>
               </div>
-              <div className='col-span-6'>
-                <div className='flex flex-row justify-center items-center'>
+              <div className="col-span-6">
+                <div className="flex flex-row justify-center items-center">
                   <div>
-                    <img src="/static/images/two.svg" className='w-20 h-20' />
+                    <img src="/static/images/two.svg" className="w-20 h-20" />
                   </div>
-                  <div className='bg-white border w-16 h-16 rounded-md'>
+                  <div className="bg-white border w-16 h-16 rounded-md">
                     <Text
-                      fontFamily='Roboto Condensed'
-                      class='text-3xl font-bold text-center pt-3'
-                      text='55'
-                      fontColor='#197F5C'
+                      fontFamily="Roboto Condensed"
+                      class="text-3xl font-bold text-center pt-3"
+                      text="55"
+                      fontColor="#197F5C"
                     />
                   </div>
                 </div>

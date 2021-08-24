@@ -1,21 +1,26 @@
 import React from "react";
 import { Text } from "../../common";
 
-const PitchInsights = (props) => {
+const PitchInsgihts = (props) => {
   return (
-    <div className="p-2 sm:border rounded-md">
-      {
-        !!props.hideTitle ? "" : <Text
+    <div className="p-2  sm:border rounded-md">
+      {!!props.hideTitle ? (
+        ""
+      ) : (
+        <Text
           fontFamily="Roboto Condensed"
           class="text-sm font-semibold pb-1"
-          text="Pitch Inisghts"
+          text="Pitch Insights"
           fontColor="#283574"
         />
-      }
-      <div className="h-60 px-4 flex items-center justify-around">
+      )}
+      <div className=" h-60 px-4 flex items-center justify-around">
         <div className="space-y-6">
           <div>
-            <img src="/static/images/pitch.png " className='w-32 sm:w-full ' />
+            <img
+              src="/static/images/pitch.png "
+              className="md:w-44 sm:w-full "
+            />
           </div>
           <div className="text-center">
             <Text
@@ -59,4 +64,4 @@ const PitchInsights = (props) => {
   );
 };
 
-export default PitchInsights;
+export default PitchInsgihts;
