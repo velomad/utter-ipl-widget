@@ -62,6 +62,10 @@
       padding-box !important;
     opacity: 1 !important;
   }
+
+  .scrollable::-webkit-scrollbar-thumb:hover {
+    overflow-x: hidden !important;
+  }
 }
 @media only screen and (max-width: 480px) {
   .gradient-bk {
@@ -69,5 +73,9 @@
       linear-gradient(180deg, #b3b3b326 0%, #ffffff26 100%) 0% 0% no-repeat
       padding-box !important;
     opacity: 1 !important;
+  }
+
+  .scrollable::-webkit-scrollbar-thumb:hover {
+    overflow-x: hidden !important;
   }
 }
