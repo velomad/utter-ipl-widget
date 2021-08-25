@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Text } from "../../common";
 
 export default function Topperformers(props) {
+  const scrollable = useRef(null);
+
+  const handleScroll = (scrollOffset) => {
+    scrollable.current.scrollLeft += scrollOffset;
+    console.log(scrollable);
+  };
+
   return (
     <React.Fragment>
       <div className="main-container h-72 sm:border w-full h-full p-2 rounded-md gradient-bk">
@@ -12,8 +19,11 @@ export default function Topperformers(props) {
             fontWeight="600"
           />
         </h4>
-
-        <div className="flex overflow-auto md:overflow-x-hidden space-x-4 w-full">
+        {/* <button onClick={() => handleScroll(100)}>scroll me</button> */}
+        <div
+          ref={scrollable}
+          className="scrollable flex overflow-auto space-x-4 w-full"
+        >
           {[
             ...new Array(
               "Virat Kohli",
