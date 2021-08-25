@@ -56,8 +56,9 @@ const AnnouncedPlayers = (props) => {
       <div className="flex justify-center -space-x-2">
         <button
           onClick={() => setBtn(true)}
-          className={`bg-gray-100 w-32  ${btn && "shadow-md border z-10 rounded-md"
-            } `}
+          className={`bg-gray-100 w-32  ${
+            btn && "shadow-md border z-10 rounded-md"
+          } `}
         >
           <Text
             fontFamily="Roboto Condensed"
@@ -68,8 +69,9 @@ const AnnouncedPlayers = (props) => {
         </button>
         <button
           onClick={() => setBtn(false)}
-          className={`bg-gray-100 w-32  rounded-md ${!btn && "shadow-md border z-10 rounded-md"
-            } `}
+          className={`bg-gray-100 w-32  rounded-md ${
+            !btn && "shadow-md border z-10 rounded-md"
+          } `}
         >
           <Text
             fontFamily="Roboto Condensed"
@@ -83,10 +85,10 @@ const AnnouncedPlayers = (props) => {
       <div className="grid grid-cols-3 space-x-2 space-y-2 sm:space-y-4 sm:px-4 sm:space-x-4">
         {team.map((el, index) => (
           <div
-            className="flex justify-between bg-gray-100 border mt-2 ml-2 pl-2 sm:ml-4 sm:pl-4"
+            className="flex justify-between bg-gray-100 border mt-2 sm:mt-4 ml-2 pl-2 sm:ml-4 sm:pl-4"
             key={index}
           >
-            <div className='block sm:hidden flex justify-center items-center'>
+            <div className="block sm:hidden flex justify-center items-center">
               <Text
                 fontFamily="Roboto Condensed"
                 class="font-medium"
@@ -95,8 +97,8 @@ const AnnouncedPlayers = (props) => {
                 fontSize="0.5rem"
               />
             </div>
-            <div className='flex justify-center items-center'>
-              <div className='hidden sm:block'>
+            <div className="flex justify-center items-center">
+              <div className="hidden sm:block">
                 <Text
                   fontFamily="Roboto Condensed"
                   class="font-medium"
@@ -108,21 +110,27 @@ const AnnouncedPlayers = (props) => {
             </div>
             <div className="flex items-center">
               {el.isCaptain && (
-                <div className="bg-red-600 text-white rounded-full text-center text-xs w-5 h-5 ">
-                  C
+                <div className="bg-red-600 text-white rounded-full flex items-center justify-center w-3 h-3">
+                  <Text
+                    fontFamily="Roboto Condensed"
+                    class="text-white"
+                    text="c"
+                    fontSize="0.7rem"
+                  />
                 </div>
               )}
               <div>
                 <img
                   className="w-5 sm:w-7"
-                  src={`static/images/${el.playerRole === "bowler"
-                    ? "ball.svg"
-                    : el.playerRole === "keeper"
+                  src={`static/images/${
+                    el.playerRole === "bowler"
+                      ? "ball.svg"
+                      : el.playerRole === "keeper"
                       ? "keeper.svg"
                       : el.playerRole === "allRounder"
-                        ? "allrounder.svg"
-                        : "bat.svg"
-                    }`}
+                      ? "allrounder.svg"
+                      : "bat.svg"
+                  }`}
                 />
               </div>
             </div>

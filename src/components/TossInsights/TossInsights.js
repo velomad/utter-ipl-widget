@@ -173,12 +173,12 @@ const TossInsights = (props) => {
                 </div>
                 <div className="flex flex-row justify-between space-x-2 items-start">
                   <div>
-                    <div className='bg-gray-200 rounded-full w-10 h-10 flex justify-center items-center'>
+                    <div className="bg-gray-200 rounded-full w-10 h-10 flex justify-center items-center">
                       <Text
-                        fontFamily='Roboto Condensed'
-                        class='text-sm font-bold text-center'
-                        text='00'
-                        fontColor='#283574'
+                        fontFamily="Roboto Condensed"
+                        class="text-sm font-bold text-center"
+                        text="00"
+                        fontColor="#283574"
                       />
                     </div>
                     <Text
@@ -189,12 +189,12 @@ const TossInsights = (props) => {
                     />
                   </div>
                   <div>
-                    <div className='bg-gray-200 rounded-full w-10 h-10 flex justify-center items-center'>
+                    <div className="bg-gray-200 rounded-full w-10 h-10 flex justify-center items-center">
                       <Text
-                        fontFamily='Roboto Condensed'
-                        class='text-sm font-bold text-center'
-                        text='24'
-                        fontColor='#283574'
+                        fontFamily="Roboto Condensed"
+                        class="text-sm font-bold text-center"
+                        text="24"
+                        fontColor="#283574"
                       />
                     </div>
                     <Text
@@ -205,12 +205,12 @@ const TossInsights = (props) => {
                     />
                   </div>
                   <div>
-                    <div className='bg-gray-200 rounded-full w-10 h-10 flex justify-center items-center'>
+                    <div className="bg-gray-200 rounded-full w-10 h-10 flex justify-center items-center">
                       <Text
-                        fontFamily='Roboto Condensed'
-                        class='text-sm font-bold text-center'
-                        text='36'
-                        fontColor='#283574'
+                        fontFamily="Roboto Condensed"
+                        class="text-sm font-bold text-center"
+                        text="36"
+                        fontColor="#283574"
                       />
                     </div>
                     <Text
@@ -226,55 +226,57 @@ const TossInsights = (props) => {
           </div>
           <div className="col-span-7">
             <Text
-              fontFamily='Roboto Condensed'
-              class='text-xs font-bold text-center pt-4'
-              text='Batting Win %'
-              fontColor='#283574'
+              fontFamily="Roboto Condensed"
+              class="text-xs font-bold text-center pt-4"
+              text="Batting Win %"
+              fontColor="#283574"
             />
-            <div className='grid grid-cols-12 pt-4'>
-              <div className='col-span-6'>
-                <div className='flex flex-row justify-between items-center relative'>
+            <div className="grid grid-cols-12 pt-4">
+              <div className="col-span-6">
+                <div className="flex flex-row justify-between items-center relative">
                   <div>
-                    <img src="/static/images/one.svg" className='w-20 h-14' />
+                    <img src="/static/images/one.svg" className="w-20 h-14" />
                   </div>
-                  <div className='flex flex-col items-start'>
+                  <div className="flex flex-col items-start">
                     <Text
-                      fontFamily='Roboto Condensed'
-                      class='absolute -top-1 left-12 text-xs font-extrabold text-center'
-                      text='st'
-                      fontColor='#656666'
+                      fontFamily="Roboto Condensed"
+                      class="absolute -top-1 left-12 text-xs font-extrabold text-center"
+                      text="st"
+                      fontColor="#656666"
                     />
-                    <div className='z-60 absolute bottom-0 left-12 bg-white border w-11 h-10 rounded-md flex justify-center items-center'>
+                    <div className="z-60 absolute bottom-0 left-12 bg-white border w-11 h-10 rounded-md flex justify-center items-center">
                       <Text
-                        fontFamily='Roboto Condensed'
-                        class='text-xl font-extrabold text-center'
-                        text='45'
-                        fontColor='#9F1C34'
+                        fontFamily="Roboto Condensed"
+                        class="text-xl font-extrabold text-center"
+                        text="45"
+                        fontColor="#9F1C34"
                       />
                     </div>
                   </div>
                 </div>
               </div>
-              <div className='col-span-6'>
-                <div className='flex flex-row justify-center items-center relative'>
-                  <div>
-                    <img src="/static/images/two.svg" className='w-20 h-14' />
-                  </div>
-                  <div className='flex flex-col items-start'>
-                    <Text
-                      fontFamily='Roboto Condensed'
-                      class='absolute -top-1 left-16 text-xs font-extrabold text-center'
-                      text='nd'
-                      fontColor='#656666'
-                    />
-                  <div className='z-60 absolute bottom-0 left-14 bg-white border w-10 h-10 rounded-md flex justify-center items-center'>
-                    <Text
-                      fontFamily='Roboto Condensed'
-                      class='text-xl font-extrabold text-center'
-                      text='55'
-                      fontColor='#197F5C'
-                    />
-                  </div>
+              <div className="col-span-6">
+                <div className="flex flex-row justify-center items-center">
+                  <div class="relative">
+                    <div>
+                      <img src="/static/images/two.svg" className="w-20 h-14" />
+                    </div>
+                    <div className="flex flex-col items-start">
+                      <Text
+                        fontFamily="Roboto Condensed"
+                        class="absolute -top-1 left-16 text-xs font-extrabold text-center"
+                        text="nd"
+                        fontColor="#656666"
+                      />
+                    </div>
+                    <div className="z-60 absolute bottom-0 left-12 bg-white border w-10 h-10 rounded-md flex justify-center items-center">
+                      <Text
+                        fontFamily="Roboto Condensed"
+                        class="text-xl font-extrabold text-center"
+                        text="55"
+                        fontColor="#197F5C"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
