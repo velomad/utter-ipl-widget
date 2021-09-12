@@ -3,7 +3,7 @@ import { Text } from "../../common";
 
 const PitchInsgihts = (props) => {
   return (
-    <div className="sm:p-2 sm:border rounded-md py-2">
+    <div className="sm:p-2 rounded-md py-2">
       {
         !!props.hideTitle ? "" : <Text
           fontFamily="Roboto Condensed"

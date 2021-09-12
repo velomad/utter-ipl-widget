@@ -42,7 +42,7 @@ const AnnouncedPlayers = (props) => {
   const team = btn === true ? data : rcbData;
 
   return (
-    <div className="p-2 py-2 sm:border rounded-md space-y-2 sm:h-72">
+    <div className="p-2 py-2 rounded-md space-y-2 sm:h-72">
       {!!props.hideTitle ? (
         ""
       ) : (

@@ -20,25 +20,25 @@ function App() {
           <GroundInsights />
         </div>
         <div className="hidden sm:block">
-          <PitchInsights />
+          <HeadToHead />
         </div>
       </div>
-      <div className="md:px-40 mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 space-y-5 sm:space-y-0">
+      {/* <div className="md:px-40 mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 space-y-5 sm:space-y-0">
         <div className="hidden sm:block">
           <TossInsights />
         </div>
         <div className="hidden sm:block">
           <AnnouncedPlayers />
         </div>
-      </div>
-      <div className="md:px-40 mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 space-y-5 sm:space-y-0">
+      </div> */}
+      {/* <div className="md:px-40 mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 space-y-5 sm:space-y-0">
         <div>
           <HeadToHead />
         </div>
         <div>
           <TopPerformers />
         </div>
-      </div>
+      </div> */}
       <div className="md:px-40 mt-4">
         <PlayingTeam />
       </div>
