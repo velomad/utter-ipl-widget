@@ -4,13 +4,13 @@ import { Text } from "../../common";
 const TossInsights = (props) => {
   return (
     <React.Fragment>
-      <div className="p-2 border rounded-md h-72 hidden sm:block">
-        <Text
+      <div className="p-2 rounded-md h-72 hidden sm:block">
+        {/* <Text
           fontFamily="Roboto Condensed"
           class="text-sm font-semibold pb-1"
           text="Toss Insights"
           fontColor="#283574"
-        />
+        /> */}
         <div className="flex relative justify-between px-4 items-center py-4 ">
           <div className="space-y-6">
             <div className="">
