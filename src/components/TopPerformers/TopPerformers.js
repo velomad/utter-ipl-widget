@@ -11,8 +11,11 @@ export default function Topperformers(props) {
 
   return (
     <React.Fragment>
-      <div className="main-container h-72 sm:border w-full h-full p-2 rounded-md gradient-bk">
-        <h4 className="text-sm font-semibold pb-2">
+      <div
+        className="md:mt-20 main-container h-72  p-2 rounded-md gradient-bk"
+        style={{ width: "95%" }}
+      >
+        <h4 className="block md:hidden  text-sm font-semibold pb-2">
           <Text
             text="Top Performers in last 5 Matches"
             fontColor="#283574"

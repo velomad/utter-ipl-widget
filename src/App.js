@@ -32,20 +32,20 @@ function App() {
           <AnnouncedPlayers />
         </div>
       </div> */}
-      {/* <div className="md:px-40 mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 space-y-5 sm:space-y-0">
-        <div>
+      <div className="md:px-40 mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 space-y-5 sm:space-y-0">
+        {/* <div>
           <HeadToHead />
-        </div>
-        <div>
+        </div> */}
+        <div className="md:hidden">
           <TopPerformers />
         </div>
-      </div> */}
+      </div>
       <div className="md:px-40 mt-4">
         <PlayingTeam />
       </div>
-      <div className="md:px-40 mt-4">
+      {/* <div className="md:px-40 mt-4">
         <InterestingInsights />
-      </div>
+      </div> */}
       <div className="mt-8">
         <Footer />
       </div>

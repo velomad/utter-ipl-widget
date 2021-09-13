@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { TopPerformers } from "..";
 import { Text } from "../../common";
+import InterestingInsights from "../InterestingInsights";
 
 const PlayingTeam = () => {
+  const [section, setSection] = useState(0);
+
   const data = [
     "Sam Curran has taken Virat Kohli's wicket 8 times in IPL",
     "Suresh Raina has an average of 43 against RCB",
@@ -12,77 +16,92 @@ const PlayingTeam = () => {
     <div>
       <div className="hidden sm:block">
         <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-9 border rounded-md">
-            <div className="grid grid-cols-8 gap-4">
-              <div className="col-span-2 p-2 space-y-6">
-                <div className="">
-                  <Text
-                    text="Playing XI"
-                    fontColor="#283574"
-                    fontWeight="700"
-                  />
-                </div>
-                <div className="">
-                  <Text
-                    fontSize="12px"
-                    text="Utter's recommedned playing 11 for the match"
-                    fontColor="#707070"
-                    fontWeight="600"
-                  />
-                </div>
+          <div className="col-span-9 border rounded-md relative">
+            <div className="flex space-x-10 text-sm px-2 py-2">
+              <div className="cursor-pointer" onClick={() => setSection(0)}>
+                <Text
+                  text="Top performers in last 5 matches"
+                  fontColor={section === 0 ? `#283574` : "#707070"}
+                  fontWeight="700"
+                />
+              </div>
+              <div className="cursor-pointer" onClick={() => setSection(1)}>
+                <Text
+                  text="Recommended playing XI"
+                  fontColor={section === 1 ? `#283574` : "#707070"}
+                  fontWeight="700"
+                />
+              </div>
+            </div>
 
-                <div className="rounded-md">
-                  <div
-                    className="text-center text-white"
-                    style={{ backgroundColor: "#283574" }}
-                  >
-                    <Text text="Wildcard" fontColor="#fff" />
+            {section === 1 ? (
+              <div className="grid grid-cols-8 gap-4">
+                <div className="col-span-2 p-2 space-y-6">
+                  <div className="">
+                    <Text
+                      fontSize="12px"
+                      text="Utter's recommedned playing 11 for the match"
+                      fontColor="#707070"
+                      fontWeight="600"
+                    />
                   </div>
-                  <div className="bg-gray-100 py-8 space-y-4">
-                    <div>
-                      <img
-                        src="/static/images/wildcard.png"
-                        className="mx-auto"
-                      />
-                    </div>
 
-                    <div className="px-4">
-                      <p>
-                        <Text
-                          fontSize="12px"
-                          text='"An exceptional bowler with great line and length. He
+                  <div className="rounded-md">
+                    <div
+                      className="text-center text-white"
+                      style={{ backgroundColor: "#283574" }}
+                    >
+                      <Text text="Wildcard" fontColor="#fff" />
+                    </div>
+                    <div className="bg-gray-100 py-8 space-y-4">
+                      <div>
+                        <img
+                          src="/static/images/wildcard.png"
+                          className="mx-auto"
+                        />
+                      </div>
+
+                      <div className="px-4">
+                        <p>
+                          <Text
+                            fontSize="12px"
+                            text='"An exceptional bowler with great line and length. He
                       could be the joker everyone wants in their deck of the
                       playing XI. "'
-                          fontColor="#707070"
-                          fontWeight="700"
-                        />
-                      </p>
-                      <div className=" float-right px-2">
-                        <Text
-                          text="-Utter.Ai"
-                          fontColor="#283574"
-                          fontWeight="700"
-                        />
+                            fontColor="#707070"
+                            fontWeight="700"
+                          />
+                        </p>
+                        <div className=" float-right px-2">
+                          <Text
+                            text="-Utter.Ai"
+                            fontColor="#283574"
+                            fontWeight="700"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="col-span-6 py-8">
-                <div className="grid grid-cols-4 place-items-center gap-6">
-                  {[...new Array(11)].map((e, index) => (
-                    <div>
-                      <img
-                        src={`/static/images/${index + 1}.png`}
-                        className="w-20"
-                      />
-                    </div>
-                  ))}
+                <div className="col-span-6 py-8">
+                  <div className="grid grid-cols-4 place-items-center gap-6">
+                    {[...new Array(11)].map((e, index) => (
+                      <div>
+                        <img
+                          src={`/static/images/${index + 1}.png`}
+                          className="w-20"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              <TopPerformers />
+            )}
           </div>
+
           <div className="col-span-3 bg-gray-100 border rounded-md space-y-4 p-4">
             <div>
               <img src="/static/images/cricket.png" className="mx-auto" />
@@ -96,25 +115,7 @@ const PlayingTeam = () => {
                 fontWeight="700"
               />
             </div>
-
-            <div>
-              {data.map((el, index) => (
-                <div className="flex space-x-2 space-y-4">
-                  <div className="mt-4" style={{ color: "#707070" }}>
-                    {index + 1}
-                    <span>.</span>
-                  </div>
-                  <div>
-                    <Text
-                      text={el}
-                      fontColor="#707070"
-                      fontSize="14px"
-                      fontWeight="600"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+            <InterestingInsights />
           </div>
         </div>
       </div>
