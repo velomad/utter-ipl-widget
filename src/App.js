@@ -9,6 +9,7 @@ import {
   TopPerformers,
   TossInsights,
 } from "./components";
+import InterestingInsights from "./components/InterestingInsights";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
       </div>
       <div className="md:px-40 mt-4">
         <PlayingTeam />
+      </div>
+      <div className="md:px-40 mt-4">
+        <InterestingInsights />
       </div>
       <div className="mt-8">
         <Footer />

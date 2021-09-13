@@ -124,7 +124,7 @@ const PlayingTeam = () => {
             <img src="/static/images/cricket.png" className="w-10 mx-auto" />
           </div>
           <div>
-            <div className='flex flex-col items-start'>
+            <div className="flex flex-col items-start">
               <Text
                 class="text-xs font-bold pb-2"
                 text="UtterAI Interesting 
@@ -132,24 +132,30 @@ const PlayingTeam = () => {
                 fontColor="#283574"
                 fontWeight="700"
               />
-              {
-                data.map((el, index) => {
-                  return <Text text={index + 1 + ". " + el} fontWeight="bolder" class='text-left font-extrabold' fontSize="0.6rem" fontColor="#1E1E58" />
-                })
-              }
+              {data.map((el, index) => {
+                return (
+                  <Text
+                    text={index + 1 + ". " + el}
+                    fontWeight="bolder"
+                    class="text-left font-extrabold"
+                    fontSize="0.6rem"
+                    fontColor="#1E1E58"
+                  />
+                );
+              })}
             </div>
           </div>
         </div>
-        <div className='grid grid-cols-12 mt-4 gap-2 pt-2 gradient-bk'>
+        <div className="grid grid-cols-12 mt-4 gap-2 pt-2 gradient-bk">
           <div class="col-span-4 px-2">
             <Text
-              class='text-xs text-left font-bold pb-1'
+              class="text-xs text-left font-bold pb-1"
               text="Playing XI"
               fontColor="#283574"
               fontWeight="700"
             />
             <Text
-              class='text-left font-bold'
+              class="text-left font-bold"
               text="Utter's recommended playing XI for the match"
               fontColor="#707070"
               fontWeight="700"
@@ -159,8 +165,12 @@ const PlayingTeam = () => {
           <div class="col-span-8 px-2">
             <div class="w-full">
               <div class="h-full flex items-center border-gray-200 border p-1 rounded-lg">
-                <div className='flex flex-col items-center'>
-                  <img alt="team" class="p-2 bg-gray-100 object-cover object-center flex-shrink-0 rounded-sm mr-2" src="/static/images/wildcard.png" />
+                <div className="flex flex-col items-center">
+                  <img
+                    alt="team"
+                    class="p-2 bg-gray-100 object-cover object-center flex-shrink-0 rounded-sm mr-2"
+                    src="/static/images/wildcard.png"
+                  />
                   {/* <div className='bg-indigo-700 w-12 text-left mr-2'>
                     <Text
                       class='text-center font-bold'
@@ -173,14 +183,14 @@ const PlayingTeam = () => {
                 </div>
                 <div class="flex-grow items-center">
                   <Text
-                    class='text-left font-bold'
+                    class="text-left font-bold"
                     text="“An exceptional bowler with great line and length. He could be the joker everyone wants in their deck of the playing XI.”"
                     fontColor="#656666"
                     fontWeight="700"
                     fontSize="0.5rem"
                   />
                   <Text
-                    class='text-right font-bold pr-2'
+                    class="text-right font-bold pr-2"
                     text="-UtterAi"
                     fontColor="#283574"
                     fontWeight="700"
@@ -191,7 +201,7 @@ const PlayingTeam = () => {
             </div>
           </div>
         </div>
-        <div className='flex flex-nowrap items-center mt-4 px-2'>
+        <div className="flex flex-nowrap items-center mt-4 px-2">
           <div className="grid grid-cols-4 place-items-center gap-6">
             {[...new Array(11)].map((e, index) => (
               <div>
