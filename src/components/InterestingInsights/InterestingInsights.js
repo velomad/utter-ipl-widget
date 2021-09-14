@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Text } from "../../common";
 
 const InterestingInsights = () => {
@@ -27,8 +28,12 @@ const InterestingInsights = () => {
         </div>
       ))}
 
-      <div className="bg-blue-200 rounded-lg text-center p-2 cursor-pointer">
-        <Text text="Show More" fontColor="#283574" fontWeight="700" />
+      <div>
+        <Link to="/insights">
+          <div className="bg-blue-200 rounded-lg text-center p-2 cursor-pointer">
+            <Text text="Show More" fontColor="#283574" fontWeight="700" />
+          </div>
+        </Link>
       </div>
     </>
   );
