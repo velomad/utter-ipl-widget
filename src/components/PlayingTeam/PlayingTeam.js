@@ -5,6 +5,7 @@ import InterestingInsights from "../InterestingInsights";
 
 const PlayingTeam = () => {
   const [section, setSection] = useState(0);
+  const [isDropDownVisible, setIsDropDownVisible] = useState(false);
 
   const data = [
     "Sam Curran has taken Virat Kohli's wicket 8 times in IPL",
@@ -120,10 +121,7 @@ const PlayingTeam = () => {
         </div>
       </div>
       <div className="mobile-view block sm:hidden py-2">
-        <div className="flex flex-row items-center px-4 space-x-4">
-          <div>
-            <img src="/static/images/cricket.png" className="w-10 mx-auto" />
-          </div>
+        <div className="flex flex-row items-start px-4 space-x-4">
           <div>
             <div className="flex flex-col items-start">
               <Text
@@ -133,18 +131,75 @@ const PlayingTeam = () => {
                 fontColor="#283574"
                 fontWeight="700"
               />
-              {data.map((el, index) => {
-                return (
-                  <Text
-                    text={index + 1 + ". " + el}
-                    fontWeight="bolder"
-                    class="text-left font-extrabold"
-                    fontSize="0.6rem"
-                    fontColor="#1E1E58"
-                  />
-                );
-              })}
+              <div className={!isDropDownVisible?'h-28 overflow-y-auto':'h-96 overflow-y-auto'}>
+                <div class="w-full pb-2">
+                  <div class="h-full flex items-start border-gray-200 border p-3 rounded-lg">
+                    <div class="flex-grow">
+                      <Text
+                        class='text-center text-sm'
+                        text="Kieron Pollard has highest strike rate against CSK"
+                        fontColor="#707070"
+                        fontWeight="700"
+                      />
+                      <div className="flex mt-1 justify-around  items-center">
+                        <div>
+                          <img src="/static/images/bat.svg" />
+                        </div>
+                        <Text
+                          class='text-center text-sm'
+                          text="133.6"
+                          fontColor="#707070"
+                          fontWeight="700"
+                        />
+                        <div className="font-bold">
+                          <Text text="Strike Rate" class='text-sm' fontColor="#9F1C34" fontWeight="700" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {
+                  isDropDownVisible ?
+                    [...new Array(3)].map(() => (
+                      <div class="w-full mt-2">
+                        <div class="h-full flex items-start border-gray-200 border p-4 rounded-lg">
+                          <div class="flex-grow">
+                            <Text
+                              class='text-center text-sm'
+                              text="Kieron Pollard has highest strike rate against CSK"
+                              fontColor="#707070"
+                              fontWeight="700"
+                            />
+                            <div className="flex mt-1 justify-around  items-center">
+                              <div>
+                                <img src="/static/images/bat.svg" />
+                              </div>
+                              <Text
+                                class='text-center text-sm'
+                                text="133.6"
+                                fontColor="#707070"
+                                fontWeight="700"
+                              />
+                              <div className="font-bold">
+                                <Text text="Strike Rate" class='text-sm' fontColor="#9F1C34" fontWeight="700" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    ))
+                    : ""
+                }
+              </div>
             </div>
+          </div>
+          <div className='mt-14' onClick={() => setIsDropDownVisible(!isDropDownVisible)}>
+            {
+              !isDropDownVisible ?
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg> :
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+            }
           </div>
         </div>
         <div className="grid grid-cols-12 mt-4 gap-2 pt-2 gradient-bk">

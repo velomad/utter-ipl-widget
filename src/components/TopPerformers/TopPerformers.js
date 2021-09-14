@@ -13,7 +13,6 @@ export default function Topperformers(props) {
     <React.Fragment>
       <div
         className="md:mt-20 main-container h-72  p-2 rounded-md gradient-bk"
-        style={{ width: "95%" }}
       >
         <h4 className="block md:hidden  text-sm font-semibold pb-2">
           <Text
