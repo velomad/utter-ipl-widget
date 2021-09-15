@@ -62,6 +62,20 @@
   transform: translate(-50%, -50%);
 }
 
+.insights-scroll::-webkit-scrollbar {
+  height: 4px; /* height of horizontal scrollbar ← You're missing this */
+  width: 3px; /* width of vertical scrollbar */
+}
+.insights-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.insights-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.insights-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 @media only screen and (max-width: 320px) {
   .gradient-bk {
     background: transparent
