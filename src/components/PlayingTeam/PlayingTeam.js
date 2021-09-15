@@ -10,7 +10,7 @@ const PlayingTeam = () => {
   const data = [
     "Sam Curran has taken Virat Kohli's wicket 8 times in IPL",
     "Suresh Raina has an average of 43 against RCB",
-    "Harshal Patel has taken two wickets 5 times againtst CSK",
+    "Harshal Patel has taken two wickets 5 times againtst CSK"
   ];
 
   return (
@@ -105,10 +105,14 @@ const PlayingTeam = () => {
 
           <div className="col-span-3 bg-gray-100 border rounded-md space-y-4 p-4">
             <div>
-              <img src="/static/images/cricket.png" className="mx-auto" />
+              <img
+                src="/static/images/cricket.png"
+                className="mx-auto"
+                width="40px"
+              />
             </div>
 
-            <div>
+            <div className="text-center text-sm">
               <Text
                 text="UtterAI Interesting 
             Insights"
@@ -131,12 +135,18 @@ const PlayingTeam = () => {
                 fontColor="#283574"
                 fontWeight="700"
               />
-              <div className={!isDropDownVisible?'h-28 overflow-y-auto':'h-96 overflow-y-auto'}>
+              <div
+                className={
+                  !isDropDownVisible
+                    ? "h-28 overflow-y-auto"
+                    : "h-96 overflow-y-auto"
+                }
+              >
                 <div class="w-full pb-2">
                   <div class="h-full flex items-start border-gray-200 border p-3 rounded-lg">
                     <div class="flex-grow">
                       <Text
-                        class='text-center text-sm'
+                        class="text-center text-sm"
                         text="Kieron Pollard has highest strike rate against CSK"
                         fontColor="#707070"
                         fontWeight="700"
@@ -146,26 +156,30 @@ const PlayingTeam = () => {
                           <img src="/static/images/bat.svg" />
                         </div>
                         <Text
-                          class='text-center text-sm'
+                          class="text-center text-sm"
                           text="133.6"
                           fontColor="#707070"
                           fontWeight="700"
                         />
                         <div className="font-bold">
-                          <Text text="Strike Rate" class='text-sm' fontColor="#9F1C34" fontWeight="700" />
+                          <Text
+                            text="Strike Rate"
+                            class="text-sm"
+                            fontColor="#9F1C34"
+                            fontWeight="700"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                {
-                  isDropDownVisible ?
-                    [...new Array(3)].map(() => (
+                {isDropDownVisible
+                  ? [...new Array(3)].map(() => (
                       <div class="w-full mt-2">
                         <div class="h-full flex items-start border-gray-200 border p-4 rounded-lg">
                           <div class="flex-grow">
                             <Text
-                              class='text-center text-sm'
+                              class="text-center text-sm"
                               text="Kieron Pollard has highest strike rate against CSK"
                               fontColor="#707070"
                               fontWeight="700"
@@ -175,31 +189,59 @@ const PlayingTeam = () => {
                                 <img src="/static/images/bat.svg" />
                               </div>
                               <Text
-                                class='text-center text-sm'
+                                class="text-center text-sm"
                                 text="133.6"
                                 fontColor="#707070"
                                 fontWeight="700"
                               />
                               <div className="font-bold">
-                                <Text text="Strike Rate" class='text-sm' fontColor="#9F1C34" fontWeight="700" />
+                                <Text
+                                  text="Strike Rate"
+                                  class="text-sm"
+                                  fontColor="#9F1C34"
+                                  fontWeight="700"
+                                />
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-
                     ))
-                    : ""
-                }
+                  : ""}
               </div>
             </div>
           </div>
-          <div className='mt-14' onClick={() => setIsDropDownVisible(!isDropDownVisible)}>
-            {
-              !isDropDownVisible ?
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg> :
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
-            }
+          <div
+            className="mt-14"
+            onClick={() => setIsDropDownVisible(!isDropDownVisible)}
+          >
+            {!isDropDownVisible ? (
+              <svg
+                class="w-8 h-8"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            ) : (
+              <svg
+                class="w-8 h-8"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            )}
           </div>
         </div>
         <div className="grid grid-cols-12 mt-4 gap-2 pt-2 gradient-bk">
