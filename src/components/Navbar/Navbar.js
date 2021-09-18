@@ -6,7 +6,7 @@ function Navbar() {
     <div className="overflow-hidden">
       <div className="slnt absolute overflow-hidden"></div>
       <div className="relative z-10 flex justify-between top-2 sm:px-20 px-7">
-        <img src="https://coovid19india.000webhostapp.com/static/images/csk.png" className="object-fit" />
+        <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/csk.png" className="object-fit" />
         <div className='bg-white rounded-full h-10 w-10 mt-4 sm:mr-4 mr-10'>
           <Text
             class='text-center mt-2'
@@ -15,7 +15,7 @@ function Navbar() {
             fontWeight="600"
           />
         </div>
-        <img src="https://coovid19india.000webhostapp.com/static/images/rcb.png" className="object-fit" />
+        <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/rcb.png" className="object-fit" />
       </div>
     </div>
   );

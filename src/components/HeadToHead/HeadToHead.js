@@ -17,14 +17,14 @@ export default function Headtohead(props) {
               <div className="absolute bottom-0 " style={{left:"4.5rem"}}>
                 <img
                   className=" z-0 w-14 sm:w-20 object-cover object-center mx-auto"
-                  src="https://coovid19india.000webhostapp.com/static/images/chennai_logo.png"
+                  src="https://utterai.s3.ap-south-1.amazonaws.com/img/chennai_logo.png"
                   alt="player1"
                 />
               </div>
               <div className="absolute">
                 <img
                   class="z-10 w-28 object-cover object-center mx-auto"
-                  src="https://coovid19india.000webhostapp.com/static/images/dhoni.png"
+                  src="https://utterai.s3.ap-south-1.amazonaws.com/img/dhoni.png"
                   alt="player1"
                 />
               </div>
@@ -50,14 +50,14 @@ export default function Headtohead(props) {
               <div className="absolute bottom-0 right-16">
                 <img
                   class="z-0 w-14 sm:w-20 object-cover object-center mx-auto"
-                  src="https://coovid19india.000webhostapp.com/static/images/rcb_logo.png"
+                  src="https://utterai.s3.ap-south-1.amazonaws.com/img/rcb_logo.png"
                   alt="player2"
                 />
               </div>
               <div className="absolute">
                 <img
                   class="z-10 w-28 object-cover object-center mx-auto"
-                  src="https://coovid19india.000webhostapp.com/static/images/virat.png"
+                  src="https://utterai.s3.ap-south-1.amazonaws.com/img/virat.png"
                   alt="player2"
                 />
               </div>
@@ -73,7 +73,7 @@ export default function Headtohead(props) {
               fontColor="#197F5C"
             />
             <div>
-              <img src="https://coovid19india.000webhostapp.com/static/images/66.png" className="mx-auto" />
+              <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/66.png" className="mx-auto" />
             </div>
             <div className="flex flex-row justify-center items-center space-x-1">
               <div className="bg-gray-200 w-5 rounded-full">
@@ -156,7 +156,7 @@ export default function Headtohead(props) {
               fontColor="#9F1C34"
             />
             <div>
-              <img src="https://coovid19india.000webhostapp.com/static/images/33.png" className="mx-auto" />
+              <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/33.png" className="mx-auto" />
             </div>
             <div className="flex flex-row justify-center items-center space-x-1">
               <div className="bg-gray-200 w-5 rounded-full">

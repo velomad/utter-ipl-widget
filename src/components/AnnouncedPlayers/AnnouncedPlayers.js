@@ -122,7 +122,7 @@ const AnnouncedPlayers = (props) => {
               <div>
                 <img
                   className="w-5 sm:w-7"
-                  src={`static/images/${
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
                     el.playerRole === "bowler"
                       ? "ball.svg"
                       : el.playerRole === "keeper"

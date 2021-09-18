@@ -16,12 +16,12 @@ const TossInsights = (props) => {
             <div className="">
               <div className="absolute left-20">
                 <img
-                  src="https://coovid19india.000webhostapp.com/static/images/tails.png"
+                  src="https://utterai.s3.ap-south-1.amazonaws.com/img/tails.png"
                   className="w-20  right-10"
                 />
               </div>
               <div className="z-20">
-                <img src="https://coovid19india.000webhostapp.com/static/images/heads.png" className="w-20" />
+                <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/heads.png" className="w-20" />
               </div>
             </div>
 
@@ -105,7 +105,7 @@ const TossInsights = (props) => {
               <div className="flex relative space-x-9">
                 <div className="flex space-x-3">
                   <div className="absolute left-2 right-2">
-                    <img src="https://coovid19india.000webhostapp.com/static/images/one.svg" className="w-8 " />
+                    <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/one.svg" className="w-8 " />
                   </div>
                   <div className="absolute left-8">
                     <sup>st</sup>
@@ -122,7 +122,7 @@ const TossInsights = (props) => {
               </div>
               <div className="flex relative space-x-14">
                 <div className="absolute left-2 right-2">
-                  <img src="https://coovid19india.000webhostapp.com/static/images/two.svg" className="w-14" />
+                  <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/two.svg" className="w-14" />
                 </div>
                 <div className="absolute left-4">
                   <sup>nd</sup>
@@ -156,10 +156,10 @@ const TossInsights = (props) => {
             <div className="flex flex-col">
               <div>
                 <div className="absolute left-16">
-                  <img src="https://coovid19india.000webhostapp.com/static/images/tails.png" className="w-16 h-16" />
+                  <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/tails.png" className="w-16 h-16" />
                 </div>
                 <div className="z-20">
-                  <img src="https://coovid19india.000webhostapp.com/static/images/heads.png" className="w-16 h-16" />
+                  <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/heads.png" className="w-16 h-16" />
                 </div>
               </div>
               <div className="flex flex-col items-start mt-3">
@@ -235,7 +235,7 @@ const TossInsights = (props) => {
               <div className="col-span-6">
                 <div className="flex flex-row justify-between items-center relative">
                   <div>
-                    <img src="https://coovid19india.000webhostapp.com/static/images/one.svg" className="w-20 h-14" />
+                    <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/one.svg" className="w-20 h-14" />
                   </div>
                   <div className="flex flex-col items-start">
                     <Text
@@ -259,7 +259,7 @@ const TossInsights = (props) => {
                 <div className="flex flex-row justify-center items-center">
                   <div class="relative">
                     <div>
-                      <img src="https://coovid19india.000webhostapp.com/static/images/two.svg" className="w-20 h-14" />
+                      <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/two.svg" className="w-20 h-14" />
                     </div>
                     <div className="flex flex-col items-start">
                       <Text
