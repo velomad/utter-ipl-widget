@@ -3,7 +3,7 @@ import { TopPerformers } from "..";
 import { Text } from "../../common";
 import InterestingInsights from "../InterestingInsights";
 
-const PlayingTeam = () => {
+const PlayingTeam = ({ powerStatsData }) => {
   const [section, setSection] = useState(0);
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
 
@@ -103,7 +103,7 @@ const PlayingTeam = () => {
                 </div>
               </div>
             ) : (
-              <TopPerformers />
+              <TopPerformers TopPerformer={powerStatsData.TopPerformer} />
             )}
           </div>
 

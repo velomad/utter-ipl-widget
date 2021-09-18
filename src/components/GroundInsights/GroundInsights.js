@@ -3,10 +3,28 @@ import { Text } from "../../common";
 import {
   PitchInsights,
   TossInsights,
-  AnnouncedPlayers,
+  AnnouncedPlayers
 } from "../../components";
-const GroundInsights = () => {
+const GroundInsights = ({ powerStatsData }) => {
   const [selectedVal, setSelectedVal] = useState("ground");
+
+  let data = {};
+
+  if (powerStatsData) {
+    if (powerStatsData.GroundInsights)
+      powerStatsData?.GroundInsights?.Runs.map((el) => {
+        data["groundName"] = el.Ground;
+        data["highestRuns"] = el.HighestRuns;
+        data["lowestRuns"] = el.LowestRuns;
+        data["avgRuns"] = el.AvgRuns;
+      });
+    powerStatsData?.GroundInsights?.Wickets.map((el) => {
+      data["avgWicketPercent"] = el.AvgWicketPercent;
+      data["avgWicketSpin"] = el.AvgWicketSpin;
+      data["pacerWickets"] = el.PacerWickets;
+      data["spinnerWickets"] = el.SpinnerWickets;
+    });
+  }
 
   return (
     <React.Fragment>
@@ -118,7 +136,7 @@ const GroundInsights = () => {
                 <Text
                   fontFamily="Roboto Condensed"
                   class="text-sm font-semibold pb-1"
-                  text="M chinnaswamy Stadium"
+                  text={data.groundName}
                   fontColor="#283574"
                 />
                 <Text
@@ -141,7 +159,7 @@ const GroundInsights = () => {
                       <Text
                         fontFamily="Roboto Condensed"
                         class="text-xl font-bold pb-2"
-                        text="178"
+                        text={data.avgRuns}
                         fontColor="#283574"
                       />
                     </div>
@@ -166,7 +184,7 @@ const GroundInsights = () => {
                       <Text
                         fontFamily="Roboto Condensed"
                         class="text-xl font-bold pb-2"
-                        text="245"
+                        text={data.highestRuns}
                         fontColor="#197F5C"
                       />
                     </div>
@@ -190,7 +208,7 @@ const GroundInsights = () => {
                       <Text
                         fontFamily="Roboto Condensed"
                         class="text-xl font-bold pb-2"
-                        text="49"
+                        text={data.lowestRuns}
                         fontColor="#9F1C34"
                       />
                     </div>
@@ -222,7 +240,7 @@ const GroundInsights = () => {
                       <Text
                         fontFamily="Roboto Condensed"
                         class="text-xl font-bold pb-2"
-                        text="4"
+                        text={data.avgWicketPercent}
                         fontColor="#283574"
                       />
                     </div>
@@ -247,7 +265,7 @@ const GroundInsights = () => {
                       <Text
                         fontFamily="Roboto Condensed"
                         class="text-xl font-bold pb-2"
-                        text="6"
+                        text={data.avgWicketSpin}
                         fontColor="#197F5C"
                       />
                     </div>
@@ -274,7 +292,14 @@ const GroundInsights = () => {
           ""
         )}
         {selectedVal == "pitch" ? <PitchInsights hideTitle={true} /> : ""}
-        {selectedVal == "toss" ? <TossInsights hideTitle={true} /> : ""}
+        {selectedVal == "toss" ? (
+          <TossInsights
+            hideTitle={true}
+            TossInsights={powerStatsData.TossInsights}
+          />
+        ) : (
+          ""
+        )}
         {selectedVal == "announcedplayers" ? (
           <AnnouncedPlayers hideTitle={true} />
         ) : (

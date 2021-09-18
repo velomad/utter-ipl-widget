@@ -2,6 +2,19 @@ import React from "react";
 import { Text } from "../../common";
 
 const TossInsights = (props) => {
+  const { TossInsights } = props;
+
+  let data = {};
+  if (TossInsights) {
+    TossInsights?.BattingFirst.map((el) => {
+      data["battingFirstWinPercent"] = el.WinPercent;
+    });
+    TossInsights?.BattingSecond.map((el) => {
+      data["battingSecondWinPercent"] = el.WinPercent;
+    });
+  }
+
+
   return (
     <React.Fragment>
       <div className="p-2 rounded-md h-72 hidden sm:block">
@@ -111,11 +124,11 @@ const TossInsights = (props) => {
                     <sup>st</sup>
                   </div>
                 </div>
-                <div className=" bg-gray-100 z-10 mt-4 border mr-4 h-28 px-4 rounded-md flex items-center">
+                <div className=" bg-gray-100 z-10 mt-4 border mr-4 h-28 justify-center px-2 w-24 rounded-md flex items-center">
                   <Text
                     fontFamily="Roboto Condensed"
-                    class="text-4xl font-semibold p-2"
-                    text="45"
+                    class="text-3xl font-semibold p-2"
+                    text={data.battingFirstWinPercent}
                     fontColor="#9F1C34"
                   />
                 </div>
@@ -127,11 +140,11 @@ const TossInsights = (props) => {
                 <div className="absolute left-4">
                   <sup>nd</sup>
                 </div>
-                <div className="bg-gray-100 border mt-4 h-26 z-10 px-4 rounded-md flex items-center">
+                <div className="bg-gray-100 border mt-4 h-26 z-10 px-2 w-24 text-center rounded-md flex items-center justify-center">
                   <Text
                     fontFamily="Roboto Condensed"
-                    class="text-4xl font-semibold p-2"
-                    text="55"
+                    class="text-3xl font-semibold p-2"
+                    text={data.battingSecondWinPercent}
                     fontColor="#197F5C"
                   />
                 </div>
