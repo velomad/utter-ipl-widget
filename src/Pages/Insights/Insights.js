@@ -18,7 +18,7 @@ const Insights = () => {
             </div>
             <div className="flex  justify-around  items-center">
               <div>
-                <img src="/static/images/bat.svg" />
+                <img src="https://coovid19india.000webhostapp.com/static/images/bat.svg" />
               </div>
               <div className="font-bold">
                 <Text text="133.6" fontColor="#707070" fontWeight="700" />

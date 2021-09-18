@@ -1,10 +1,14 @@
 import React from "react";
-import Routes from "./Routes";
+import { Footer, Navbar } from "./components";
+import LandingScreen  from "./Pages/LandingScreen";
+
 
 function App() {
   return (
     <div>
-      <Routes />
+      <Navbar />
+      <LandingScreen />
+      <Footer />
     </div>
   );
 }

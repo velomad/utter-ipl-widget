@@ -39,7 +39,7 @@ export default function Topperformers(props) {
               <div className="flex flex-col border-r border-t border-l border-gray-300 rounded-bl-0 rounded-br-0 w-32 rounded-tl-md rounded-tr-md">
                 <img
                   class="h-20 w-20 object-cover object-center mx-auto mt-1"
-                  src={`/static/images/${index + 1}.png`}
+                  src={`https://coovid19india.000webhostapp.com/static/images/${index + 1}.png`}
                   alt="player"
                 />
                 <p className="text-sm font-bold text-center">
