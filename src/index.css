@@ -76,16 +76,6 @@
   background: #555;
 }
 
-.utter-container::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.utter-container {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
 @media only screen and (max-width: 320px) {
   .gradient-bk {
     background: transparent
