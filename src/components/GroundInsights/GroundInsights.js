@@ -590,7 +590,7 @@ const GroundInsights = ({ powerStatsData }) => {
           )}
           {selectedVal == "pitch" ? <PitchInsights hideTitle={true} /> : ""}
           {selectedVal == "toss" ? <TossInsights hideTitle={true} /> : ""}
-          {selectedVal == "announcedplayers" ? (
+          {selectedVal == "announcedplayers" && window.innerWidth < '768' ? (
             <AnnouncedPlayers hideTitle={true} />
           ) : (
             ""

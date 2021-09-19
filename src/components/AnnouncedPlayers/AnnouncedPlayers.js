@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Text } from "../../common";
+import { io } from "socket.io-client";
 
 const AnnouncedPlayers = (props) => {
   const [btn, setBtn] = useState(true);
-  console.log(btn);
+
   const data = [
     { playerName: "Faf Du Plessis", isCaptain: false, playerRole: "batsmen" },
     { playerName: "Ruturaj Gaikwad", isCaptain: false, playerRole: "batsmen" },
@@ -21,7 +22,6 @@ const AnnouncedPlayers = (props) => {
     { playerName: "Deepak Chahar", isCaptain: false, playerRole: "bowler" },
     { playerName: "Shardul Thakkur", isCaptain: false, playerRole: "bowler" }
   ];
-
   const rcbData = [
     { playerName: "Virat Kohli", isCaptain: true, playerRole: "batsmen" },
     { playerName: "Devdutt Padikkal", isCaptain: false, playerRole: "batsmen" },
@@ -38,8 +38,68 @@ const AnnouncedPlayers = (props) => {
     { playerName: "Y. Chahal", isCaptain: false, playerRole: "bowler" },
     { playerName: "M. Siraj", isCaptain: false, playerRole: "bowler" }
   ];
-
   const team = btn === true ? data : rcbData;
+  // useEffect(() => {
+  //   makeSocketConnection();
+  //   console.log('Announced Players...');
+  // }, []);
+
+  // const makeSocketConnection = () => {
+  //   // var socket = io('wss://echo.websocket.org',
+  //   //   );
+  //   // socket.on('connect', function () {
+  //   //   socket.on('disconnect', function () {
+  //   //     socket.socket.reconnectionDelay /= 2;
+  //   //   });
+  //   // });
+  //   // socket.on('message', data => {
+  //   //   console.log('Good Message From Socket...',data);
+  //   // });
+
+  //   let ws = new WebSocket('wss://hapi.utter.ai/matchupdates');
+  //   ws.onopen = () => {
+  //     console.log("connected");
+  //   };
+
+  //   ws.onmessage = (evt) => {
+  //     setLastMessage(JSON.parse(evt.data));
+  //   };
+
+  //   ws.onclose = () => {
+  //     // console.log("disconnected");
+  //     // automatically try to connect on connection loss
+  //     setWS(createWebScoket('wss://hapi.utter.ai/matchupdates'));
+  //   };
+
+  //   return ws;
+  // }
+
+
+  const [ws, setWS] = useState(null);
+
+  useEffect(() => {
+    setWS(createWebScoket("wss://hapi.utter.ai/matchupdates"));
+  },[]);
+
+  const createWebScoket = (url) => {
+    let ws = new WebSocket(url);
+    ws.onopen = () => {
+      console.log("connected");
+    };
+
+    ws.onmessage = (evt) => {
+      console.log("evt.data============>", evt.data);
+    };
+
+    ws.onclose = () => {
+      console.log("disconnected");
+      // automatically try to connect on connection loss
+      setWS(createWebScoket(url));
+    };
+
+    return ws;
+  };
+
 
   return (
     <div className="p-2 py-2 rounded-md space-y-2 sm:h-72">
@@ -56,9 +116,8 @@ const AnnouncedPlayers = (props) => {
       <div className="flex justify-center -space-x-2">
         <button
           onClick={() => setBtn(true)}
-          className={`bg-gray-100 w-32  ${
-            btn && "shadow-md border z-10 rounded-md"
-          } `}
+          className={`bg-gray-100 w-32  ${btn && "shadow-md border z-10 rounded-md"
+            } `}
         >
           <Text
             fontFamily="Roboto Condensed"
@@ -69,9 +128,8 @@ const AnnouncedPlayers = (props) => {
         </button>
         <button
           onClick={() => setBtn(false)}
-          className={`bg-gray-100 w-32  rounded-md ${
-            !btn && "shadow-md border z-10 rounded-md"
-          } `}
+          className={`bg-gray-100 w-32  rounded-md ${!btn && "shadow-md border z-10 rounded-md"
+            } `}
         >
           <Text
             fontFamily="Roboto Condensed"
@@ -122,15 +180,14 @@ const AnnouncedPlayers = (props) => {
               <div>
                 <img
                   className="w-5 sm:w-7"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
-                    el.playerRole === "bowler"
-                      ? "ball.svg"
-                      : el.playerRole === "keeper"
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${el.playerRole === "bowler"
+                    ? "ball.svg"
+                    : el.playerRole === "keeper"
                       ? "keeper.svg"
                       : el.playerRole === "allRounder"
-                      ? "allrounder.svg"
-                      : "bat.svg"
-                  }`}
+                        ? "allrounder.svg"
+                        : "bat.svg"
+                    }`}
                 />
               </div>
             </div>
