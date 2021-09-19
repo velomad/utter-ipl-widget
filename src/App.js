@@ -1,7 +1,8 @@
-import React, {useEffect} from "react";
-import Routes from "./Routes";
-import axios from "axios";
+import React, { useEffect } from "react";
 
+import axios from "axios";
+import { Footer, Navbar } from "./components";
+import LandingScreen from "./Pages/LandingScreen";
 
 function App() {
   useEffect(() => {
@@ -18,7 +19,9 @@ function App() {
 
   return (
     <div>
-      <Routes />
+      <Navbar />
+      <LandingScreen />
+      <Footer />
     </div>
   );
 }

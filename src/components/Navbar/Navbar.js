@@ -15,7 +15,7 @@ function Navbar() {
             fontWeight="600"
           />
         </div>
-        <img src="/static/images/rcb.png" className="object-fit" />
+        <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/rcb.png" className="object-fit" />
       </div>
     </div>
   );

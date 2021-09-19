@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-const WidgetDiv = document.querySelectorAll("#root");
+const WidgetDiv = document.querySelectorAll(".utter-container");
 
 WidgetDiv.forEach((Div) => {
   ReactDOM.render(
