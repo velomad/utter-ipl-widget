@@ -143,20 +143,21 @@ export default function Topperformers(props) {
 
           {props.TopPerformer?.Batting.map((el, idx) => (
             <div key={idx} className="flex flex-col items-center">
-              <div>{el.Batsman}</div>
               <div className="flex flex-col border-r border-t border-l border-gray-300 rounded-bl-0 rounded-br-0 w-32 rounded-tl-md rounded-tr-md">
-                {/* <img
+                <img
                   class="h-20 w-20 object-cover object-center mx-auto mt-1"
-                  src={`/static/images/${index + 1}.png`}
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                    el.Batsman.replace(/\s/g, "_") + ".JPG"
+                  }`}
                   alt="player"
-                /> */}
-                <p className="text-sm font-bold text-center">
+                />
+                {/* <p className="text-sm font-bold text-center">
                   <Text
-                    text={"images goes here"}
+                    text={el.Batsman}
                     fontColor="#283574"
                     fontWeight="600"
                   />
-                </p>
+                </p> */}
               </div>
               <div className="flex flex-col bg-gray-100 border border-gray-300 rounded-md w-36">
                 <div className="flex flex-col items-center space-y-2 py-2">

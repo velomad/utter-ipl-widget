@@ -14,12 +14,12 @@ const AnnouncedPlayers = (props) => {
     {
       playerName: "Ravindra Jageda",
       isCaptain: false,
-      playerRole: "allRounder",
+      playerRole: "allRounder"
     },
     { playerName: "Dwayne Brawo", isCaptain: false, playerRole: "allRounder" },
     { playerName: "Sam Curran", isCaptain: false, playerRole: "allRounder" },
     { playerName: "Deepak Chahar", isCaptain: false, playerRole: "bowler" },
-    { playerName: "Shardul Thakkur", isCaptain: false, playerRole: "bowler" },
+    { playerName: "Shardul Thakkur", isCaptain: false, playerRole: "bowler" }
   ];
 
   const rcbData = [
@@ -32,11 +32,11 @@ const AnnouncedPlayers = (props) => {
     {
       playerName: "W. Sundar",
       isCaptain: false,
-      playerRole: "allRounder",
+      playerRole: "allRounder"
     },
     { playerName: "K. Richardson", isCaptain: false, playerRole: "allRounder" },
     { playerName: "Y. Chahal", isCaptain: false, playerRole: "bowler" },
-    { playerName: "M. Siraj", isCaptain: false, playerRole: "bowler" },
+    { playerName: "M. Siraj", isCaptain: false, playerRole: "bowler" }
   ];
 
   const team = btn === true ? data : rcbData;

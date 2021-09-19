@@ -42,7 +42,7 @@ const LandingScreen = () => {
             <GroundInsights powerStatsData={powerStatsData} />
           </div>
           <div className="hidden sm:block">
-            <HeadToHead />
+            <HeadToHead teamMatches={powerStatsData.TeamMatches} />
           </div>
         </div>
         {/* <div className="md:px-40 mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 space-y-5 sm:space-y-0">
