@@ -16,7 +16,7 @@ const PitchInsgihts = (props) => {
         <div className="col-span-4 flex justify-center items-center">
           <div className='flex flex-col space-y-4'>
             <div>
-              <img src="/static/images/pitch.png" className='w-32 sm:w-36' style={{ webkitTransform: "scaleX(-1)" }} />
+              <img src="https://coovid19india.000webhostapp.com/static/images/pitch.png" className='w-32 sm:w-36' style={{ webkitTransform: "scaleX(-1)" }} />
             </div>
             <div className="text-center">
               <Text

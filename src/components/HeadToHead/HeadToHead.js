@@ -107,7 +107,10 @@ export default function Headtohead(props) {
               }
             />
             <div>
-              <img src="/static/images/66.png" className="mx-auto" />
+              <img
+                src="https://coovid19india.000webhostapp.com/static/images/66.png"
+                className="mx-auto"
+              />
             </div>
 
             <div className="flex flex-row justify-center items-center space-x-1">
@@ -195,7 +198,10 @@ export default function Headtohead(props) {
               }
             />
             <div>
-              <img src="/static/images/33.png" className="mx-auto" />
+              <img
+                src="https://coovid19india.000webhostapp.com/static/images/33.png"
+                className="mx-auto"
+              />
             </div>
             <div className="flex flex-row justify-center items-center space-x-1">
               {team2.results?.map((res) => (

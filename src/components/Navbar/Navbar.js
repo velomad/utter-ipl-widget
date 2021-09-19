@@ -15,7 +15,10 @@ function Navbar() {
             fontWeight="600"
           />
         </div>
-        <img src="/static/images/rcb.png" className="object-fit" />
+        <img
+          src="https://coovid19india.000webhostapp.com/static/images/rcb.png"
+          className="object-fit"
+        />
       </div>
     </div>
   );
