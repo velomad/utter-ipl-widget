@@ -124,7 +124,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                 fontWeight="700"
               />
             </div>
-            <InterestingInsights />
+            <InterestingInsights topInsights={powerStatsData.TopInsights}  />
           </div>
         </div>
       </div>

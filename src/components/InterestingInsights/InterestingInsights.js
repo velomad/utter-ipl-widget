@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Text } from "../../common";
 
-const InterestingInsights = () => {
+const InterestingInsights = ({topInsights}) => {
   const data = [
     "Among top order batsmen, Suresh Raina is the highest scorer with 513 runs against RCB",
     "In the middle order, MS Dhoni has scored the highest - 254 runs against RCB",
@@ -14,6 +14,7 @@ const InterestingInsights = () => {
   ];
 
   const [insightsCount, setInsightsCount] = useState(4);
+
   const showMoreInsights = () => {
     if (insightsCount == 4) {
       setInsightsCount(8);
@@ -29,14 +30,15 @@ const InterestingInsights = () => {
           insightsCount == 4 ? "h-72" : "h-72 overflow-y-auto insights-scroll "
         }
       >
-        {[...new Array(insightsCount)].map((el, index) => (
+        {Object.keys(topInsights).map((el, index) => (
+          index < insightsCount ?
           <div className="p-2 mt-2 bg-gray-100 rounded-lg bg-gray-200">
             <div className="text-center text-xs space-y-2">
               <div className="py-1">
-                <Text text={data[index]} fontColor="#707070" fontWeight="700" />
+                <Text text={topInsights[el]} fontColor="#707070" fontWeight="700" />
               </div>
             </div>
-          </div>
+          </div>:""
         ))}
       </div>
       <div>
