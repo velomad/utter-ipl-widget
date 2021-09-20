@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { TopPerformers } from "..";
 import { Text } from "../../common";
+import { getFirstCharacter } from "../../utils/getFirstCharacter";
 import InterestingInsights from "../InterestingInsights";
 
 const PlayingTeam = ({ powerStatsData }) => {
@@ -91,10 +92,13 @@ const PlayingTeam = ({ powerStatsData }) => {
 
                 <div className="col-span-6 py-8">
                   <div className="grid grid-cols-4 place-items-center gap-6">
-                    {[...new Array(11)].map((e, index) => (
+                    {powerStatsData.RecommendedPlayingXI.map((e, index) => (
                       <div>
                         <img
-                          src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${index + 1}.png`}
+                          src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                            e.player.replace(/\s/g, "_") +
+                            ".JPG"
+                          }`}
                           className="w-20"
                         />
                       </div>
@@ -307,7 +311,12 @@ const PlayingTeam = ({ powerStatsData }) => {
           <div className="grid grid-cols-4 place-items-center gap-6">
             {[...new Array(11)].map((e, index) => (
               <div>
-                <img src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${index + 1}.png`} className="w-24" />
+                <img
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                    index + 1
+                  }.png`}
+                  className="w-24"
+                />
               </div>
             ))}
           </div>

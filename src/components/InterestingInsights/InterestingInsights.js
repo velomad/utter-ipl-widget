@@ -15,7 +15,7 @@ const InterestingInsights = () => {
 
   const [insightsCount, setInsightsCount] = useState(4);
   const showMoreInsights = () => {
-    if (insightsCount == 4) {
+    if (insightsCount == 4) { 
       setInsightsCount(8);
     } else {
       setInsightsCount(4);

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Text } from "../../common";
 import { getFirstCharacter } from "../../utils/getFirstCharacter";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 export default function Headtohead(props) {
   let team1 = {};
@@ -11,13 +13,13 @@ export default function Headtohead(props) {
     team1["matchesWon"] = props.teamMatches[0].MatchesWon;
     team1["noResults"] = props.teamMatches[0].NoResults;
     team1["results"] = props.teamMatches[0].Results;
-    team1["winPercent"] = props.teamMatches[0].WinPercent;
+    team1["winPercent"] = props.teamMatches[0].WinPercentage;
 
     team2["teamName"] = props.teamMatches[1].ForTeam;
     team2["matchesWon"] = props.teamMatches[1].MatchesWon;
     team2["noResults"] = props.teamMatches[1].NoResults;
     team2["results"] = props.teamMatches[1].Results;
-    team2["winPercent"] = props.teamMatches[1].WinPercent;
+    team2["winPercent"] = props.teamMatches[1].WinPercentage;
   }
 
   return (
@@ -106,8 +108,11 @@ export default function Headtohead(props) {
                 team1.matchesWon > team2.matchesWon ? "#197F5C" : "#9F1C34"
               }
             />
-            <div>
-              <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/66.png" className="mx-auto" />
+            <div className="w-16 h-16 mx-auto">
+              <CircularProgressbar
+                value={Number(team1.winPercent)}
+                text={Number(team1.winPercent)}
+              />
             </div>
 
             <div className="flex flex-row justify-center items-center space-x-1">
@@ -194,8 +199,20 @@ export default function Headtohead(props) {
                 team2.matchesWon > team1.matchesWon ? "#197F5C" : "#9F1C34"
               }
             />
-            <div>
-              <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/33.png" className="mx-auto" />
+            <div className="h-16 w-16 mx-auto ">
+              {/* <img
+                src="https://utterai.s3.ap-south-1.amazonaws.com/img/33.png"
+                className="mx-auto"
+              /> */}
+              <CircularProgressbar
+                styles={buildStyles({
+                  pathColor:
+                    team2.winPercent > `rgba(159,28,52, ${team2.winPercent})`
+                })}
+                // value={team1.winPercent}
+                value="20"
+                text={team2.winPercent}
+              />
             </div>
             <div className="flex flex-row justify-center items-center space-x-1">
               {team2.results?.map((res) => (

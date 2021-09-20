@@ -7,13 +7,12 @@ const TossInsights = (props) => {
   let data = {};
   if (TossInsights) {
     TossInsights?.BattingFirst.map((el) => {
-      data["battingFirstWinPercent"] = el.WinPercent;
+      data["battingFirstWinPercent"] = el.WinPercentage;
     });
     TossInsights?.BattingSecond.map((el) => {
-      data["battingSecondWinPercent"] = el.WinPercent;
+      data["battingSecondWinPercent"] = el.WinPercentage;
     });
   }
-
 
   return (
     <React.Fragment>
@@ -34,7 +33,10 @@ const TossInsights = (props) => {
                 />
               </div>
               <div className="z-20">
-                <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/heads.png" className="w-20" />
+                <img
+                  src="https://utterai.s3.ap-south-1.amazonaws.com/img/heads.png"
+                  className="w-20"
+                />
               </div>
             </div>
 
@@ -118,7 +120,10 @@ const TossInsights = (props) => {
               <div className="flex relative space-x-9">
                 <div className="flex space-x-3">
                   <div className="absolute left-2 right-2">
-                    <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/one.svg" className="w-8 " />
+                    <img
+                      src="https://utterai.s3.ap-south-1.amazonaws.com/img/one.svg"
+                      className="w-8 "
+                    />
                   </div>
                   <div className="absolute left-8">
                     <sup>st</sup>
@@ -135,7 +140,10 @@ const TossInsights = (props) => {
               </div>
               <div className="flex relative space-x-14">
                 <div className="absolute left-2 right-2">
-                  <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/two.svg" className="w-14" />
+                  <img
+                    src="https://utterai.s3.ap-south-1.amazonaws.com/img/two.svg"
+                    className="w-14"
+                  />
                 </div>
                 <div className="absolute left-4">
                   <sup>nd</sup>
@@ -169,10 +177,16 @@ const TossInsights = (props) => {
             <div className="flex flex-col">
               <div>
                 <div className="absolute left-16">
-                  <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/tails.png" className="w-16 h-16" />
+                  <img
+                    src="https://utterai.s3.ap-south-1.amazonaws.com/img/tails.png"
+                    className="w-16 h-16"
+                  />
                 </div>
                 <div className="z-20">
-                  <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/heads.png" className="w-16 h-16" />
+                  <img
+                    src="https://utterai.s3.ap-south-1.amazonaws.com/img/heads.png"
+                    className="w-16 h-16"
+                  />
                 </div>
               </div>
               <div className="flex flex-col items-start mt-3">
@@ -248,12 +262,15 @@ const TossInsights = (props) => {
               <div className="col-span-6">
                 <div className="flex flex-row justify-between items-center relative">
                   <div>
-                    <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/one.svg" className="w-20 h-14" />
+                    <img
+                      src="https://utterai.s3.ap-south-1.amazonaws.com/img/one.svg"
+                      className="w-20 h-14"
+                    />
                   </div>
                   <div className="flex flex-col items-start">
                     <Text
                       fontFamily="Roboto Condensed"
-                      class="absolute -top-1 left-12 text-xs font-extrabold text-center"
+                      class="absolute -top-1 left-14 text-xs font-extrabold text-center"
                       text="st"
                       fontColor="#656666"
                     />
@@ -261,7 +278,7 @@ const TossInsights = (props) => {
                       <Text
                         fontFamily="Roboto Condensed"
                         class="text-xl font-extrabold text-center"
-                        text="45"
+                        text={data.battingFirstWinPercent}
                         fontColor="#9F1C34"
                       />
                     </div>
@@ -272,7 +289,10 @@ const TossInsights = (props) => {
                 <div className="flex flex-row justify-center items-center">
                   <div class="relative">
                     <div>
-                      <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/two.svg" className="w-20 h-14" />
+                      <img
+                        src="https://utterai.s3.ap-south-1.amazonaws.com/img/two.svg"
+                        className="w-20 h-14"
+                      />
                     </div>
                     <div className="flex flex-col items-start">
                       <Text
@@ -286,7 +306,7 @@ const TossInsights = (props) => {
                       <Text
                         fontFamily="Roboto Condensed"
                         class="text-xl font-extrabold text-center"
-                        text="55"
+                        text={data.battingSecondWinPercent}
                         fontColor="#197F5C"
                       />
                     </div>

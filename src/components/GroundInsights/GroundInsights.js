@@ -589,8 +589,15 @@ const GroundInsights = ({ powerStatsData }) => {
             ""
           )}
           {selectedVal == "pitch" ? <PitchInsights hideTitle={true} /> : ""}
-          {selectedVal == "toss" ? <TossInsights hideTitle={true} /> : ""}
-          {selectedVal == "announcedplayers" && window.innerWidth < '768' ? (
+          {selectedVal == "toss" ? (
+            <TossInsights
+              hideTitle={true}
+              TossInsights={powerStatsData.TossInsights}
+            />
+          ) : (
+            ""
+          )}
+          {selectedVal == "announcedplayers" && window.innerWidth < "768" ? (
             <AnnouncedPlayers hideTitle={true} />
           ) : (
             ""
