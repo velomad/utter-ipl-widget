@@ -6,23 +6,6 @@ const AnnouncedPlayers = (props) => {
   const [btn, setBtn] = useState(true);
   const [activeTeamData, setActiveTeamData] = useState([]);
 
-  const data = [
-    { playerName: "Faf Du Plessis", isCaptain: false, playerRole: "batsmen" },
-    { playerName: "Ruturaj Gaikwad", isCaptain: false, playerRole: "batsmen" },
-    { playerName: "Suresh Raina", isCaptain: false, playerRole: "batsmen" },
-    { playerName: "Moeen Ali", isCaptain: false, playerRole: "batsmen" },
-    { playerName: "Moeen Ali", isCaptain: false, playerRole: "batsmen" },
-    { playerName: "MS Dhoni", isCaptain: true, playerRole: "keeper" },
-    {
-      playerName: "Ravindra Jageda",
-      isCaptain: false,
-      playerRole: "allRounder"
-    },
-    { playerName: "Dwayne Brawo", isCaptain: false, playerRole: "allRounder" },
-    { playerName: "Sam Curran", isCaptain: false, playerRole: "allRounder" },
-    { playerName: "Deepak Chahar", isCaptain: false, playerRole: "bowler" },
-    { playerName: "Shardul Thakkur", isCaptain: false, playerRole: "bowler" }
-  ];
   const rcbData = [
     { playerName: "Virat Kohli", isCaptain: true, playerRole: "batsmen" },
     { playerName: "Devdutt Padikkal", isCaptain: false, playerRole: "batsmen" },
@@ -60,24 +43,60 @@ const AnnouncedPlayers = (props) => {
     };
 
     ws.onmessage = (evt) => {
-      setAnouncedPlayers(evt.data);
-      console.log("evt.data============>", evt.data);
+      var announced_players_data;
       let isMatched = null;
-      if (Object.keys(JSON.parse(evt.data)).includes("iplt20_2021_g1")) {
+      if (!!localStorage.getItem('announced_players_data')) {
+        console.log('Found data');
+        announced_players_data = JSON.parse(localStorage.getItem('announced_players_data'));
+        if (Object.keys(announced_players_data).includes("iplt20_2021_g1")) {
+          isMatched = true;
+        } else {
+          isMatched = false;
+        }
+      }
+      if (isMatched) {
+        setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
+        setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[0]]);
+      } else {
+        localStorage.setItem('announced_players_data', JSON.stringify(evt.data));
+        var announced_players_data = JSON.parse(localStorage.getItem('announced_players_data'));
+        setAnouncedPlayers(announced_players_data);
+        console.log("announced_players_data============>", announced_players_data);
+        if (Object.keys(announced_players_data).includes("iplt20_2021_g1")) {
+          isMatched = true;
+        } else {
+          isMatched = false;
+        }
+        if (isMatched) {
+          setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
+          setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[0]]);
+        } else {
+          setTeamsData([]);
+          setActiveTeamData([]);
+        }
+        setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
+        setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[0]]);
+      }
+      console.log('Not Found data');
+      localStorage.setItem('announced_players_data', JSON.stringify(evt.data));
+      var announced_players_data = JSON.parse(localStorage.getItem('announced_players_data'));
+      setAnouncedPlayers(announced_players_data);
+      console.log("announced_players_data============>", announced_players_data);
+      if (Object.keys(announced_players_data).includes("iplt20_2021_g1")) {
         isMatched = true;
       } else {
         isMatched = false;
       }
       if (isMatched) {
-        setTeamsData(Object.keys(evt.data.iplt20_2021_g1));
-        setActiveTeamData(evt.data.iplt20_2021_g1[Object.keys(evt.data.iplt20_2021_g1)[0]]);
+        setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
+        setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[0]]);
       } else {
         setTeamsData([]);
         setActiveTeamData([]);
       }
 
-      setTeamsData(Object.keys(evt.data.iplt20_2021_g1));
-      setActiveTeamData(evt.data.iplt20_2021_g1[Object.keys(evt.data.iplt20_2021_g1)[0]]);
+      setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
+      setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[0]]);
     };
 
     ws.onclose = () => {
