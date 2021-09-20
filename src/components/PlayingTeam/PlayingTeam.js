@@ -7,12 +7,12 @@ import InterestingInsights from "../InterestingInsights";
 const PlayingTeam = ({ powerStatsData }) => {
   const [section, setSection] = useState(0);
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
-  const [interestingInsightsData,setInterestingInsightsData] = useState({});
+  const [interestingInsightsData, setInterestingInsightsData] = useState({});
 
-  useEffect(() =>{
+  useEffect(() => {
     console.log('Palying team');
     setInterestingInsightsData(powerStatsData.TopInsights || {});
-  },[powerStatsData]);
+  }, [powerStatsData]);
 
 
   return (
@@ -92,10 +92,9 @@ const PlayingTeam = ({ powerStatsData }) => {
                     {powerStatsData.RecommendedPlayingXI.map((e, index) => (
                       <div>
                         <img
-                          src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
-                            e.player.replace(/\s/g, "_") +
+                          src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${e.player.replace(/\s/g, "_") +
                             ".JPG"
-                          }`}
+                            }`}
                           className="w-20"
                         />
                       </div>
@@ -180,7 +179,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                 </div>
                 {isDropDownVisible
                   ? Object.keys(interestingInsightsData).map((el, index) => (
-                    index !=0?
+                    index != 0 ?
                       <div class="w-full mt-2">
                         <div class="h-full flex items-start border-gray-200 border p-4 rounded-lg">
                           <div class="flex-grow">
@@ -212,8 +211,8 @@ const PlayingTeam = ({ powerStatsData }) => {
                           </div>
                         </div>
                       </div>
-                      :null
-                    ))
+                      : null
+                  ))
                   : ""}
               </div>
             </div>
@@ -308,13 +307,13 @@ const PlayingTeam = ({ powerStatsData }) => {
         </div>
         <div className="flex flex-nowrap items-center mt-4 px-2">
           <div className="grid grid-cols-4 place-items-center gap-6">
-            {[...new Array(11)].map((e, index) => (
+            {powerStatsData.RecommendedPlayingXI.map((e, index) => (
               <div>
                 <img
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
-                    index + 1
-                  }.png`}
-                  className="w-24"
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${e.player.replace(/\s/g, "_") +
+                    ".JPG"
+                    }`}
+                  className="w-20"
                 />
               </div>
             ))}

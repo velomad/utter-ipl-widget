@@ -300,7 +300,7 @@ const GroundInsights = ({ powerStatsData }) => {
         ) : (
           ""
         )}
-        {selectedVal == "announcedplayers" ? (
+        {selectedVal == "announcedplayers" && window.innerWidth > "768" ? (
           <AnnouncedPlayers hideTitle={true} />
         ) : (
           ""

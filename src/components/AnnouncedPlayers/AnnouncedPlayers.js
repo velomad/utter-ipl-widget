@@ -151,7 +151,7 @@ const AnnouncedPlayers = (props) => {
                 fontColor="#656666"
               />
             </button>
-          </div> : <div className="text-center text-sm font-bold">No Data Found</div>
+          </div> : <div className="text-center  text-gray-500 text-sm font-bold">Yet to be announced</div>
       }
 
 
