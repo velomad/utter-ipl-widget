@@ -10,29 +10,31 @@ import {
   TossInsights
 } from "../../components";
 
-const LandingScreen = ({getPowerStatsData}) => {
+const LandingScreen = ({ getPowerStatsData }) => {
   const [powerStatsData, setPowerStatsData] = useState({});
 
-  const token = localStorage.getItem("clientAuthToken");
-
   useEffect(() => {
-    getPowerStats();
+    getClientAuth();
   }, []);
 
-  const getPowerStats = async () => {
-    const results = await axios.post(
+  const getClientAuth = async () => {
+    const results = await axios.get(
+      `https://hapi.utter.ai/restclient/issue?clientID=${window.client_id}&domain=${window.domain_name}`
+    );
+    localStorage.setItem("clientAuthToken", results.data.token);
+    const Utterresults = await axios.post(
       "https://hapi.utter.ai/api/v1.0/getPowerStats",
       null,
       {
         headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${results.data.token}`
         }
       }
     );
-
-    setPowerStatsData(results.data);
-    getPowerStatsData(results.data);
+    setPowerStatsData(Utterresults.data);
+    getPowerStatsData(Utterresults.data);
   };
+
 
   console.log(powerStatsData);
 

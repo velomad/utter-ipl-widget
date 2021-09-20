@@ -77,8 +77,8 @@ const AnnouncedPlayers = (props) => {
           setTeamsData([]);
           setActiveTeamData([]);
         }
-        setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
-        setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
+        // setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
+        // setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
       }
       console.log('Not Found data');
       localStorage.setItem('announced_players_data', evt.data);
@@ -98,8 +98,8 @@ const AnnouncedPlayers = (props) => {
         setActiveTeamData([]);
       }
 
-      setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
-      setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
+      // setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
+      // setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
     };
 
     ws.onclose = () => {

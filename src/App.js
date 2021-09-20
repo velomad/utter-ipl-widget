@@ -6,24 +6,11 @@ import LandingScreen from "./Pages/LandingScreen";
 
 function App() {
 
-  const [data, setData] = useState({})
-  useEffect(() => {
-    getClientAuth();
-  }, []);
+  const [data, setData] = useState({});
 
   const mainWebData = (val) => {
     setData(val)
   }
-
-
-
-  const getClientAuth = async () => {
-    const results = await axios.get(
-      "https://hapi.utter.ai/restclient/issue?clientID=QdfTr0344Gdw8bm&domain=testclient.com"
-    );
-
-    localStorage.setItem("clientAuthToken", results.data.token);
-  };
 
   return (
     <div>

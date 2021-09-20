@@ -7,11 +7,12 @@ import InterestingInsights from "../InterestingInsights";
 const PlayingTeam = ({ powerStatsData }) => {
   const [section, setSection] = useState(0);
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
-  const [interestingInsightsData, setInterestingInsightsData] = useState({});
+  const [interestingInsightsData, setInterestingInsightsData] = useState([]);
+  const [RecommendedPlayingXI, setRecommendedPlayingXI] = useState([]);
 
   useEffect(() => {
-    console.log('Palying team');
     setInterestingInsightsData(powerStatsData.TopInsights || {});
+    setRecommendedPlayingXI(powerStatsData.RecommendedPlayingXI);
   }, [powerStatsData]);
 
 
@@ -89,7 +90,7 @@ const PlayingTeam = ({ powerStatsData }) => {
 
                 <div className="col-span-6 py-8">
                   <div className="grid grid-cols-4 place-items-center gap-6">
-                    {powerStatsData.RecommendedPlayingXI.map((e, index) => (
+                    {RecommendedPlayingXI && RecommendedPlayingXI.map((e, index) => (
                       <div>
                         <img
                           src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${e.player.replace(/\s/g, "_") +
@@ -307,7 +308,7 @@ const PlayingTeam = ({ powerStatsData }) => {
         </div>
         <div className="flex flex-nowrap items-center mt-4 px-2">
           <div className="grid grid-cols-4 place-items-center gap-6">
-            {powerStatsData.RecommendedPlayingXI.map((e, index) => (
+            {RecommendedPlayingXI && RecommendedPlayingXI.map((e, index) => (
               <div>
                 <img
                   src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${e.player.replace(/\s/g, "_") +
