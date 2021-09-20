@@ -37,7 +37,7 @@ export default function Topperformers(props) {
               <div className="flex flex-col border-r border-t border-l border-gray-300 rounded-bl-0 rounded-br-0 w-32 rounded-tl-md rounded-tr-md">
                 <img
                   class="h-20 w-20 object-cover object-center mx-auto mt-1"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${index + 1}.png`}
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${index + 1}.JPG`}
                   alt="player"
                 />
                 <p className="text-sm font-bold text-center">
@@ -203,7 +203,7 @@ export default function Topperformers(props) {
                         />
                       </p>
                     </div>
-                    <div>
+                    {/* <div>
                       <p
                         style={{ fontSize: "0.6rem" }}
                         className="font-semibold text-center"
@@ -228,7 +228,7 @@ export default function Topperformers(props) {
                           fontWeight="600"
                         />
                       </p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

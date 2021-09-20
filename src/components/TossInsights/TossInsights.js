@@ -40,16 +40,16 @@ const TossInsights = (props) => {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <Text
                 fontFamily="Roboto Condensed"
                 class="text-xs font-semibold"
                 text="Time left for the toss"
                 fontColor="#656666"
               />
-            </div>
+            </div> */}
 
-            <div className="flex items-center space-x-4">
+            {/* <div className="flex items-center space-x-4">
               <div>
                 <div className="bg-gray-100 border rounded-full h-12 w-12 flex items-center justify-center">
                   <Text
@@ -104,7 +104,7 @@ const TossInsights = (props) => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="space-y-10 ">
@@ -174,7 +174,7 @@ const TossInsights = (props) => {
         )}
         <div className="grid grid-cols-12 mt-2">
           <div className="col-span-5">
-            <div className="flex flex-col">
+            <div className="flex flex-col mt-8">
               <div>
                 <div className="absolute left-16">
                   <img
@@ -189,7 +189,7 @@ const TossInsights = (props) => {
                   />
                 </div>
               </div>
-              <div className="flex flex-col items-start mt-3">
+              {/* <div className="flex flex-col items-start mt-3">
                 <div className="">
                   <Text
                     fontFamily="Roboto Condensed"
@@ -248,7 +248,7 @@ const TossInsights = (props) => {
                     />
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="col-span-7">

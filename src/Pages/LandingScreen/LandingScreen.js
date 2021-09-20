@@ -19,7 +19,7 @@ const LandingScreen = ({ getPowerStatsData }) => {
 
   const getClientAuth = () => {
     axios.get(
-      `https://hapi.utter.ai/restclient/issue?clientID=${window.client_id}&domain=${window.domain_name}`
+      `https://hapi.utter.ai/restclient/issue?clientID=${'QdfTr0344Gdw8bm'}&domain=${'testclient.com'}`
     ).then((results) => {
       localStorage.setItem("clientAuthToken", results.data.token);
       axios.post(
