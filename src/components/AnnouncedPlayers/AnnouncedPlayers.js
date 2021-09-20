@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Text } from "../../common";
 import { io } from "socket.io-client";
 
+var selectedTeam = 0;
+
 const AnnouncedPlayers = (props) => {
   const [btn, setBtn] = useState(true);
   const [activeTeamData, setActiveTeamData] = useState([]);
@@ -23,9 +25,10 @@ const AnnouncedPlayers = (props) => {
     { playerName: "M. Siraj", isCaptain: false, playerRole: "bowler" }
   ];
 
-  const handleBtnClick = (flag, teamName) => {
+  const handleBtnClick = (flag, teamName,index) => {
     setActiveTeamData(anouncedPlayers.iplt20_2021_g1[teamName]);
     setBtn(flag, teamName);
+    selectedTeam = index;
   }
   const [ws, setWS] = useState(null);
   const [teamsdata, setTeamsData] = useState([]);
@@ -56,9 +59,9 @@ const AnnouncedPlayers = (props) => {
       }
       if (isMatched) {
         setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
-        setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[0]]);
+        setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
       } else {
-        localStorage.setItem('announced_players_data', JSON.stringify(evt.data));
+        localStorage.setItem('announced_players_data', evt.data);
         var announced_players_data = JSON.parse(localStorage.getItem('announced_players_data'));
         setAnouncedPlayers(announced_players_data);
         console.log("announced_players_data============>", announced_players_data);
@@ -69,16 +72,16 @@ const AnnouncedPlayers = (props) => {
         }
         if (isMatched) {
           setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
-          setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[0]]);
+          setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
         } else {
           setTeamsData([]);
           setActiveTeamData([]);
         }
         setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
-        setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[0]]);
+        setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
       }
       console.log('Not Found data');
-      localStorage.setItem('announced_players_data', JSON.stringify(evt.data));
+      localStorage.setItem('announced_players_data', evt.data);
       var announced_players_data = JSON.parse(localStorage.getItem('announced_players_data'));
       setAnouncedPlayers(announced_players_data);
       console.log("announced_players_data============>", announced_players_data);
@@ -89,14 +92,14 @@ const AnnouncedPlayers = (props) => {
       }
       if (isMatched) {
         setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
-        setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[0]]);
+        setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
       } else {
         setTeamsData([]);
         setActiveTeamData([]);
       }
 
       setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
-      setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[0]]);
+      setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
     };
 
     ws.onclose = () => {
@@ -125,7 +128,7 @@ const AnnouncedPlayers = (props) => {
         teamsdata.length > 0 ?
           <div className="flex justify-center -space-x-2">
             <button
-              onClick={() => handleBtnClick(true, teamsdata[0])}
+              onClick={() => handleBtnClick(true, teamsdata[0], 0)}
               className={`bg-gray-100 w-32  ${btn && "shadow-md border z-10 rounded-md"
                 } `}
             >
@@ -137,7 +140,7 @@ const AnnouncedPlayers = (props) => {
               />
             </button>
             <button
-              onClick={() => handleBtnClick(false, teamsdata[1])}
+              onClick={() => handleBtnClick(false, teamsdata[1], 1)}
               className={`bg-gray-100 w-32  rounded-md ${!btn && "shadow-md border z-10 rounded-md"
                 } `}
             >
