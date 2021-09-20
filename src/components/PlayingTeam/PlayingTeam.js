@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TopPerformers } from "..";
 import { Text } from "../../common";
 import { getFirstCharacter } from "../../utils/getFirstCharacter";
@@ -7,16 +7,13 @@ import InterestingInsights from "../InterestingInsights";
 const PlayingTeam = ({ powerStatsData }) => {
   const [section, setSection] = useState(0);
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
+  const [interestingInsightsData,setInterestingInsightsData] = useState({});
 
-  const data = [
-    "Among top order batsmen, Suresh Raina is the highest scorer with 513 runs against RCB",
-    "In the middle order, MS Dhoni has scored the highest - 254 runs against RCB",
-    "Virat Kohli has scored 30+ runs 14 times against CSK",
-    "RA Jadeja has taken 2 Wickets or more, 6 times against RCB",
-    "29 pacers have taken 97 wickets while 13 Spinners have taken 32 wickets for CSK against RCB",
-    "Imran Tahir has the best bowling figures of 4 overs 9 runs 3 wickets against RCB",
-    "Harhal Patel is the most expensive bowler having an economy rate 8 or more 3 times against CSK"
-  ];
+  useEffect(() =>{
+    console.log('Palying team');
+    setInterestingInsightsData(powerStatsData.TopInsights || {});
+  },[powerStatsData]);
+
 
   return (
     <div>
@@ -128,7 +125,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                 fontWeight="700"
               />
             </div>
-            <InterestingInsights />
+            <InterestingInsights propsInterestingInsight={interestingInsightsData} />
           </div>
         </div>
       </div>
@@ -155,7 +152,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                     <div class="flex-grow">
                       <Text
                         class="text-center text-sm"
-                        text="Among top order batsmen, Suresh Raina is the highest scorer with 513 runs against RCB"
+                        text={interestingInsightsData[1]}
                         fontColor="#707070"
                         fontWeight="700"
                       />
@@ -182,13 +179,14 @@ const PlayingTeam = ({ powerStatsData }) => {
                   </div>
                 </div>
                 {isDropDownVisible
-                  ? data.map((el, index) => (
+                  ? Object.keys(interestingInsightsData).map((el, index) => (
+                    index !=0?
                       <div class="w-full mt-2">
                         <div class="h-full flex items-start border-gray-200 border p-4 rounded-lg">
                           <div class="flex-grow">
                             <Text
                               class="text-center text-sm"
-                              text={el}
+                              text={interestingInsightsData[el]}
                               fontColor="#707070"
                               fontWeight="700"
                             />
@@ -214,6 +212,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                           </div>
                         </div>
                       </div>
+                      :null
                     ))
                   : ""}
               </div>
