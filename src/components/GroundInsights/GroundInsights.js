@@ -19,8 +19,8 @@ const GroundInsights = ({ powerStatsData }) => {
         data["avgRuns"] = el.AvgRuns;
       });
     powerStatsData?.GroundInsights?.Wickets.map((el) => {
-      data["avgWicketPercent"] = el.AvgWicketPercent;
-      data["avgWicketSpin"] = el.AvgWicketSpin;
+      data["avgWicketPercent"] = el.AvgWicketPacer;
+      data["avgWicketSpin"] = el.AvgWicketSpinner;
       data["pacerWickets"] = el.PacerWickets;
       data["spinnerWickets"] = el.SpinnerWickets;
     });
@@ -444,7 +444,7 @@ const GroundInsights = ({ powerStatsData }) => {
                             <Text
                               fontFamily="Roboto Condensed"
                               class="text-sm font-bold pb-1"
-                              text="178"
+                              text={data.avgRuns}
                               fontColor="#283574"
                             />
                             <div>
@@ -468,7 +468,7 @@ const GroundInsights = ({ powerStatsData }) => {
                             <Text
                               fontFamily="Roboto Condensed"
                               class="text-sm font-bold pb-1"
-                              text="254"
+                              text={data.highestRuns}
                               fontColor="#197F5C"
                             />
                             <div>
@@ -493,7 +493,7 @@ const GroundInsights = ({ powerStatsData }) => {
                               <Text
                                 fontFamily="Roboto Condensed"
                                 class="text-sm font-bold pb-1"
-                                text="49"
+                                text={data.lowestRuns}
                                 fontColor="#9F1C34"
                               />
                             </div>
@@ -531,7 +531,7 @@ const GroundInsights = ({ powerStatsData }) => {
                               <Text
                                 fontFamily="Roboto Condensed"
                                 class="text-sm font-bold text-center"
-                                text="4"
+                                text={data.avgWicketPercent}
                                 fontColor="#283574"
                               />
                             </div>
@@ -557,7 +557,7 @@ const GroundInsights = ({ powerStatsData }) => {
                               <Text
                                 fontFamily="Roboto Condensed"
                                 class="text-sm font-bold text-center"
-                                text="6"
+                                text={data.avgWicketSpin}
                                 fontColor="#197F5C"
                               />
                             </div>
