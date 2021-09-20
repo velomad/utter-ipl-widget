@@ -10,8 +10,9 @@ import {
   TossInsights
 } from "../../components";
 
-const LandingScreen = () => {
+const LandingScreen = ({getPowerStatsData}) => {
   const [powerStatsData, setPowerStatsData] = useState({});
+
   const token = localStorage.getItem("clientAuthToken");
 
   useEffect(() => {
@@ -30,6 +31,7 @@ const LandingScreen = () => {
     );
 
     setPowerStatsData(results.data);
+    getPowerStatsData(results.data);
   };
 
   console.log(powerStatsData);
