@@ -3,6 +3,7 @@ import { TopPerformers } from "..";
 import { Text } from "../../common";
 import { getFirstCharacter } from "../../utils/getFirstCharacter";
 import InterestingInsights from "../InterestingInsights";
+import { fixBrokenImg } from "../../utils/fixBrokenImg";
 
 const PlayingTeam = ({ powerStatsData }) => {
   const [section, setSection] = useState(0);

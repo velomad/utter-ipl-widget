@@ -31,7 +31,6 @@ function Navbar({ powerStatsData }) {
           src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
             teamOne && getFirstCharacter(teamOne)
           }.png`}
-          onError={(event) => fixBrokenImg(event)}
           className="w-20 object-contain"
         />
         <div className="bg-white rounded-full h-10 w-10 mt-4 sm:mr-4 mr-10">

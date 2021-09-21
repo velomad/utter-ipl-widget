@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Text } from "../../common";
+import { fixBrokenImg } from "../../utils/fixBrokenImg";
 
 export default function Topperformers(props) {
   const scrollable = useRef(null);
