@@ -7,7 +7,6 @@
   width: 100%;
   height: 5.5rem;
   overflow-y: hidden;
-  background-color: #ffeb00;
 }
 
 .slnt::before,
@@ -17,8 +16,8 @@
   height: 100%;
 }
 
+
 .slnt::before {
-  background-color: #ffeb00;
   transform: skew(-40deg);
   margin-right: -30px;
   position: relative;
@@ -28,7 +27,6 @@
 }
 
 .slnt::after {
-  background-image: linear-gradient(to right, #000000, #484848);
   width: 60%;
   position: relative;
   right: -31px;
@@ -125,6 +123,100 @@
   font-weight: 600;
   color: #8b8b8b; }
 
+  .rr-background {
+    background-color: #E21A80;
+  }
+
+  .pk-background {
+    background-color: #F11616;
+  }
+  
+
+  .csk-background {
+    background-color: #FFCC01;
+  }
+
+  .srh-background {
+    background-color: #E65802;
+  }
+
+  .dc-background {
+    background-color: #255FAB;
+  }
+
+  .mi-background {
+    background-color: #001848;
+  }
+  
+  .kkr-background {
+    background-color: #381F5C;
+  }
+  
+  .rcb-background {
+    background-color: #131720;
+  }
+  .rr-background::before {
+    background-color: #E21A80;
+  }
+
+  .pk-background::before {
+    background-color: #F11616;
+  }
+  
+
+  .csk-background::before {
+    background-color: #FFCC01;
+  }
+
+  .srh-background::before {
+    background-color: #E65802;
+  }
+
+  .dc-background::before {
+    background-color: #255FAB;
+  }
+
+  .mi-background::before {
+    background-color: #001848;
+  }
+  
+  .kkr-background::before {
+    background-color: #381F5C;
+  }
+  .rr-background-after::after {
+    background-color: #E21A80;
+  }
+
+  .pk-background-after::after {
+    background-color: #F11616;
+  }
+  
+
+  .csk-background-after::after {
+    background-color: #FFCC01;
+  }
+
+  .srh-background-after::after {
+    background-color: #E65802;
+  }
+
+  .dc-background-after::after {
+    background-color: #255FAB;
+  }
+
+  .mi-background-after::after {
+    background-color: #001848;
+  }
+  
+  .kkr-background-after::after {
+    background-color: #381F5C;
+  }
+  
+  .rcb-background-after::after{
+    background-color: #131720;
+  }
+  
+  
 .progress-circle.progress-0:after {
   background-image: linear-gradient(90deg, #ebebeb 50%, transparent 50%, transparent), linear-gradient(90deg, #66b8ff 50%, #ebebeb 50%, #ebebeb); }
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Text } from "../../common";
+import { imageChecker } from "../../Hooks/imageChecker";
 import { getFirstCharacter } from "../../utils/getFirstCharacter";
 
 function Navbar({ powerStatsData }) {
@@ -14,9 +15,17 @@ function Navbar({ powerStatsData }) {
   }, [powerStatsData]);
   console.log(powerStatsData.TeamMatches);
 
+  imageChecker()
+
   return (
     <div className="overflow-hidden">
-      <div className="slnt absolute overflow-hidden"></div>
+      <div
+        className={`slnt absolute overflow-hidden ${getFirstCharacter(
+          teamOne
+        ).toLowerCase()}-background ${getFirstCharacter(
+          teamTwo
+        ).toLowerCase()}-background-after`}
+      ></div>
       <div className="relative z-10 flex justify-between top-2 sm:px-20 px-7">
         <img
           src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${

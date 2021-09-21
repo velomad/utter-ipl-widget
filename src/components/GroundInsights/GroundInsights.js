@@ -5,6 +5,7 @@ import {
   TossInsights,
   AnnouncedPlayers
 } from "../../components";
+import { Event } from "../../utils/tracker";
 const GroundInsights = ({ powerStatsData }) => {
   const [selectedVal, setSelectedVal] = useState("ground");
 
@@ -50,7 +51,13 @@ const GroundInsights = ({ powerStatsData }) => {
                 fontWeight="600"
               />
             </div>
-            <div onClick={() => setSelectedVal("pitch")}>
+            <div
+              onClick={() => {
+                setSelectedVal("pitch");
+                console.log("test");
+                Event("Insight", "View Pitch Insight", "Pitch Insight");
+              }}
+            >
               <Text
                 class={
                   selectedVal == "pitch"
