@@ -24,6 +24,13 @@ const GroundInsights = ({ powerStatsData }) => {
       data["pacerWickets"] = el.PacerWickets;
       data["spinnerWickets"] = el.SpinnerWickets;
     });
+
+    if (powerStatsData.WeatherInsights) {
+      powerStatsData?.WeatherInsights?.map((el) => {
+        data["temperature"] = el.Temperature;
+        data["humidity"] = el.Humidity;
+      });
+    }
   }
 
   return (
@@ -96,7 +103,7 @@ const GroundInsights = ({ powerStatsData }) => {
                     <Text
                       fontFamily="Roboto Condensed"
                       class="text-sm inline-block font-semibold pb-1"
-                      text="34"
+                      text={data.temperature}
                       fontColor="#9F1C34"
                     />
                     <div className="inline-block">
@@ -120,7 +127,7 @@ const GroundInsights = ({ powerStatsData }) => {
                     <Text
                       fontFamily="Roboto Condensed"
                       class="text-sm inline-block font-semibold pb-1"
-                      text="20%"
+                      text={data.humidity + "%"}
                       fontColor="#283574"
                     />
                   </div>
@@ -291,7 +298,14 @@ const GroundInsights = ({ powerStatsData }) => {
         ) : (
           ""
         )}
-        {selectedVal == "pitch" ? <PitchInsights hideTitle={true} /> : ""}
+        {selectedVal == "pitch" ? (
+          <PitchInsights
+            hideTitle={true}
+            pitchInsightsData={powerStatsData.PitchInsights}
+          />
+        ) : (
+          ""
+        )}
         {selectedVal == "toss" ? (
           <TossInsights
             hideTitle={true}
@@ -385,7 +399,7 @@ const GroundInsights = ({ powerStatsData }) => {
                         <Text
                           fontFamily="Roboto Condensed"
                           class="text-xs"
-                          text="34C"
+                          text={data.temperature + "C"}
                           fontColor="#283574"
                           fontWeight="900"
                         />
@@ -400,7 +414,7 @@ const GroundInsights = ({ powerStatsData }) => {
                         <Text
                           fontFamily="Roboto Condensed"
                           class="text-xs"
-                          text="20%"
+                          text={data.humidity + "%"}
                           fontColor="#283574"
                           fontWeight="900"
                         />
@@ -588,7 +602,14 @@ const GroundInsights = ({ powerStatsData }) => {
           ) : (
             ""
           )}
-          {selectedVal == "pitch" ? <PitchInsights hideTitle={true} /> : ""}
+          {selectedVal == "pitch" ? (
+            <PitchInsights
+              hideTitle={true}
+              pitchInsightsData={powerStatsData.PitchInsights}
+            />
+          ) : (
+            ""
+          )}
           {selectedVal == "toss" ? (
             <TossInsights
               hideTitle={true}

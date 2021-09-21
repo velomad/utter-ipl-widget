@@ -15,7 +15,6 @@ const PlayingTeam = ({ powerStatsData }) => {
     setRecommendedPlayingXI(powerStatsData.RecommendedPlayingXI);
   }, [powerStatsData]);
 
-
   return (
     <div>
       <div className="hidden sm:block">
@@ -90,16 +89,17 @@ const PlayingTeam = ({ powerStatsData }) => {
 
                 <div className="col-span-6 py-8">
                   <div className="grid grid-cols-4 place-items-center gap-6">
-                    {RecommendedPlayingXI && RecommendedPlayingXI.map((e, index) => (
-                      <div>
-                        <img
-                          src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${e.player.replace(/\s/g, "_") +
-                            ".JPG"
+                    {RecommendedPlayingXI &&
+                      RecommendedPlayingXI.map((e, index) => (
+                        <div>
+                          <img
+                            src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                              e.player.replace(/\s/g, "_") + ".png"
                             }`}
-                          className="w-20"
-                        />
-                      </div>
-                    ))}
+                            className="w-20"
+                          />
+                        </div>
+                      ))}
                   </div>
                 </div>
               </div>
@@ -125,7 +125,9 @@ const PlayingTeam = ({ powerStatsData }) => {
                 fontWeight="700"
               />
             </div>
-            <InterestingInsights propsInterestingInsight={interestingInsightsData} />
+            <InterestingInsights
+              propsInterestingInsight={interestingInsightsData}
+            />
           </div>
         </div>
       </div>
@@ -179,18 +181,18 @@ const PlayingTeam = ({ powerStatsData }) => {
                   </div>
                 </div>
                 {isDropDownVisible
-                  ? Object.keys(interestingInsightsData).map((el, index) => (
-                    index != 0 ?
-                      <div class="w-full mt-2">
-                        <div class="h-full flex items-start border-gray-200 border p-4 rounded-lg">
-                          <div class="flex-grow">
-                            <Text
-                              class="text-center text-sm"
-                              text={interestingInsightsData[el]}
-                              fontColor="#707070"
-                              fontWeight="700"
-                            />
-                            {/* <div className="flex mt-1 justify-around  items-center">
+                  ? Object.keys(interestingInsightsData).map((el, index) =>
+                      index != 0 ? (
+                        <div class="w-full mt-2">
+                          <div class="h-full flex items-start border-gray-200 border p-4 rounded-lg">
+                            <div class="flex-grow">
+                              <Text
+                                class="text-center text-sm"
+                                text={interestingInsightsData[el]}
+                                fontColor="#707070"
+                                fontWeight="700"
+                              />
+                              {/* <div className="flex mt-1 justify-around  items-center">
                               <div>
                                 <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/bat.svg" />
                               </div>
@@ -209,11 +211,11 @@ const PlayingTeam = ({ powerStatsData }) => {
                                 />
                               </div>
                             </div> */}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      : null
-                  ))
+                      ) : null
+                    )
                   : ""}
               </div>
             </div>
@@ -308,16 +310,17 @@ const PlayingTeam = ({ powerStatsData }) => {
         </div>
         <div className="flex flex-nowrap items-center mt-4 px-2">
           <div className="grid grid-cols-4 place-items-center gap-6">
-            {RecommendedPlayingXI && RecommendedPlayingXI.map((e, index) => (
-              <div>
-                <img
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${e.player.replace(/\s/g, "_") +
-                    ".JPG"
+            {RecommendedPlayingXI &&
+              RecommendedPlayingXI.map((e, index) => (
+                <div>
+                  <img
+                    src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                      e.player.replace(/\s/g, "_") + ".png"
                     }`}
-                  className="w-20"
-                />
-              </div>
-            ))}
+                    className="w-20"
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </div>

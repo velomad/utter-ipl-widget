@@ -34,11 +34,12 @@ export default function Headtohead(props) {
         <div className="grid grid-cols-10 relative">
           <div class="col-span-4 ">
             <div className="flex justify-start h-24">
-              <div className="absolute bottom-0 left-14" >
+              <div className="absolute bottom-0 left-14">
                 <img
                   className=" z-0 w-14 sm:w-20 object-cover object-center mx-auto"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${team1.teamName && getFirstCharacter(team1.teamName)
-                    }.JPG`}
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                    team1.teamName && getFirstCharacter(team1.teamName)
+                  }.JPG`}
                   // src={`https://utterai.s3.ap-south-1.amazonaws.com/team/img/${
                   //   team1.teamName.replace(/\s/g, "_") + ".png"
                   // }`}
@@ -48,8 +49,9 @@ export default function Headtohead(props) {
               <div className="absolute">
                 <img
                   class="z-10 w-20 object-cover object-center mx-auto"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${team1.teamName && getFirstCharacter(team1.teamName)
-                    }_C.png`}
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                    team1.teamName && getFirstCharacter(team1.teamName)
+                  }_C.png`}
                   alt="player1"
                 />
               </div>
@@ -59,8 +61,9 @@ export default function Headtohead(props) {
             <Text
               fontFamily="Roboto Condensed"
               class="font-bold text-center"
-              text={`Matches Played : ${props.teamMatches && props.teamMatches[0]?.MatchesPlayed
-                }`}
+              text={`Matches Played : ${
+                props.teamMatches && props.teamMatches[0]?.MatchesPlayed
+              }`}
               fontColor="#283574"
               fontSize="0.6rem"
             />
@@ -77,16 +80,18 @@ export default function Headtohead(props) {
                 <img
                   class="z-0 w-14 sm:w-20 object-cover object-center mx-auto"
                   // src="/static/images/rcb_logo.png"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${team2.teamName && getFirstCharacter(team2.teamName)
-                    }.JPG`}
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                    team2.teamName && getFirstCharacter(team2.teamName)
+                  }.JPG`}
                   alt="player2"
                 />
               </div>
               <div className="absolute">
                 <img
                   class="z-10 w-20 object-cover object-center mx-auto"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${team2.teamName && getFirstCharacter(team2.teamName)
-                    }_C.png`}
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                    team2.teamName && getFirstCharacter(team2.teamName)
+                  }_C.png`}
                   alt="player1"
                 />
               </div>
@@ -109,8 +114,13 @@ export default function Headtohead(props) {
                 text={Number(team1.winPercent)}
               /> */}
 
-              <div class={`progress-circle progress-${Math.floor(team1.winPercent)}`}><span>{team1.winPercent}</span></div>
-
+              <div
+                class={`progress-circle progress-${Math.floor(
+                  team1.winPercent
+                )}`}
+              >
+                <span>{team1.winPercent}</span>
+              </div>
             </div>
 
             <div className="flex flex-row justify-center py-2 items-center space-x-1">
@@ -213,7 +223,13 @@ export default function Headtohead(props) {
               /> */}
 
               <div class="progress-circle-container">
-                <div class={`progress-circle progress-${Math.floor(team2.winPercent)}`}><span>{team2.winPercent}</span></div>
+                <div
+                  class={`progress-circle progress-${Math.floor(
+                    team2.winPercent
+                  )}`}
+                >
+                  <span>{team2.winPercent}</span>
+                </div>
               </div>
             </div>
             <div className="flex flex-row justify-center py-2 items-center space-x-1">
