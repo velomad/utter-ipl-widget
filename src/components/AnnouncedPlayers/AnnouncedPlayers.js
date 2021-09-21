@@ -1,42 +1,42 @@
 import React, { useEffect, useState } from "react";
 import { Text } from "../../common";
 import { io } from "socket.io-client";
+import axios from "axios";
 
 var selectedTeam = 0;
 
 const AnnouncedPlayers = (props) => {
   const [btn, setBtn] = useState(true);
   const [activeTeamData, setActiveTeamData] = useState([]);
+  const [anouncedPlayers, setAnouncedPlayers] = useState({});
 
-  const rcbData = [
-    { playerName: "Virat Kohli", isCaptain: true, playerRole: "batsmen" },
-    { playerName: "Devdutt Padikkal", isCaptain: false, playerRole: "batsmen" },
-    { playerName: "Rajat Patidar", isCaptain: false, playerRole: "batsmen" },
-    { playerName: "Glen Maxwell", isCaptain: false, playerRole: "batsmen" },
-    { playerName: "AB De Villiers", isCaptain: false, playerRole: "keeper" },
-    { playerName: "Daniel Sams", isCaptain: true, playerRole: "allRounder" },
-    {
-      playerName: "W. Sundar",
-      isCaptain: false,
-      playerRole: "allRounder"
-    },
-    { playerName: "K. Richardson", isCaptain: false, playerRole: "allRounder" },
-    { playerName: "Y. Chahal", isCaptain: false, playerRole: "bowler" },
-    { playerName: "M. Siraj", isCaptain: false, playerRole: "bowler" }
-  ];
-
-  const handleBtnClick = (flag, teamName,index) => {
-    setActiveTeamData(anouncedPlayers.iplt20_2021_g1[teamName]);
+  const handleBtnClick = (flag, teamName, index) => {
+    setActiveTeamData(anouncedPlayers.iplt20_2021_g032[teamName]);
     setBtn(flag, teamName);
     selectedTeam = index;
   }
   const [ws, setWS] = useState(null);
   const [teamsdata, setTeamsData] = useState([]);
 
-  const [anouncedPlayers, setAnouncedPlayers] = useState({});
 
   useEffect(() => {
-    setWS(createWebScoket("wss://hapi.utter.ai/matchupdates"));
+    axios
+      .post("https://hapi.utter.ai/api/v1.0/getCurrentPlayingXI", null, {
+        headers: {
+          Authorization: `Bearer ${window.utter_token}`
+        }
+      })
+      .then((results) => {
+        if (results.data.hasOwnProperty('current_match_playingxi')) {
+          console.log('results', results);
+          setTeamsData(Object.keys(results.data.current_match_playingxi.iplt20_2021_g032));
+          setActiveTeamData(results.data.current_match_playingxi.iplt20_2021_g032[Object.keys(results.data.current_match_playingxi.iplt20_2021_g032)[selectedTeam]]);
+          setAnouncedPlayers(results.data.current_match_playingxi);
+        } else {
+          setWS(createWebScoket("wss://hapi.utter.ai/matchupdates"));
+        }
+      })
+      .catch((e) => console.log(e));
   }, []);
 
   const createWebScoket = (url) => {
