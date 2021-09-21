@@ -150,6 +150,7 @@ export default function Topperformers(props) {
                     el.Batsman.replace(/\s/g, "_") + ".png"
                   }`}
                   alt="player"
+                  onError={(event) => fixBrokenImg(event)}
                 />
                 {/* <p className="text-sm font-bold text-center">
                   <Text

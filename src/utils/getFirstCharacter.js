@@ -7,4 +7,3 @@
   return firstCharcters.toUpperCase();
 };
 
-console.log(getFirstCharacter("chennai suo kinhgs")); 

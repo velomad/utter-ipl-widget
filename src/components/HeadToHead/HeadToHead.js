@@ -3,6 +3,7 @@ import { Text } from "../../common";
 import { getFirstCharacter } from "../../utils/getFirstCharacter";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { fixBrokenImg } from "../../utils/fixBrokenImg";
 
 export default function Headtohead(props) {
   let team1 = {};
@@ -53,6 +54,7 @@ export default function Headtohead(props) {
                     team1.teamName && getFirstCharacter(team1.teamName)
                   }_C.png`}
                   alt="player1"
+                  onError={(event) => fixBrokenImg(event)}
                 />
               </div>
             </div>
@@ -93,6 +95,7 @@ export default function Headtohead(props) {
                     team2.teamName && getFirstCharacter(team2.teamName)
                   }_C.png`}
                   alt="player1"
+                  onError={(event) => fixBrokenImg(event)}
                 />
               </div>
             </div>

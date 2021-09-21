@@ -61,6 +61,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                         <img
                           src="https://utterai.s3.ap-south-1.amazonaws.com/img/wildcard.png"
                           className="mx-auto"
+                          onError={(event) => fixBrokenImg(event)}
                         />
                       </div>
 
@@ -97,6 +98,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                               e.player.replace(/\s/g, "_") + ".png"
                             }`}
                             className="w-20"
+                          onError={(event) => fixBrokenImg(event)}
                           />
                         </div>
                       ))}
@@ -318,6 +320,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                       e.player.replace(/\s/g, "_") + ".png"
                     }`}
                     className="w-20"
+                    onError={(event) => fixBrokenImg(event)}
                   />
                 </div>
               ))}
