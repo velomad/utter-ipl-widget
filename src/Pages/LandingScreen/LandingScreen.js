@@ -18,26 +18,20 @@ const LandingScreen = ({ getPowerStatsData }) => {
   }, []);
 
   const getClientAuth = () => {
-    axios.get(
-      `https://hapi.utter.ai/restclient/issue?clientID=${'QdfTr0344Gdw8bm'}&domain=${'testclient.com'}`
-    ).then((results) => {
-      localStorage.setItem("clientAuthToken", results.data.token);
+      localStorage.setItem("clientAuthToken", window.utter_token);
       axios.post(
         "https://hapi.utter.ai/api/v1.0/getPowerStats",
         null,
         {
           headers: {
-            Authorization: `Bearer ${results.data.token}`
+            Authorization: `Bearer ${window.utter_token}`
           }
         }
       ).then((Utterresults) => {
         setPowerStatsData(Utterresults.data);
         getPowerStatsData(Utterresults.data);
       }).catch((e) => console.log(e));
-    }).catch((e) => console.log(e));
   };
-
-
   console.log(powerStatsData);
 
   return (
