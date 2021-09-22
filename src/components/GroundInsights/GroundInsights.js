@@ -104,7 +104,7 @@ const GroundInsights = ({ powerStatsData }) => {
               <div className="flex justify-between w-full">
                 <div className="flex space-x-2 items-center">
                   <div>
-                    <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/icon-sunny.svg" />{" "}
+                    <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/icon-sunny.svg" />{" "}
                   </div>
                   <div>
                     <Text
@@ -128,7 +128,7 @@ const GroundInsights = ({ powerStatsData }) => {
                 </div>
                 <div className="flex space-x-2 items-center">
                   <div>
-                    <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/icon-rainy.svg" />{" "}
+                    <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/icon-rainy.svg" />{" "}
                   </div>
                   <div>
                     <Text
@@ -142,7 +142,7 @@ const GroundInsights = ({ powerStatsData }) => {
               </div>
               <div>
                 <img
-                  src="https://utterai.s3.ap-south-1.amazonaws.com/img/stadium.png"
+                  src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/stadium.png"
                   className="w-40 mx-auto"
                 />
               </div>
@@ -164,7 +164,7 @@ const GroundInsights = ({ powerStatsData }) => {
             <div className="space-y-2">
               <div className="flex items-center">
                 <div>
-                  <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/batting.png" />
+                  <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/batting.png" />
                 </div>
 
                 <div className="text-center border bg-gray-100 w-full rounded-md flex justify-between p-4">
@@ -246,7 +246,7 @@ const GroundInsights = ({ powerStatsData }) => {
 
               <div className="flex items-center ">
                 <div>
-                  <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/bowling.svg" />
+                  <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/bowling.svg" />
                 </div>
                 <div className="text-center w-full px-12 border bg-gray-100 rounded-md flex justify-between p-4">
                   <div>
@@ -399,7 +399,7 @@ const GroundInsights = ({ powerStatsData }) => {
                       <div className="flex flex-row justify-center space-x-1 items-center">
                         <div>
                           <img
-                            src="https://utterai.s3.ap-south-1.amazonaws.com/img/icon-sunny.svg"
+                            src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/icon-sunny.svg"
                             className="w-5 h-5"
                           />{" "}
                         </div>
@@ -414,7 +414,7 @@ const GroundInsights = ({ powerStatsData }) => {
                       <div className="flex flex-row justify-center space-x-1 items-center">
                         <div>
                           <img
-                            src="https://utterai.s3.ap-south-1.amazonaws.com/img/icon-rainy.svg"
+                            src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/icon-rainy.svg"
                             className="w-5 h-5"
                           />{" "}
                         </div>
@@ -428,7 +428,7 @@ const GroundInsights = ({ powerStatsData }) => {
                       </div>
                     </div>
                     <div className="mt-5">
-                      <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/stadium.png" />
+                      <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/stadium.png" />
                     </div>
                     <div>
                       <div className="text-center pt-2">
@@ -457,7 +457,7 @@ const GroundInsights = ({ powerStatsData }) => {
                         className="w-8 h-8 absolute -top-4 -ml-4"
                         style={{ left: "50%" }}
                       >
-                        <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/batting.png" />
+                        <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/batting.png" />
                       </div>
                       <div className="w-full box1 bg-gray-100 h-20 rounded-md">
                         <div className="flex flex-row justify-between items-center p-2 pt-5 py-2">
@@ -543,7 +543,7 @@ const GroundInsights = ({ powerStatsData }) => {
                         className="w-8 h-8 absolute -top-4 -ml-4"
                         style={{ left: "50%" }}
                       >
-                        <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/bowling.svg" />
+                        <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/bowling.svg" />
                       </div>
                       <div className="w-full box2 bg-gray-100 h-20 rounded-md">
                         <div className="flex flex-row justify-between space-x-4 items-center pt-5 p-2">

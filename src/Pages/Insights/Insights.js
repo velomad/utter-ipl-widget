@@ -18,7 +18,7 @@ const Insights = () => {
             </div>
             <div className="flex  justify-around  items-center">
               <div>
-                <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/bat.svg" />
+                <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/bat.svg" />
               </div>
               <div className="font-bold">
                 <Text text="133.6" fontColor="#707070" fontWeight="700" />

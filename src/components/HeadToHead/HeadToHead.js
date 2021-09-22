@@ -38,9 +38,9 @@ export default function Headtohead(props) {
               <div className="absolute bottom-0 left-14">
                 <img
                   className=" z-0 w-14 sm:w-20 object-cover object-center mx-auto"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
                     team1.teamName && getFirstCharacter(team1.teamName)
-                  }.JPG`}
+                  }.png`}
                   // src={`https://utterai.s3.ap-south-1.amazonaws.com/team/img/${
                   //   team1.teamName.replace(/\s/g, "_") + ".png"
                   // }`}
@@ -49,8 +49,8 @@ export default function Headtohead(props) {
               </div>
               <div className="absolute">
                 <img
-                  class="z-10 w-20 object-cover object-center mx-auto"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                  class="z-10 w-24 object-cover object-center mx-auto"
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
                     team1.teamName && getFirstCharacter(team1.teamName)
                   }_C.png`}
                   alt="player1"
@@ -82,16 +82,16 @@ export default function Headtohead(props) {
                 <img
                   class="z-0 w-14 sm:w-20 object-cover object-center mx-auto"
                   // src="/static/images/rcb_logo.png"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
                     team2.teamName && getFirstCharacter(team2.teamName)
-                  }.JPG`}
+                  }.png`}
                   alt="player2"
                 />
               </div>
               <div className="absolute">
                 <img
-                  class="z-10 w-20 object-cover object-center mx-auto"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                  class="z-10 w-24 object-cover object-center mx-auto"
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
                     team2.teamName && getFirstCharacter(team2.teamName)
                   }_C.png`}
                   alt="player1"
@@ -212,7 +212,7 @@ export default function Headtohead(props) {
             />
             <div className="h-16 w-16 mx-auto ">
               {/* <img
-                src="https://utterai.s3.ap-south-1.amazonaws.com/img/33.png"
+                src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/33.png"
                 className="mx-auto"
               /> */}
               {/* <CircularProgressbar

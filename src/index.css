@@ -151,10 +151,11 @@
   .kkr-background {
     background-color: #381F5C;
   }
-  
+
   .rcb-background {
     background-color: #131720;
   }
+
   .rr-background::before {
     background-color: #E21A80;
   }
@@ -183,6 +184,11 @@
   .kkr-background::before {
     background-color: #381F5C;
   }
+
+  .rcb-background::after {
+    background-color: #131720;
+  }
+
   .rr-background-after::after {
     background-color: #E21A80;
   }

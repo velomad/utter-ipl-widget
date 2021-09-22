@@ -15,7 +15,7 @@ function Navbar({ powerStatsData }) {
   }, [powerStatsData]);
   console.log(powerStatsData.TeamMatches);
 
-  imageChecker()
+  imageChecker();
 
   return (
     <div className="overflow-hidden">
@@ -26,14 +26,14 @@ function Navbar({ powerStatsData }) {
           teamTwo
         ).toLowerCase()}-background-after`}
       ></div>
-      <div className="relative z-10 flex justify-between top-2 sm:px-20 px-7">
+      <div className="relative z-10 flex items-center mt-2 justify-between sm:px-20 px-7">
         <img
-          src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+          src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
             teamOne && getFirstCharacter(teamOne)
           }.png`}
-          className="w-20 object-contain"
+          className="w-16 object-contain"
         />
-        <div className="bg-white rounded-full h-10 w-10 mt-4 sm:mr-4 mr-10">
+        <div className="bg-white rounded-full h-10 w-10 mt-4 -mr-1 mr-2">
           <Text
             class="text-center mt-2"
             text="VS"
@@ -42,10 +42,10 @@ function Navbar({ powerStatsData }) {
           />
         </div>
         <img
-          src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+          src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
             teamTwo && getFirstCharacter(teamTwo)
           }.png`}
-          className="w-20 object-contain"
+          className="w-16 object-contain"
         />
       </div>
     </div>

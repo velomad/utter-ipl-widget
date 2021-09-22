@@ -60,7 +60,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                     <div className="bg-gray-100 py-8 space-y-4">
                       <div>
                         <img
-                          src="https://utterai.s3.ap-south-1.amazonaws.com/img/wildcard.png"
+                          src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/wildcard.png"
                           className="mx-auto"
                           onError={(event) => fixBrokenImg(event)}
                         />
@@ -90,20 +90,30 @@ const PlayingTeam = ({ powerStatsData }) => {
                 </div>
 
                 <div className="col-span-6 py-8">
-                  <div className="grid grid-cols-4 place-items-center gap-6">
-                    {RecommendedPlayingXI &&
-                      RecommendedPlayingXI.map((e, index) => (
-                        <div>
-                          <img
-                            src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
-                              e.player.replace(/\s/g, "_") + ".png"
-                            }`}
-                            className="w-20"
-                          onError={(event) => fixBrokenImg(event)}
-                          />
-                        </div>
-                      ))}
-                  </div>
+                  {RecommendedPlayingXI ? (
+                    <div className="grid grid-cols-4 place-items-center gap-6">
+                      {RecommendedPlayingXI &&
+                        RecommendedPlayingXI.map((e, index) => (
+                          <div>
+                            <img
+                              src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
+                                e.player.replace(/\s/g, "_") + ".png"
+                              }`}
+                              className="w-20"
+                              onError={(event) => fixBrokenImg(event)}
+                            />
+                          </div>
+                        ))}
+                    </div>
+                  ) : (
+                    <div className="text-center">
+                      <Text
+                        text="Yet To Be Announced"
+                        fontColor="#283574"
+                        fontWeight="700"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             ) : (
@@ -114,7 +124,7 @@ const PlayingTeam = ({ powerStatsData }) => {
           <div className="col-span-3 bg-gray-100 border rounded-md space-y-4 p-4">
             <div>
               <img
-                src="https://utterai.s3.ap-south-1.amazonaws.com/img/cricket.png"
+                src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/cricket.png"
                 className="mx-auto"
                 width="40px"
               />
@@ -163,7 +173,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                       />
                       {/* <div className="flex mt-1 justify-around  items-center">
                         <div>
-                          <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/bat.svg" />
+                          <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/bat.svg" />
                         </div>
                         <Text
                           class="text-center text-sm"
@@ -197,7 +207,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                               />
                               {/* <div className="flex mt-1 justify-around  items-center">
                               <div>
-                                <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/bat.svg" />
+                                <img src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/bat.svg" />
                               </div>
                               <Text
                                 class="text-center text-sm"
@@ -279,7 +289,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                   <img
                     alt="team"
                     class="p-2 bg-gray-100 object-cover object-center flex-shrink-0 rounded-sm mr-2"
-                    src="https://utterai.s3.ap-south-1.amazonaws.com/img/wildcard.png"
+                    src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/wildcard.png"
                   />
                   {/* <div className='bg-indigo-700 w-12 text-left mr-2'>
                     <Text
@@ -317,7 +327,7 @@ const PlayingTeam = ({ powerStatsData }) => {
               RecommendedPlayingXI.map((e, index) => (
                 <div>
                   <img
-                    src={`https://utterai.s3.ap-south-1.amazonaws.com/img/${
+                    src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
                       e.player.replace(/\s/g, "_") + ".png"
                     }`}
                     className="w-20"

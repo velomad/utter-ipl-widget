@@ -30,7 +30,7 @@ const PitchInsgihts = (props) => {
           <div className="flex flex-col space-y-4">
             <div>
               <img
-                src="https://utterai.s3.ap-south-1.amazonaws.com/img/pitch.png"
+                src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/pitch.png"
                 className="w-32 sm:w-36"
                 style={{ webkitTransform: "scaleX(-1)" }}
               />
