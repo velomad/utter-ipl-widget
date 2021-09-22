@@ -13,8 +13,6 @@ function Navbar({ powerStatsData }) {
       setTeamTwo(powerStatsData.TeamMatches[0].AgainstTeam);
     }
   }, [powerStatsData]);
-  console.log(powerStatsData.TeamMatches);
-
   imageChecker();
 
   return (

@@ -7,7 +7,6 @@ export default function Topperformers(props) {
 
   const handleScroll = (scrollOffset) => {
     scrollable.current.scrollLeft += scrollOffset;
-    console.log(scrollable);
   };
 
   return (

@@ -54,7 +54,6 @@ const GroundInsights = ({ powerStatsData }) => {
             <div
               onClick={() => {
                 setSelectedVal("pitch");
-                console.log("test");
                 Event("Insight", "View Pitch Insight", "Pitch Insight");
               }}
             >

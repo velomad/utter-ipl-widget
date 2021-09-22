@@ -48,14 +48,12 @@ const AnnouncedPlayers = (props) => {
   const createWebScoket = (url) => {
     let ws = new WebSocket(url);
     ws.onopen = () => {
-      console.log("connected");
     };
 
     ws.onmessage = (evt) => {
       var announced_players_data;
       let isMatched = null;
       if (!!localStorage.getItem('announced_players_data')) {
-        console.log('Found data');
         announced_players_data = JSON.parse(localStorage.getItem('announced_players_data'));
         if (Object.keys(announced_players_data).includes(matchKey)) {
           isMatched = true;
@@ -70,7 +68,6 @@ const AnnouncedPlayers = (props) => {
         localStorage.setItem('announced_players_data', evt.data);
         var announced_players_data = JSON.parse(localStorage.getItem('announced_players_data'));
         setAnouncedPlayers(announced_players_data);
-        console.log("announced_players_data============>", announced_players_data);
         if (Object.keys(announced_players_data).includes(matchKey)) {
           isMatched = true;
         } else {
@@ -84,11 +81,9 @@ const AnnouncedPlayers = (props) => {
           setActiveTeamData([]);
         }
       }
-      console.log('Not Found data');
       localStorage.setItem('announced_players_data', evt.data);
       var announced_players_data = JSON.parse(localStorage.getItem('announced_players_data'));
       setAnouncedPlayers(announced_players_data);
-      console.log("announced_players_data============>", announced_players_data);
       if (Object.keys(announced_players_data).includes(matchKey)) {
         isMatched = true;
       } else {
@@ -104,7 +99,6 @@ const AnnouncedPlayers = (props) => {
     };
 
     ws.onclose = () => {
-      console.log("disconnected");
       // automatically try to connect on connection loss
       setWS(createWebScoket(url));
     };

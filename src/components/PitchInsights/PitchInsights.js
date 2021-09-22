@@ -11,8 +11,6 @@ const PitchInsgihts = (props) => {
     });
   }
 
-  console.log(data);
-
   return (
     <div className="sm:p-2 rounded-md py-2">
       {!!props.hideTitle ? (
