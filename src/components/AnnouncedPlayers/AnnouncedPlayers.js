@@ -4,6 +4,7 @@ import { io } from "socket.io-client";
 import axios from "axios";
 
 var selectedTeam = 0;
+var matchKey = "";
 
 const AnnouncedPlayers = (props) => {
   const [btn, setBtn] = useState(true);
@@ -18,22 +19,27 @@ const AnnouncedPlayers = (props) => {
   const [ws, setWS] = useState(null);
   const [teamsdata, setTeamsData] = useState([]);
 
-
   useEffect(() => {
     axios
       .post("https://hapi.utter.ai/api/v1.0/getCurrentPlayingXI", null, {
         headers: {
-          Authorization: `Bearer ${window.utter_token}`
+          // Authorization: `Bearer ${window.utter_token}`
+          Authorization: `Bearer ${'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVdHRlckFJIiwidXNlciI6eyJ1c2VybmFtZSI6IndlYnBsYXRmb3JtQVBJIiwicm9sZSI6InJlc3RDbGllbnQifSwiaWF0IjoxNjMyMjQ2NTY0LCJpZCI6IlFkZlRyMDM0NEdkdzhibSIsImV4cCI6MTYzMjMzMjk2NH0.AzkorK0AZWEw1XaSp-Q34qjMAEqRbEG_l3nMeibC_WM'}`
         }
       })
       .then((results) => {
-        if (results.data.hasOwnProperty('current_match_playingxi')) {
-          console.log('results', results);
-          setTeamsData(Object.keys(results.data.current_match_playingxi.iplt20_2021_g032));
-          setActiveTeamData(results.data.current_match_playingxi.iplt20_2021_g032[Object.keys(results.data.current_match_playingxi.iplt20_2021_g032)[selectedTeam]]);
-          setAnouncedPlayers(results.data.current_match_playingxi);
-        } else {
-          setWS(createWebScoket("wss://hapi.utter.ai/matchupdates"));
+        for (var match_key in results.data.current_match_playingxi) {
+          matchKey= match_key;
+          var teams = results.data.current_match_playingxi[match_key];
+          if (Object.keys(teams).length) {
+            //means teams is defined and player list is there
+            setTeamsData(Object.keys(results.data.current_match_playingxi[matchKey]));
+            setActiveTeamData(results.data.current_match_playingxi[matchKey][Object.keys(results.data.current_match_playingxi[matchKey])[selectedTeam]]);
+            setAnouncedPlayers(results.data.current_match_playingxi);
+          } else {
+            //means empty object
+            setWS(createWebScoket("wss://hapi.utter.ai/matchupdates"));
+          }
         }
       })
       .catch((e) => console.log(e));
@@ -51,55 +57,50 @@ const AnnouncedPlayers = (props) => {
       if (!!localStorage.getItem('announced_players_data')) {
         console.log('Found data');
         announced_players_data = JSON.parse(localStorage.getItem('announced_players_data'));
-        if (Object.keys(announced_players_data).includes("iplt20_2021_g1")) {
+        if (Object.keys(announced_players_data).includes(matchKey)) {
           isMatched = true;
         } else {
           isMatched = false;
         }
       }
       if (isMatched) {
-        setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
-        setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
+        setTeamsData(Object.keys(announced_players_data[matchKey]));
+        setActiveTeamData(announced_players_data[matchKey][Object.keys(announced_players_data[matchKey])[selectedTeam]]);
       } else {
         localStorage.setItem('announced_players_data', evt.data);
         var announced_players_data = JSON.parse(localStorage.getItem('announced_players_data'));
         setAnouncedPlayers(announced_players_data);
         console.log("announced_players_data============>", announced_players_data);
-        if (Object.keys(announced_players_data).includes("iplt20_2021_g1")) {
+        if (Object.keys(announced_players_data).includes(matchKey)) {
           isMatched = true;
         } else {
           isMatched = false;
         }
         if (isMatched) {
-          setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
-          setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
+          setTeamsData(Object.keys(announced_players_data[matchKey]));
+          setActiveTeamData(announced_players_data[matchKey][Object.keys(announced_players_data[matchKey])[selectedTeam]]);
         } else {
           setTeamsData([]);
           setActiveTeamData([]);
         }
-        // setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
-        // setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
       }
       console.log('Not Found data');
       localStorage.setItem('announced_players_data', evt.data);
       var announced_players_data = JSON.parse(localStorage.getItem('announced_players_data'));
       setAnouncedPlayers(announced_players_data);
       console.log("announced_players_data============>", announced_players_data);
-      if (Object.keys(announced_players_data).includes("iplt20_2021_g1")) {
+      if (Object.keys(announced_players_data).includes(matchKey)) {
         isMatched = true;
       } else {
         isMatched = false;
       }
       if (isMatched) {
-        setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
-        setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
+        setTeamsData(Object.keys(announced_players_data[matchKey]));
+        setActiveTeamData(announced_players_data[matchKey][Object.keys(announced_players_data[matchKey])[selectedTeam]]);
       } else {
         setTeamsData([]);
         setActiveTeamData([]);
       }
-
-      // setTeamsData(Object.keys(announced_players_data.iplt20_2021_g1));
-      // setActiveTeamData(announced_players_data.iplt20_2021_g1[Object.keys(announced_players_data.iplt20_2021_g1)[selectedTeam]]);
     };
 
     ws.onclose = () => {
