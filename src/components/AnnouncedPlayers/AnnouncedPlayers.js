@@ -12,7 +12,7 @@ const AnnouncedPlayers = (props) => {
   const [anouncedPlayers, setAnouncedPlayers] = useState({});
 
   const handleBtnClick = (flag, teamName, index) => {
-    setActiveTeamData(anouncedPlayers.iplt20_2021_g032[teamName]);
+    setActiveTeamData(anouncedPlayers[matchKey][teamName]);
     setBtn(flag, teamName);
     selectedTeam = index;
   };
