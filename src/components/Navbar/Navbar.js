@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Text } from "../../common";
-import { imageChecker } from "../../Hooks/imageChecker";
 import { getFirstCharacter } from "../../utils/getFirstCharacter";
 
 function Navbar({ powerStatsData }) {
@@ -13,7 +12,6 @@ function Navbar({ powerStatsData }) {
       setTeamTwo(powerStatsData.TeamMatches[0].AgainstTeam);
     }
   }, [powerStatsData]);
-  imageChecker();
 
   return (
     <div className="overflow-hidden">
