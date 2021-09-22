@@ -325,7 +325,7 @@ const PlayingTeam = ({ powerStatsData }) => {
         </div>
         <div className="flex flex-nowrap items-center mt-4 px-2">
           <div className="grid grid-cols-4 place-items-center gap-6">
-            {RecommendedPlayingXI.length &&
+            {RecommendedPlayingXI.length !== 0 &&
               RecommendedPlayingXI.map((e, index) => (
                 <div>
                   <img
