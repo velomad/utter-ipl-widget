@@ -13,7 +13,9 @@ const PlayingTeam = ({ powerStatsData }) => {
 
   useEffect(() => {
     setInterestingInsightsData(powerStatsData.TopInsights || {});
-    setRecommendedPlayingXI(powerStatsData.RecommendedPlayingXI);
+    if(!!powerStatsData.RecommendedPlayingXI){
+      setRecommendedPlayingXI(powerStatsData.RecommendedPlayingXI);
+    }
   }, [powerStatsData]);
 
   return (
@@ -90,9 +92,9 @@ const PlayingTeam = ({ powerStatsData }) => {
                 </div>
 
                 <div className="col-span-6 py-8">
-                  {RecommendedPlayingXI ? (
+                  {RecommendedPlayingXI.length !==0 ? (
                     <div className="grid grid-cols-4 place-items-center gap-6">
-                      {RecommendedPlayingXI &&
+                      {RecommendedPlayingXI.length &&
                         RecommendedPlayingXI.map((e, index) => (
                           <div>
                             <img
@@ -323,7 +325,7 @@ const PlayingTeam = ({ powerStatsData }) => {
         </div>
         <div className="flex flex-nowrap items-center mt-4 px-2">
           <div className="grid grid-cols-4 place-items-center gap-6">
-            {RecommendedPlayingXI &&
+            {RecommendedPlayingXI.length &&
               RecommendedPlayingXI.map((e, index) => (
                 <div>
                   <img
