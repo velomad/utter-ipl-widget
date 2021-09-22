@@ -13,7 +13,7 @@ const PlayingTeam = ({ powerStatsData }) => {
 
   useEffect(() => {
     setInterestingInsightsData(powerStatsData.TopInsights || {});
-    if(!!powerStatsData.RecommendedPlayingXI){
+    if (!!powerStatsData.RecommendedPlayingXI) {
       setRecommendedPlayingXI(powerStatsData.RecommendedPlayingXI);
     }
   }, [powerStatsData]);
@@ -92,7 +92,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                 </div>
 
                 <div className="col-span-6 py-8">
-                  {RecommendedPlayingXI.length !==0 ? (
+                  {RecommendedPlayingXI.length !== 0 ? (
                     <div className="grid grid-cols-4 place-items-center gap-6">
                       {RecommendedPlayingXI.length &&
                         RecommendedPlayingXI.map((e, index) => (
@@ -104,6 +104,15 @@ const PlayingTeam = ({ powerStatsData }) => {
                               className="w-20"
                               onError={(event) => fixBrokenImg(event)}
                             />
+                            <div className="text-center">
+                              <Text
+                                class="text-center font-bold pr-2"
+                                text={e.player}
+                                fontColor="#283574"
+                                fontWeight="700"
+                                fontSize="0.8rem"
+                              />
+                            </div>
                           </div>
                         ))}
                     </div>
@@ -327,15 +336,26 @@ const PlayingTeam = ({ powerStatsData }) => {
           <div className="grid grid-cols-4 place-items-center gap-6">
             {RecommendedPlayingXI.length !== 0 &&
               RecommendedPlayingXI.map((e, index) => (
-                <div>
-                  <img
-                    src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
-                      e.player.replace(/\s/g, "_") + ".png"
-                    }`}
-                    className="w-20"
-                    onError={(event) => fixBrokenImg(event)}
-                  />
-                </div>
+                <React.Fragment>
+                  <div>
+                    <img
+                      src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
+                        e.player.replace(/\s/g, "_") + ".png"
+                      }`}
+                      className="w-20"
+                      onError={(event) => fixBrokenImg(event)}
+                    />
+                    <div className="text-center">
+                      <Text
+                        class="text-center font-bold pr-2"
+                        text={e.player}
+                        fontColor="#283574"
+                        fontWeight="700"
+                        fontSize="0.7rem"
+                      />
+                    </div>
+                  </div>
+                </React.Fragment>
               ))}
           </div>
         </div>

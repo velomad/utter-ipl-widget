@@ -152,13 +152,13 @@ export default function Topperformers(props) {
                   alt="player"
                   onError={(event) => fixBrokenImg(event)}
                 />
-                {/* <p className="text-sm font-bold text-center">
+                <p className="text-sm font-bold text-center">
                   <Text
                     text={el.Batsman}
                     fontColor="#283574"
                     fontWeight="600"
                   />
-                </p> */}
+                </p>
               </div>
               <div className="flex flex-col bg-gray-100 border border-gray-300 rounded-md w-36">
                 <div className="flex flex-col items-center space-y-2 py-2">
@@ -173,7 +173,7 @@ export default function Topperformers(props) {
 
                   <div className="flex flex-row items-center space-x-1">
                     {el.RunsScored.map((runs, index) => (
-                      <div className="bg-white w-5 h-5 rounded-full">
+                      <div className="bg-white mx-auto flex items-center justify-center w-5 h-5 rounded-full">
                         <p
                           style={{ fontSize: "0.7rem" }}
                           className="font-bold text-xs flex items-center justify-center"

@@ -136,7 +136,7 @@
     background-color: #FFCC01;
   }
 
-  .srh-background {
+  .sh-background {
     background-color: #E65802;
   }
 
@@ -169,7 +169,7 @@
     background-color: #FFCC01;
   }
 
-  .srh-background::before {
+  .sh-background::before {
     background-color: #E65802;
   }
 
@@ -202,7 +202,7 @@
     background-color: #FFCC01;
   }
 
-  .srh-background-after::after {
+  .sh-background-after::after {
     background-color: #E65802;
   }
 
