@@ -22,7 +22,7 @@ const LandingScreen = ({ getPowerStatsData }) => {
     axios
       .post("https://hapi.utter.ai/api/v1.0/getPowerStats", null, {
         headers: {
-          Authorization: `Bearer ${window.utter_token}`
+          Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVdHRlckFJIiwidXNlciI6eyJ1c2VybmFtZSI6IndlYnBsYXRmb3JtQVBJIiwicm9sZSI6InJlc3RDbGllbnQifSwiaWF0IjoxNjMyMzcxODEwLCJpZCI6IlFkZlRyMDM0NEdkdzhibSIsImV4cCI6MTYzMjQ1ODIxMH0.4a-MiqzCIhGL9y2y7vb3nQmJl6iNiqt-Pewfa_uAMmo"}`
         }
       })
       .then((Utterresults) => {
