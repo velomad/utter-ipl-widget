@@ -130,7 +130,6 @@
   .pk-background {
     background-color: #F11616;
   }
-  
 
   .csk-background {
     background-color: #FFCC01;
@@ -156,6 +155,11 @@
     background-color: #131720;
   }
 
+
+  .rcb-background::before {
+    background-color: #131720;
+  }
+
   .rr-background::before {
     background-color: #E21A80;
   }
@@ -164,7 +168,6 @@
     background-color: #F11616;
   }
   
-
   .csk-background::before {
     background-color: #FFCC01;
   }
@@ -185,7 +188,9 @@
     background-color: #381F5C;
   }
 
-  .rcb-background::after {
+
+
+  .rcb-background-after::after {
     background-color: #131720;
   }
 
@@ -197,7 +202,6 @@
     background-color: #F11616;
   }
   
-
   .csk-background-after::after {
     background-color: #FFCC01;
   }
@@ -218,9 +222,7 @@
     background-color: #381F5C;
   }
   
-  .rcb-background-after::after{
-    background-color: #131720;
-  }
+
   
   
 .progress-circle.progress-0:after {
