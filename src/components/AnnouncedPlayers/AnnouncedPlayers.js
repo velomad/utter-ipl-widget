@@ -23,7 +23,8 @@ const AnnouncedPlayers = (props) => {
     axios
       .post("https://hapi.utter.ai/api/v1.0/getCurrentPlayingXI", null, {
         headers: {
-          Authorization: `Bearer ${window.utter_token}`
+          // Authorization: `Bearer ${window.utter_token}`
+          Authorization: `Bearer ${'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVdHRlckFJIiwidXNlciI6eyJ1c2VybmFtZSI6IndlYnBsYXRmb3JtQVBJIiwicm9sZSI6InJlc3RDbGllbnQifSwiaWF0IjoxNjMyNTEyNDAwLCJpZCI6IlFkZlRyMDM0NEdkdzhibSIsImV4cCI6MTYzMjU5ODgwMH0.rNW_gp3yxD-T4qeEHWKK1YSbN-qwVoM9Q8Wx8XlniH0'}`
         }
       })
       .then((results) => {
@@ -37,9 +38,9 @@ const AnnouncedPlayers = (props) => {
             );
             setActiveTeamData(
               results.data.current_match_playingxi[matchKey][
-                Object.keys(results.data.current_match_playingxi[matchKey])[
-                  selectedTeam
-                ]
+              Object.keys(results.data.current_match_playingxi[matchKey])[
+              selectedTeam
+              ]
               ]
             );
             setAnouncedPlayers(results.data.current_match_playingxi);
@@ -54,55 +55,11 @@ const AnnouncedPlayers = (props) => {
 
   const createWebScoket = (url) => {
     let ws = new WebSocket(url);
-    ws.onopen = () => {};
-
-    ws.onmessage = (evt) => {
+    ws.onopen = () => {
       var announced_players_data;
       let isMatched = null;
-      if (!!localStorage.getItem("announced_players_data")) {
-        announced_players_data = JSON.parse(
-          localStorage.getItem("announced_players_data")
-        );
-        if (Object.keys(announced_players_data).includes(matchKey)) {
-          isMatched = true;
-        } else {
-          isMatched = false;
-        }
-      }
-      if (isMatched) {
-        setTeamsData(Object.keys(announced_players_data[matchKey]));
-        setActiveTeamData(
-          announced_players_data[matchKey][
-            Object.keys(announced_players_data[matchKey])[selectedTeam]
-          ]
-        );
-      } else {
-        localStorage.setItem("announced_players_data", evt.data);
-        var announced_players_data = JSON.parse(
-          localStorage.getItem("announced_players_data")
-        );
-        setAnouncedPlayers(announced_players_data);
-        if (Object.keys(announced_players_data).includes(matchKey)) {
-          isMatched = true;
-        } else {
-          isMatched = false;
-        }
-        if (isMatched) {
-          setTeamsData(Object.keys(announced_players_data[matchKey]));
-          setActiveTeamData(
-            announced_players_data[matchKey][
-              Object.keys(announced_players_data[matchKey])[selectedTeam]
-            ]
-          );
-        } else {
-          setTeamsData([]);
-          setActiveTeamData([]);
-        }
-      }
-      localStorage.setItem("announced_players_data", evt.data);
-      var announced_players_data = JSON.parse(
-        localStorage.getItem("announced_players_data")
-      );
+      var announced_players_data = {"iplt20_2021_g1": {}};
+      // var announced_players_data = evt.data
       setAnouncedPlayers(announced_players_data);
       if (Object.keys(announced_players_data).includes(matchKey)) {
         isMatched = true;
@@ -113,13 +70,36 @@ const AnnouncedPlayers = (props) => {
         setTeamsData(Object.keys(announced_players_data[matchKey]));
         setActiveTeamData(
           announced_players_data[matchKey][
-            Object.keys(announced_players_data[matchKey])[selectedTeam]
+          Object.keys(announced_players_data[matchKey])[selectedTeam]
           ]
         );
       } else {
         setTeamsData([]);
         setActiveTeamData([]);
       }
+    };
+
+    ws.onmessage = (evt) => {
+      // var announced_players_data;
+      // let isMatched = null;
+      // var announced_players_data = evt.data
+      // setAnouncedPlayers(announced_players_data);
+      // if (Object.keys(announced_players_data).includes(matchKey)) {
+      //   isMatched = true;
+      // } else {
+      //   isMatched = false;
+      // }
+      // if (isMatched) {
+      //   setTeamsData(Object.keys(announced_players_data[matchKey]));
+      //   setActiveTeamData(
+      //     announced_players_data[matchKey][
+      //     Object.keys(announced_players_data[matchKey])[selectedTeam]
+      //     ]
+      //   );
+      // } else {
+      //   setTeamsData([]);
+      //   setActiveTeamData([]);
+      // }
     };
 
     ws.onclose = () => {
@@ -146,9 +126,8 @@ const AnnouncedPlayers = (props) => {
         <div className="flex justify-center -space-x-2">
           <button
             onClick={() => handleBtnClick(true, teamsdata[0], 0)}
-            className={`bg-gray-100 w-32  ${
-              btn && "shadow-md border z-10 rounded-md"
-            } `}
+            className={`bg-gray-100 w-32  ${btn && "shadow-md border z-10 rounded-md"
+              } `}
           >
             <Text
               fontFamily="Roboto Condensed"
@@ -159,9 +138,8 @@ const AnnouncedPlayers = (props) => {
           </button>
           <button
             onClick={() => handleBtnClick(false, teamsdata[1], 1)}
-            className={`bg-gray-100 w-32  rounded-md ${
-              !btn && "shadow-md border z-10 rounded-md"
-            } `}
+            className={`bg-gray-100 w-32  rounded-md ${!btn && "shadow-md border z-10 rounded-md"
+              } `}
           >
             <Text
               fontFamily="Roboto Condensed"
