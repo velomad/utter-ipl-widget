@@ -8,6 +8,11 @@ import {
 import { Event } from "../../utils/tracker";
 const GroundInsights = ({ powerStatsData }) => {
   const [selectedVal, setSelectedVal] = useState("ground");
+  const [tossData, setTossData] = useState({});
+
+  const mainTossData = (val) => {
+    setTossData(val);
+  };
 
   let data = {};
 
@@ -316,12 +321,13 @@ const GroundInsights = ({ powerStatsData }) => {
           <TossInsights
             hideTitle={true}
             TossInsights={powerStatsData.TossInsights}
+            TossDataFromAnnounced={tossData}
           />
         ) : (
           ""
         )}
         {selectedVal == "announcedplayers" && window.innerWidth > "768" ? (
-          <AnnouncedPlayers hideTitle={true} />
+          <AnnouncedPlayers hideTitle={true} getTossData={(tossData) => mainTossData(tossData)} />
         ) : (
           ""
         )}
@@ -620,12 +626,13 @@ const GroundInsights = ({ powerStatsData }) => {
             <TossInsights
               hideTitle={true}
               TossInsights={powerStatsData.TossInsights}
+              getTossData={(tossData) => mainTossData(tossData)}
             />
           ) : (
             ""
           )}
           {selectedVal == "announcedplayers" && window.innerWidth < "768" ? (
-            <AnnouncedPlayers hideTitle={true} />
+            <AnnouncedPlayers hideTitle={true} getTossData={(tossData) => mainTossData(tossData)} />
           ) : (
             ""
           )}

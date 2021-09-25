@@ -28,26 +28,30 @@ const AnnouncedPlayers = (props) => {
         }
       })
       .then((results) => {
-        for (var match_key in results.data.current_match_playingxi) {
-          matchKey = match_key;
-          var teams = results.data.current_match_playingxi[match_key];
-          if (Object.keys(teams).length) {
-            //means teams is defined and player list is there
-            setTeamsData(
-              Object.keys(results.data.current_match_playingxi[matchKey])
-            );
-            setActiveTeamData(
-              results.data.current_match_playingxi[matchKey][
-              Object.keys(results.data.current_match_playingxi[matchKey])[
-              selectedTeam
-              ]
-              ]
-            );
-            setAnouncedPlayers(results.data.current_match_playingxi);
-          } else {
-            //means empty object
-            setWS(createWebScoket("wss://hapi.utter.ai/matchupdates"));
+        if (Object.keys(results.data.current_match_playingxi).length > 0) {
+          for (var match_key in results.data.current_match_playingxi) {
+            matchKey = match_key;
+            var teams = results.data.current_match_playingxi[match_key];
+            if (Object.keys(teams).length) {
+              //means teams is defined and player list is there
+              setTeamsData(
+                Object.keys(results.data.current_match_playingxi[matchKey])
+              );
+              setActiveTeamData(
+                results.data.current_match_playingxi[matchKey][
+                Object.keys(results.data.current_match_playingxi[matchKey])[
+                selectedTeam
+                ]
+                ]
+              );
+              setAnouncedPlayers(results.data.current_match_playingxi);
+            } else {
+              //means empty object
+              setWS(createWebScoket("wss://hapi.utter.ai/matchupdates"));
+            }
           }
+        } else {
+          setWS(createWebScoket("wss://hapi.utter.ai/matchupdates"));
         }
       })
       .catch((e) => console.log(e));
@@ -55,13 +59,18 @@ const AnnouncedPlayers = (props) => {
 
   const createWebScoket = (url) => {
     let ws = new WebSocket(url);
-    ws.onopen = () => { };
+    ws.onopen = () => {};
 
     ws.onmessage = (evt) => {
       var announced_players_data;
       let isMatched = null;
       var announced_players_data = evt.data;
       let getCalculatedData = calculateData(announced_players_data);
+      if (Object.keys(getCalculatedData).length > 0) {
+        if (getCalculatedData.havingTossData) {
+          props.getTossData(getCalculatedData.tossData);
+        }
+      }
       if (activeTeamData.length == 0) {
         if (getCalculatedData) {
           if (Object.keys(getCalculatedData).length > 0) {
