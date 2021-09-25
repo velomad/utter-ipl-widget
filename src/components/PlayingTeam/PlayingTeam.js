@@ -42,7 +42,7 @@ const PlayingTeam = ({ powerStatsData }) => {
 
             {section === 1 ? (
               <div className="grid grid-cols-8 gap-4">
-                <div className="col-span-2 p-2 space-y-6">
+                {/* <div className="col-span-2 p-2 space-y-6">
                   <div className="">
                     <Text
                       fontSize="12px"
@@ -89,9 +89,9 @@ const PlayingTeam = ({ powerStatsData }) => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="col-span-6 py-8">
+                <div className="col-span-8 py-8">
                   {RecommendedPlayingXI.length !== 0 ? (
                     <div className="grid grid-cols-4 place-items-center gap-6">
                       {RecommendedPlayingXI.length &&
@@ -294,7 +294,7 @@ const PlayingTeam = ({ powerStatsData }) => {
             />
           </div>
           <div class="col-span-8 px-2">
-            <div class="w-full">
+            {/* <div class="w-full">
               <div class="h-full flex items-center border-gray-200 border p-1 rounded-lg">
                 <div className="flex flex-col items-center">
                   <img
@@ -302,7 +302,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                     class="p-2 bg-gray-100 object-cover object-center flex-shrink-0 rounded-sm mr-2"
                     src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/wildcard.png"
                   />
-                  {/* <div className='bg-indigo-700 w-12 text-left mr-2'>
+                  <div className='bg-indigo-700 w-12 text-left mr-2'>
                     <Text
                       class='text-center font-bold'
                       text="Dhoni"
@@ -310,7 +310,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                       fontWeight="700"
                       fontSize="0.5rem"
                     />
-                  </div> */}
+                  </div>
                 </div>
                 <div class="flex-grow items-center">
                   <Text
@@ -329,7 +329,7 @@ const PlayingTeam = ({ powerStatsData }) => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="flex flex-nowrap items-center mt-4 px-2">

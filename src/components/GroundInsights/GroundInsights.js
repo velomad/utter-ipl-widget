@@ -150,7 +150,7 @@ const GroundInsights = ({ powerStatsData }) => {
                   className="w-40 mx-auto"
                 />
               </div>
-              <div className="text-center">
+              <div className="text-center" style={{ maxWidth: "10rem" }}>
                 <Text
                   fontFamily="Roboto Condensed"
                   class="text-sm font-semibold pb-1"
@@ -321,7 +321,10 @@ const GroundInsights = ({ powerStatsData }) => {
           ""
         )}
         {selectedVal == "announcedplayers" && window.innerWidth > "768" ? (
-          <AnnouncedPlayers hideTitle={true} getTossData={(tossData) => mainTossData(tossData)} />
+          <AnnouncedPlayers
+            hideTitle={true}
+            getTossData={(tossData) => mainTossData(tossData)}
+          />
         ) : (
           ""
         )}
@@ -431,7 +434,6 @@ const GroundInsights = ({ powerStatsData }) => {
                     </div>
                     <div>
                       <div className="text-center pt-2">
-                       
                         <Text
                           fontFamily="Roboto Condensed"
                           class="font-semibold"
@@ -620,7 +622,10 @@ const GroundInsights = ({ powerStatsData }) => {
             ""
           )}
           {selectedVal == "announcedplayers" && window.innerWidth < "768" ? (
-            <AnnouncedPlayers hideTitle={true} getTossData={(tossData) => mainTossData(tossData)} />
+            <AnnouncedPlayers
+              hideTitle={true}
+              getTossData={(tossData) => mainTossData(tossData)}
+            />
           ) : (
             ""
           )}
