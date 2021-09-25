@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Text } from "../../common";
+import axios from "axios"
 let TossTextDataOg;
 
 const TossInsights = (props) => {
@@ -8,15 +9,34 @@ const TossInsights = (props) => {
   const [tossTextData, setTossTextData] = useState('');
 
   useEffect(() => {
-    if (!!props.TossDataFromAnnounced && Object.keys(props.TossDataFromAnnounced).length > 0) {
-      setTossTextData(props.TossDataFromAnnounced);
-      TossTextDataOg = props.TossDataFromAnnounced;
-    }
+    axios
+      .post("https://hapi.utter.ai/api/v1.0/getCurrentMatchToss", null, {
+        headers: {
+          // Authorization: `Bearer ${window.utter_token}`
+          Authorization: `Bearer ${'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVdHRlckFJIiwidXNlciI6eyJ1c2VybmFtZSI6IndlYnBsYXRmb3JtQVBJIiwicm9sZSI6InJlc3RDbGllbnQifSwiaWF0IjoxNjMyNTE3MDc0LCJpZCI6IlFkZlRyMDM0NEdkdzhibSIsImV4cCI6MTYzMjYwMzQ3NH0.wq27KTiMm_o8uqnwIy64bVVUeEdEV3iR-QxjN_MbTfc'}`
+        }
+      })
+      .then((results) => {
+        if (Object.keys(results.data).includes('status') && !results.data.status) {
+          if (!!props.TossDataFromAnnounced && Object.keys(props.TossDataFromAnnounced).length > 0) {
+            setTossTextData(props.TossDataFromAnnounced);
+          }
+        } else {
+          console.log('Toss API', results);
+          if (Object.keys(results.data).length > 0) {
+            if (Object.keys(results.data.current_match_toss).length > 0) {
+              Object.keys(results.data.current_match_toss).map((el, index) => {
+                if (!!results.data.current_match_toss[el].str) {
+                  setTossTextData(results.data.current_match_toss[el].str);
+                }
+              });
+            }
+          }
+        }
+      })
+      .catch((e) => console.log(e));
   }, []);
   const toggleToss = () => {
-    if (!!TossTextDataOg) {
-      setTossTextData(TossTextDataOg);
-    }
     setToggleTossScreen(!toggleTossScreen);
   }
 

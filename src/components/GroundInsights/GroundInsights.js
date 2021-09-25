@@ -317,7 +317,7 @@ const GroundInsights = ({ powerStatsData }) => {
         ) : (
           ""
         )}
-        {selectedVal == "toss" ? (
+        {selectedVal == "toss" && window.innerWidth > "768" ? (
           <TossInsights
             hideTitle={true}
             TossInsights={powerStatsData.TossInsights}
@@ -622,7 +622,7 @@ const GroundInsights = ({ powerStatsData }) => {
           ) : (
             ""
           )}
-          {selectedVal == "toss" ? (
+          {selectedVal == "toss" && window.innerWidth < "768" ? (
             <TossInsights
               hideTitle={true}
               TossInsights={powerStatsData.TossInsights}
