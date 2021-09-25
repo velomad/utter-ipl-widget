@@ -7,8 +7,7 @@ const TossInsights = (props) => {
   const { TossInsights } = props;
   const [toggleTossScreen, setToggleTossScreen] = useState(true);
   const [tossTextData, setTossTextData] = useState('');
-
-  useEffect(() => {
+  const fetchDataFromAPI = () => {
     axios
       .post("https://hapi.utter.ai/api/v1.0/getCurrentMatchToss", null, {
         headers: {
@@ -22,7 +21,6 @@ const TossInsights = (props) => {
             setTossTextData(props.TossDataFromAnnounced);
           }
         } else {
-          console.log('Toss API', results);
           if (Object.keys(results.data).length > 0) {
             if (Object.keys(results.data.current_match_toss).length > 0) {
               Object.keys(results.data.current_match_toss).map((el, index) => {
@@ -35,6 +33,14 @@ const TossInsights = (props) => {
         }
       })
       .catch((e) => console.log(e));
+  }
+
+  useEffect(() => {
+    if (!!props.TossDataFromAnnounced && Object.keys(props.TossDataFromAnnounced).length > 0) {
+      setTossTextData(props.TossDataFromAnnounced);
+    } else {
+      fetchDataFromAPI();
+    }
   }, []);
   const toggleToss = () => {
     setToggleTossScreen(!toggleTossScreen);

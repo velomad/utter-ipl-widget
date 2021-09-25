@@ -19,7 +19,7 @@ const GroundInsights = ({ powerStatsData }) => {
   if (powerStatsData) {
     if (powerStatsData.GroundInsights)
       powerStatsData?.GroundInsights?.Runs.map((el) => {
-        data["groundName"] = el.Ground;
+        data["groundName"] = el.Venue;
         data["highestRuns"] = el.HighestRuns;
         data["lowestRuns"] = el.LowestRuns;
         data["avgRuns"] = el.AvgRuns;
@@ -155,12 +155,6 @@ const GroundInsights = ({ powerStatsData }) => {
                   fontFamily="Roboto Condensed"
                   class="text-sm font-semibold pb-1"
                   text={data.groundName}
-                  fontColor="#283574"
-                />
-                <Text
-                  fontFamily="Roboto Condensed"
-                  class="text-xs font-semibold pb-1"
-                  text="Bengaluru, Karnataka"
                   fontColor="#283574"
                 />
               </div>
@@ -437,17 +431,11 @@ const GroundInsights = ({ powerStatsData }) => {
                     </div>
                     <div>
                       <div className="text-center pt-2">
+                       
                         <Text
                           fontFamily="Roboto Condensed"
                           class="font-semibold"
-                          text="M chinnaswamy Stadium"
-                          fontColor="#283574"
-                          fontSize="0.6rem"
-                        />
-                        <Text
-                          fontFamily="Roboto Condensed"
-                          class="font-semibold"
-                          text="Bengaluru, Karnataka"
+                          text={data.groundName}
                           fontColor="#283574"
                           fontSize="0.6rem"
                         />

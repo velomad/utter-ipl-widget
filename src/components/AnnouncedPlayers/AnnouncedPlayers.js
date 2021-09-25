@@ -5,6 +5,8 @@ import axios from "axios";
 
 var selectedTeam = 0;
 var matchKey = "";
+var isHavingSockData = false;
+var dataFetchedFromAPI = false;
 
 const AnnouncedPlayers = (props) => {
   const [btn, setBtn] = useState(true);
@@ -19,7 +21,7 @@ const AnnouncedPlayers = (props) => {
   const [ws, setWS] = useState(null);
   const [teamsdata, setTeamsData] = useState([]);
 
-  useEffect(() => {
+  const fetchSocketAPI = () => {
     axios
       .post("https://hapi.utter.ai/api/v1.0/getCurrentPlayingXI", null, {
         headers: {
@@ -32,7 +34,6 @@ const AnnouncedPlayers = (props) => {
             matchKey = match_key;
             var teams = results.data.current_match_playingxi[match_key];
             if (Object.keys(teams).length) {
-              //means teams is defined and player list is there
               setTeamsData(
                 Object.keys(results.data.current_match_playingxi[matchKey])
               );
@@ -44,22 +45,25 @@ const AnnouncedPlayers = (props) => {
                 ]
               );
               setAnouncedPlayers(results.data.current_match_playingxi);
+              dataFetchedFromAPI = true;
             } else {
               //means empty object
-              setWS(createWebScoket("wss://hapi.utter.ai/matchupdates"));
             }
           }
         } else {
-          setWS(createWebScoket("wss://hapi.utter.ai/matchupdates"));
+          setTeamsData([]);
+          setActiveTeamData([]);
         }
       })
       .catch((e) => console.log(e));
+  }
+  useEffect(() => {
+    setWS(createWebScoket("wss://hapi.utter.ai/matchupdates"));
   }, []);
 
   const createWebScoket = (url) => {
     let ws = new WebSocket(url);
-    ws.onopen = () => {};
-
+    ws.onopen = () => { };
     ws.onmessage = (evt) => {
       var announced_players_data;
       let isMatched = null;
@@ -106,6 +110,12 @@ const AnnouncedPlayers = (props) => {
 
       }
     };
+    if (!ws.onmessage) {
+      isHavingSockData = false;
+    }
+    if (!isHavingSockData && !dataFetchedFromAPI) {
+      fetchSocketAPI();
+    }
     ws.onclose = () => {
       // automatically try to connect on connection loss
       setWS(createWebScoket(url));
