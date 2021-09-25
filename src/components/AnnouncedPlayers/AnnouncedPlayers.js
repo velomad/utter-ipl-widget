@@ -23,8 +23,7 @@ const AnnouncedPlayers = (props) => {
     axios
       .post("https://hapi.utter.ai/api/v1.0/getCurrentPlayingXI", null, {
         headers: {
-          // Authorization: `Bearer ${window.utter_token}`
-          Authorization: `Bearer ${'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVdHRlckFJIiwidXNlciI6eyJ1c2VybmFtZSI6IndlYnBsYXRmb3JtQVBJIiwicm9sZSI6InJlc3RDbGllbnQifSwiaWF0IjoxNjMyNTEyNDAwLCJpZCI6IlFkZlRyMDM0NEdkdzhibSIsImV4cCI6MTYzMjU5ODgwMH0.rNW_gp3yxD-T4qeEHWKK1YSbN-qwVoM9Q8Wx8XlniH0'}`
+          Authorization: `Bearer ${window.utter_token}`
         }
       })
       .then((results) => {
