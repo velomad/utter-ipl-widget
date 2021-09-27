@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Text } from "../../common";
-import axios from "axios"
+import axios from "axios";
 let TossTextDataOg;
 
 const TossInsights = (props) => {
   const { TossInsights } = props;
-  const [tossTextData, setTossTextData] = useState('');
+  const [tossTextData, setTossTextData] = useState("");
   const fetchDataFromAPI = () => {
     axios
       .post("https://hapi.utter.ai/api/v1.0/getCurrentMatchToss", null, {
@@ -14,8 +14,14 @@ const TossInsights = (props) => {
         }
       })
       .then((results) => {
-        if (Object.keys(results.data).includes('status') && !results.data.status) {
-          if (!!props.TossDataFromAnnounced && Object.keys(props.TossDataFromAnnounced).length > 0) {
+        if (
+          Object.keys(results.data).includes("status") &&
+          !results.data.status
+        ) {
+          if (
+            !!props.TossDataFromAnnounced &&
+            Object.keys(props.TossDataFromAnnounced).length > 0
+          ) {
             setTossTextData(props.TossDataFromAnnounced);
           }
         } else {
@@ -31,16 +37,18 @@ const TossInsights = (props) => {
         }
       })
       .catch((e) => console.log(e));
-  }
+  };
 
   useEffect(() => {
-    if (!!props.TossDataFromAnnounced && Object.keys(props.TossDataFromAnnounced).length > 0) {
+    if (
+      !!props.TossDataFromAnnounced &&
+      Object.keys(props.TossDataFromAnnounced).length > 0
+    ) {
       setTossTextData(props.TossDataFromAnnounced);
     } else {
       fetchDataFromAPI();
     }
   }, []);
-
 
   let data = {};
   if (TossInsights) {
@@ -63,26 +71,33 @@ const TossInsights = (props) => {
         /> */}
         <div className="flex relative justify-between px-4 items-center py-4 ">
           <div className="space-y-6">
-            <div className="cursor-pointer">
-              <div className="absolute left-20" >
-                <img
-                  src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/tails.png"
-                  className="w-20  right-10"
-                />
+            {!tossTextData ? (
+              <div className="cursor-pointer">
+                <div className="absolute left-20">
+                  <img
+                    src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/tails.png"
+                    className="w-20  right-10"
+                  />
+                </div>
+                <div className="z-20">
+                  <img
+                    src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/heads.png"
+                    className="w-20"
+                  />
+                </div>
               </div>
-              <div className="z-20">
-                <img
-                  src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/heads.png"
-                  className="w-20"
-                />
+            ) : (
+              <div className="text-center text-sm text-gray-600  py-8 font-bold">
+                {tossTextData && (
+                  <Text
+                    fontFamily="Roboto Condensed"
+                    class="text-sm "
+                    text={tossTextData}
+                    fontColor="#283574"
+                  />
+                )}
               </div>
-              <div className="text-center text-sm text-gray-600  py-6 font-bold">
-                {
-                  tossTextData && tossTextData
-                }
-              </div>
-            </div>
-
+            )}
             {/* <div>
               <Text
                 fontFamily="Roboto Condensed"
@@ -203,7 +218,6 @@ const TossInsights = (props) => {
             </div>
           </div>
         </div>
-
       </div>
       <div className="mobile-view block sm:hidden py-2">
         {!!props.hideTitle ? (
@@ -217,30 +231,36 @@ const TossInsights = (props) => {
           />
         )}
         {
-
           <div className="grid grid-cols-12 mt-2">
             <div className="col-span-5">
               <div className="flex flex-col">
-                <div>
-                  <div className="absolute left-16" >
-                    <img
-                      src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/tails.png"
-                      className="w-16 h-16"
-                    />
+                {!tossTextData ? (
+                  <div>
+                    <div className="absolute left-16">
+                      <img
+                        src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/tails.png"
+                        className="w-16 h-16"
+                      />
+                    </div>
+                    <div className="z-20">
+                      <img
+                        src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/heads.png"
+                        className="w-16 h-16"
+                      />
+                    </div>
                   </div>
-                  <div className="z-20">
-                    <img
-                      src="https://utterai.s3.ap-south-1.amazonaws.com/img/widget/heads.png"
-                      className="w-16 h-16"
-                    />
+                ) : (
+                  <div className="text-center text-sm text-gray-600  py-8 font-bold">
+                    {tossTextData && (
+                      <Text
+                        fontFamily="Roboto Condensed"
+                        class="text-sm "
+                        text={tossTextData}
+                        fontColor="#283574"
+                      />
+                    )}
                   </div>
-
-                  <div className="text-center text-sm text-gray-600  py-6 font-bold">
-                    {
-                      tossTextData && tossTextData
-                    }
-                  </div>
-                </div>
+                )}
                 {/* <div className="flex flex-col items-start mt-3">
                 <div className="">
                   <Text
@@ -369,9 +389,7 @@ const TossInsights = (props) => {
               </div>
             </div>
           </div>
-
         }
-
       </div>
     </React.Fragment>
   );

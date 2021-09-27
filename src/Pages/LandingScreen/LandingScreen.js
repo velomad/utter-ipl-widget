@@ -31,7 +31,6 @@ const LandingScreen = ({ getPowerStatsData }) => {
       })
       .catch((e) => console.log(e));
   };
-  console.log(powerStatsData);
 
   return (
     <div>
