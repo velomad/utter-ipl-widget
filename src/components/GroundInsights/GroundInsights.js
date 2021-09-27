@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Text } from "../../common";
 import {
   PitchInsights,
@@ -6,7 +6,21 @@ import {
   AnnouncedPlayers
 } from "../../components";
 import { Event } from "../../utils/tracker";
+import axios from "axios";
+
+
+
+var selectedTeam = 0;
+var matchKey = "";
+var isHavingSockData = false;
+var dataFetchedFromAPI = false;
+
+
 const GroundInsights = ({ powerStatsData }) => {
+  const [activeTeamData, setActiveTeamData] = useState([]);
+  const [anouncedPlayers, setAnouncedPlayers] = useState({});
+  const [teamsdata, setTeamsData] = useState([]);
+
   const [selectedVal, setSelectedVal] = useState("ground");
   const [tossData, setTossData] = useState({});
 
@@ -15,6 +29,51 @@ const GroundInsights = ({ powerStatsData }) => {
   };
 
   let data = {};
+
+  const fetchSocketAPI = () => {
+    axios
+      .post("https://hapi.utter.ai/api/v1.0/getCurrentPlayingXI", null, {
+        headers: {
+          Authorization: `Bearer ${window.utter_token}`
+        }
+      })
+      .then((results) => {
+        if (Object.keys(results.data.current_match_playingxi).length > 0) {
+          for (var match_key in results.data.current_match_playingxi) {
+            matchKey = match_key;
+            var teams = results.data.current_match_playingxi[match_key];
+            if (Object.keys(teams).length) {
+              setTeamsData(
+                Object.keys(results.data.current_match_playingxi[matchKey])
+              );
+              setActiveTeamData(
+                results.data.current_match_playingxi[matchKey][
+                Object.keys(results.data.current_match_playingxi[matchKey])[
+                selectedTeam
+                ]
+                ]
+              );
+              setAnouncedPlayers(results.data.current_match_playingxi);
+              dataFetchedFromAPI = true;
+            } else {
+              //means empty object
+            }
+          }
+        } else {
+          setTeamsData([]);
+          setActiveTeamData([]);
+          dataFetchedFromAPI = true;
+        }
+      })
+      .catch((e) => console.log(e));
+  }
+
+  useEffect(() => {
+    isHavingSockData = false;
+    dataFetchedFromAPI = false;
+    createWebScoket("wss://hapi.utter.ai/matchupdates")
+  }, []);
+
 
   if (powerStatsData) {
     if (powerStatsData.GroundInsights)
@@ -38,6 +97,141 @@ const GroundInsights = ({ powerStatsData }) => {
       });
     }
   }
+
+  const createWebScoket = (url) => {
+    let ws = new WebSocket(url);
+    ws.onopen = () => {
+
+    };
+    ws.onmessage = (evt) => {
+      var announced_players_data;
+      let isMatched = null;
+      var announced_players_data = evt.data;
+      let getCalculatedData = calculateData(announced_players_data);
+      if (Object.keys(getCalculatedData).length > 0) {
+        if (getCalculatedData.havingTossData) {
+          setTossData(getCalculatedData.tossData);
+        }
+      }
+      if (activeTeamData.length == 0) {
+        if (getCalculatedData) {
+          if (Object.keys(getCalculatedData).length > 0) {
+            if (getCalculatedData.havingPlayingData) {
+              matchKey = Object.keys(getCalculatedData.playing11Data)[0];
+              setAnouncedPlayers(getCalculatedData.playing11Data);
+              if (Object.keys(getCalculatedData.playing11Data).includes(matchKey)) {
+                isMatched = true;
+              } else {
+                isMatched = false;
+              }
+              if (isMatched) {
+                if (Object.keys(getCalculatedData.playing11Data[matchKey]).length > 0) {
+                  setTeamsData(Object.keys(getCalculatedData.playing11Data[matchKey]));
+                  setActiveTeamData(
+                    getCalculatedData.playing11Data[matchKey][
+                    Object.keys(getCalculatedData.playing11Data[matchKey])[selectedTeam]
+                    ]
+                  );
+                  isHavingSockData = true;
+                  dataFetchedFromAPI = false;
+                } else {
+                  setTeamsData([]);
+                  setActiveTeamData([]);
+                }
+              } else {
+                setTeamsData([]);
+                setActiveTeamData([]);
+              }
+            } else {
+              setTeamsData([]);
+              setActiveTeamData([]);
+            }
+          }
+        }
+      }
+    };
+    if (!ws.onmessage || ws.readyState == 0) {
+      isHavingSockData = false;
+    }
+    if (!isHavingSockData && !dataFetchedFromAPI) {
+      fetchSocketAPI();
+    }
+    ws.onclose = () => {
+      // automatically try to connect on connection loss
+      createWebScoket(url)
+    };
+    return ws;
+  };
+
+  const calculateData = (data) => {
+    let tossData, playing11Data;
+    if (!!data) {
+      if (Object.keys(data).length > 0) {
+        Object.keys(data).map((el, index) => {
+          if (el == 'toss') {
+            if (Object.keys(data[el]).length > 0) {
+              Object.keys(data[el]).map((el2, index2) => {
+                if (!!data[el][el2].str) {
+                  tossData = data[el][el2].str;
+                  console.log('Toss having data...');
+                } else {
+                  console.log('No data found in Toss 2...');
+                }
+              })
+            } else {
+              console.log('No data found in Toss 1...');
+            }
+          } else if (el == 'playingxi') {
+            if (Object.keys(data[el]).length > 0) {
+              Object.keys(data[el]).map((case2el, case2Index) => {
+                if (Object.keys(data[el][case2el]).length > 0) {
+                  playing11Data = data[el];
+                  console.log('Playing11 having data...');
+                } else {
+                  console.log('No data found in Playing11 2...');
+                }
+              })
+            } else {
+              console.log('No data found in Playing11...');
+            }
+          }
+        });
+      }
+    }
+    if (!!tossData && !!playing11Data) {
+      let data = {
+        'tossData': tossData,
+        'playing11Data': playing11Data,
+        'havingPlayingData': true,
+        'havingTossData': true,
+      }
+      return {
+        ...data
+      }
+    } else if (!!tossData) {
+      let data = {
+        'tossData': tossData,
+        'havingPlayingData': false,
+        'havingTossData': true,
+      }
+      return {
+        ...data
+      }
+    } else if (!!playing11Data) {
+      let data = {
+        'playing11Data': playing11Data,
+        'havingPlayingData': true,
+        'havingTossData': false,
+      }
+      return {
+        ...data
+      }
+    } else if (!tossData && !playing11Data) {
+      return false
+    }
+  }
+
+
 
   return (
     <React.Fragment>
@@ -315,7 +509,7 @@ const GroundInsights = ({ powerStatsData }) => {
           <TossInsights
             hideTitle={true}
             TossInsights={powerStatsData.TossInsights}
-            TossDataFromAnnounced={tossData}
+            tossData={tossData}
           />
         ) : (
           ""
@@ -323,7 +517,11 @@ const GroundInsights = ({ powerStatsData }) => {
         {selectedVal == "announcedplayers" && window.innerWidth > "768" ? (
           <AnnouncedPlayers
             hideTitle={true}
-            getTossData={(tossData) => mainTossData(tossData)}
+            teamsdata={teamsdata}
+            activeTeamMainData={activeTeamData}
+            anouncedPlayersData={anouncedPlayers}
+            matchKey={matchKey}
+            currentTeamName={teamsdata[0]}
           />
         ) : (
           ""
@@ -616,7 +814,7 @@ const GroundInsights = ({ powerStatsData }) => {
             <TossInsights
               hideTitle={true}
               TossInsights={powerStatsData.TossInsights}
-              getTossData={(tossData) => mainTossData(tossData)}
+              tossData={tossData}
             />
           ) : (
             ""
@@ -624,7 +822,11 @@ const GroundInsights = ({ powerStatsData }) => {
           {selectedVal == "announcedplayers" && window.innerWidth < "768" ? (
             <AnnouncedPlayers
               hideTitle={true}
-              getTossData={(tossData) => mainTossData(tossData)}
+              teamsdata={teamsdata}
+              activeTeamMainData={activeTeamData}
+              anouncedPlayersData={anouncedPlayers}
+              matchKey={matchKey}
+              currentTeamName={teamsdata[0]}
             />
           ) : (
             ""

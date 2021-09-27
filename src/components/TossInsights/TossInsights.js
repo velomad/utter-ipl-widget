@@ -10,7 +10,7 @@ const TossInsights = (props) => {
     axios
       .post("https://hapi.utter.ai/api/v1.0/getCurrentMatchToss", null, {
         headers: {
-          Authorization: `Bearer ${window.utter_token}`
+          Authorization: `Bearer ${'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVdHRlckFJIiwidXNlciI6eyJ1c2VybmFtZSI6IndlYnBsYXRmb3JtQVBJIiwicm9sZSI6InJlc3RDbGllbnQifSwiaWF0IjoxNjMyNzU5ODk3LCJpZCI6IlFkZlRyMDM0NEdkdzhibSIsImV4cCI6MTYzMjg0NjI5N30.8pVRYzHJYpJAuwI6MyCfEr8raWYNkOQWgtR54b1Ozhc'}`
         }
       })
       .then((results) => {
@@ -19,10 +19,10 @@ const TossInsights = (props) => {
           !results.data.status
         ) {
           if (
-            !!props.TossDataFromAnnounced &&
-            Object.keys(props.TossDataFromAnnounced).length > 0
+            !!props.tossData &&
+            Object.keys(props.tossData).length > 0
           ) {
-            setTossTextData(props.TossDataFromAnnounced);
+            setTossTextData(props.tossData);
           }
         } else {
           if (Object.keys(results.data).length > 0) {
@@ -41,14 +41,14 @@ const TossInsights = (props) => {
 
   useEffect(() => {
     if (
-      !!props.TossDataFromAnnounced &&
-      Object.keys(props.TossDataFromAnnounced).length > 0
+      !!props.tossData &&
+      Object.keys(props.tossData).length > 0
     ) {
-      setTossTextData(props.TossDataFromAnnounced);
+      setTossTextData(props.tossData);
     } else {
       fetchDataFromAPI();
     }
-  }, []);
+  }, [props.tossData]);
 
   let data = {};
   if (TossInsights) {
