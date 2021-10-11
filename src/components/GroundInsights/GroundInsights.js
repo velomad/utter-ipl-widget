@@ -106,7 +106,7 @@ const GroundInsights = ({ powerStatsData }) => {
     ws.onmessage = (evt) => {
       var announced_players_data;
       let isMatched = null;
-      var announced_players_data = evt.data;
+      var announced_players_data = JSON.parse(evt.data);
       let getCalculatedData = calculateData(announced_players_data);
       if (Object.keys(getCalculatedData).length > 0) {
         if (getCalculatedData.havingTossData) {
