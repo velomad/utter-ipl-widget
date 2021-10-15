@@ -111,6 +111,8 @@ const GroundInsights = ({ powerStatsData }) => {
       if (Object.keys(getCalculatedData).length > 0) {
         if (getCalculatedData.havingTossData) {
           setTossData(getCalculatedData.tossData);
+        }else{
+          setTossData([]);
         }
       }
       if (activeTeamData.length == 0) {
@@ -227,7 +229,12 @@ const GroundInsights = ({ powerStatsData }) => {
         ...data
       }
     } else if (!tossData && !playing11Data) {
-      return false
+      let data = {
+        'havingTossData': false,
+      }
+      return {
+        ...data
+      }
     }
   }
 
