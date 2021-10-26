@@ -6,10 +6,12 @@ import "react-circular-progressbar/dist/styles.css";
 import { fixBrokenImg } from "../../utils/fixBrokenImg";
 
 export default function Headtohead(props) {
+
+
   let team1 = {};
   let team2 = {};
 
-  if (props.teamMatches) {
+  if (props.teamMatches && props.teamMatches.length > 0) {
     team1["teamName"] = props.teamMatches[0].ForTeam;
     team1["matchesWon"] = props.teamMatches[0].MatchesWon;
     team1["noResults"] = props.teamMatches[0].NoResults;
@@ -38,9 +40,8 @@ export default function Headtohead(props) {
               <div className="absolute bottom-0 left-14">
                 <img
                   className=" z-0 w-14 sm:w-20 object-cover object-center mx-auto"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
-                    team1.teamName && getFirstCharacter(team1.teamName)
-                  }.png`}
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${team1.teamName && getFirstCharacter(team1.teamName)
+                    }.png`}
                   // src={`https://utterai.s3.ap-south-1.amazonaws.com/team/img/${
                   //   team1.teamName.replace(/\s/g, "_") + ".png"
                   // }`}
@@ -50,9 +51,8 @@ export default function Headtohead(props) {
               <div className="absolute">
                 <img
                   class="z-10 w-24 object-cover object-center mx-auto"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
-                    team1.teamName && getFirstCharacter(team1.teamName)
-                  }_C.png`}
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${team1.teamName && getFirstCharacter(team1.teamName)
+                    }_C.png`}
                   alt="player1"
                   onError={(event) => fixBrokenImg(event)}
                 />
@@ -63,9 +63,8 @@ export default function Headtohead(props) {
             <Text
               fontFamily="Roboto Condensed"
               class="font-bold text-center"
-              text={`Matches Played : ${
-                props.teamMatches && props.teamMatches[0]?.MatchesPlayed
-              }`}
+              text={`Matches Played : ${props.teamMatches && props.teamMatches[0]?.MatchesPlayed
+                }`}
               fontColor="#283574"
               fontSize="0.6rem"
             />
@@ -82,18 +81,16 @@ export default function Headtohead(props) {
                 <img
                   class="z-0 w-14 sm:w-20 object-cover object-center mx-auto"
                   // src="/static/images/rcb_logo.png"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
-                    team2.teamName && getFirstCharacter(team2.teamName)
-                  }.png`}
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${team2.teamName && getFirstCharacter(team2.teamName)
+                    }.png`}
                   alt="player2"
                 />
               </div>
               <div className="absolute">
                 <img
                   class="z-10 w-24 object-cover object-center mx-auto"
-                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${
-                    team2.teamName && getFirstCharacter(team2.teamName)
-                  }_C.png`}
+                  src={`https://utterai.s3.ap-south-1.amazonaws.com/img/widget/${team2.teamName && getFirstCharacter(team2.teamName)
+                    }_C.png`}
                   alt="player1"
                   onError={(event) => fixBrokenImg(event)}
                 />
@@ -132,8 +129,8 @@ export default function Headtohead(props) {
                   <Text
                     fontFamily="Roboto Condensed"
                     class="font-bold text-sm text-center"
-                    text={res === 0 ? "L" : "W"}
-                    fontColor={res === 1 ? "#197F5C" : "#9F1C34"}
+                    text={res === 0 ? "L" : -1 ? "NA" : "W"}
+                    fontColor={res === 1 ? "#197F5C" : -1 ? "#197F5C" : "#9F1C34"}
                   />
                 </div>
               ))}
@@ -197,7 +194,7 @@ export default function Headtohead(props) {
               fontSize="0.6rem"
               fontFamily="Roboto Condensed"
               class="font-bold text-center mt-2"
-              text={`No Result: ${team1.noResults}`}
+              text={`No Result: ${team1.noResults ? team1.noResults : "NA"}`}
               fontColor="#283574"
             />
           </div>
@@ -241,8 +238,8 @@ export default function Headtohead(props) {
                   <Text
                     fontFamily="Roboto Condensed"
                     class="font-bold text-sm text-center"
-                    text={res === 0 ? "L" : "W"}
-                    fontColor={res === 1 ? "#197F5C" : "#9F1C34"}
+                    text={res === 0 ? "L" : -1 ? "NA" : "W"}
+                    fontColor={res === 1 ? "#197F5C" : -1 ? "#197F5C" : "#9F1C34"}
                   />
                 </div>
               ))}

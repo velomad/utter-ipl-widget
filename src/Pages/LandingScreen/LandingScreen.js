@@ -18,11 +18,15 @@ const LandingScreen = ({ getPowerStatsData }) => {
   }, []);
 
   const getClientAuth = () => {
+
+
+    
     localStorage.setItem("clientAuthToken", window.utter_token);
     axios
       .post("https://hapi.utter.ai/api/v1.0/getPowerStats", null, {
         headers: {
-          Authorization: `Bearer ${window.utter_token}`
+          // Authorization: `Bearer ${window.utter_token}`
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVdHRlckFJIiwidXNlciI6eyJ1c2VybmFtZSI6IndlYnBsYXRmb3JtQVBJIiwicm9sZSI6InJlc3RDbGllbnQifSwiaWF0IjoxNjM1Mjc3MzcwLCJpZCI6IlFkZlRyMDM0NEdkdzhibSIsImV4cCI6MTYzNTM2Mzc3MH0.lERKfVT2cfzx7mpSJznXv1c7xggBIbC1nhIQMXdHT_c`
         }
       })
       .then((Utterresults) => {
